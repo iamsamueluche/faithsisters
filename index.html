@@ -1,507 +1,812 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Faith Sisters Global Mission | Living for Christ</title>
-    
+
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <style>
-        /* Logo SVG styling */
-        .brand-logo-svg {
-            width: 50px;
-            height: 50px;
-        }
-        .brand-logo-svg .orange { fill: #F26522; }
-        .brand-logo-svg .blue { fill: #00AEEF; }
-        .brand-logo-svg .blue-dark { fill: #0088BB; }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <!-- ===== NAVIGATION ===== -->
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Logo Icon - Three figures -->
-                    <path class="orange" d="M50 15 C55 15 60 20 60 30 C60 40 55 50 50 55 C45 50 40 40 40 30 C40 20 45 15 50 15 Z"/>
-                    <path class="blue" d="M25 35 C30 35 35 40 35 50 C35 60 30 70 25 75 C20 70 15 60 15 50 C15 40 20 35 25 35 Z"/>
-                    <path class="blue-dark" d="M75 35 C80 35 85 40 85 50 C85 60 80 70 75 75 C70 70 65 60 65 50 C65 40 70 35 75 35 Z"/>
-                    <circle class="orange" cx="50" cy="25" r="8"/>
-                    <circle class="blue" cx="25" cy="45" r="7"/>
-                    <circle class="blue-dark" cx="75" cy="45" r="7"/>
-                </svg>
-                <div class="brand-text">
-                    Faith Sisters
-                    <span>Global Mission</span>
-                </div>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="nav-link btn-join" href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">
-                            <i class="bi bi-heart-fill me-1"></i>Join Us
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            class="brand-logo"
+            src="images/logo.png"
+            alt="Faith Sisters Global Mission logo"
+          />
+          <div class="brand-text">
+            Faith Sisters
+            <span>Global Mission</span>
+          </div>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="outreach.html">Outreach Programs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="partners.html">Partners & Sponsors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a
+                class="nav-link btn-join"
+                href="https://forms.gle/Xf2UDiuCFTPhiDVq7"
+                target="_blank"
+              >
+                <i class="bi bi-heart-fill me-1"></i>Join Us
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- ===== HERO SECTION ===== -->
     <section class="hero-section">
-        <div class="hero-bg">
-            <img src="images/hero_group.jpg" alt="Faith Sisters">
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-particles" id="particles"></div>
-        
-        <div class="container hero-content">
-            <div class="row">
-                <div class="col-lg-8">
-                    <span class="hero-eyebrow">Welcome to Faith Sisters</span>
-                    <h1 class="hero-title">
-                        Living for <span class="highlight">Christ</span>,<br>
-                        Taking the Gospel to the Nations
-                    </h1>
-                    <p class="hero-subtitle">
+      <div class="hero-bg">
+        <img src="images/hero_group.jpg" alt="Faith Sisters" />
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-particles" id="particles"></div>
+
+      <div class="container hero-content">
+        <div class="row">
+          <div class="col-lg-8">
+            <span class="hero-eyebrow">Welcome to Faith Sisters</span>
+            <h1 class="hero-title">
+              Living for <span class="highlight">Christ</span>,<br />
+              Taking the Gospel to the Nations
+            </h1>
+            <!-- <p class="hero-subtitle">
                         We are a faith-based nonprofit dedicated to nurturing spiritual growth, 
                         fostering sisterhood, and spreading love and compassion to communities across Africa.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="about.html" class="btn btn-hero-primary">
-                            <i class="bi bi-heart-fill me-2"></i>Join the Mission
-                        </a>
-                        <a href="https://youtube.com/@FaithSistersGlobal" target="_blank" class="btn btn-hero-secondary">
-                            <i class="bi bi-youtube me-2"></i>Watch on YouTube
-                        </a>
-                    </div>
-                </div>
+                    </p> -->
+            <div class="hero-buttons">
+              <a href="about.html" class="btn btn-hero-primary">
+                <i class="bi bi-heart-fill me-2"></i>Join the Mission
+              </a>
+              <a
+                href="https://youtube.com/@FaithSistersGlobal"
+                target="_blank"
+                class="btn btn-hero-secondary"
+              >
+                <i class="bi bi-youtube me-2"></i>Watch on YouTube
+              </a>
             </div>
+          </div>
         </div>
-        
-        <div class="container hero-stats">
-            <div class="row g-3">
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <span class="stat-number" data-count="2500">0</span>
-                        <span class="stat-label">Lives Impacted</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <span class="stat-number" data-count="50">0</span>
-                        <span class="stat-label">Communities</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <span class="stat-number" data-count="25">0</span>
-                        <span class="stat-label">Partners</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <span class="stat-number" data-count="6">0</span>
-                        <span class="stat-label">Years of Service</span>
-                    </div>
-                </div>
+      </div>
+
+      <div class="container hero-stats">
+        <div class="row g-3">
+          <div class="col-6 col-md-3">
+            <div class="stat-card">
+              <span class="stat-number" data-count="2500">0</span>
+              <span class="stat-label">Lives Impacted</span>
             </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card">
+              <span class="stat-number" data-count="50">0</span>
+              <span class="stat-label">Communities</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card">
+              <span class="stat-number" data-count="25">0</span>
+              <span class="stat-label">Partners</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card">
+              <span class="stat-number" data-count="6">0</span>
+              <span class="stat-label">Years of Service</span>
+            </div>
+          </div>
         </div>
-        
-        <div class="scroll-indicator">
-            <i class="bi bi-chevron-down"></i>
-        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <i class="bi bi-chevron-down"></i>
+      </div>
     </section>
 
     <!-- ===== ABOUT SECTION ===== -->
     <section class="section-padding about-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div class="about-image">
-                        <img src="images/about_worship.jpg" alt="About Faith Sisters">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <span class="section-eyebrow">About Us</span>
-                        <h3>A Sisterhood Built on Faith, Love & Service</h3>
-                        <p>
-                            Faith Sisters Global Mission is a faith-based nonprofit organization founded on January 1, 2020. 
-                            We are a diverse group of women united by our shared commitment to uplifting one another and 
-                            fostering spiritual growth in Christ Jesus.
-                        </p>
-                        <p>
-                            We gather together every first Saturday of the month for prayer, Bible study, and mutual edification. 
-                            Through our prayer meetings, outreaches, online platforms, and resources, we strive to empower women 
-                            to embrace their spirituality and live with purpose.
-                        </p>
-                        <ul class="feature-list">
-                            <li>
-                                <i class="bi bi-check-lg"></i>
-                                <span>Monthly prayer meetings and Bible study</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-check-lg"></i>
-                                <span>Community outreach programs across Africa</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-check-lg"></i>
-                                <span>Education and healthcare support initiatives</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-check-lg"></i>
-                                <span>Youth empowerment and leadership training</span>
-                            </li>
-                        </ul>
-                        <a href="about.html" class="btn btn-hero-primary mt-4">
-                            Learn More About Us
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="about-image">
+              <img src="images/about_us.jpg" alt="About Faith Sisters" />
             </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-content">
+              <span class="section-eyebrow">About Us</span>
+              <h5>A Sisterhood Built on Faith, Love & Service</h5>
+              <p>
+                Faith sisters was founded on January 1, 2020. We are a group of
+                sisters who gather together every first Saturday of the month
+                for prayer, bible study and mutual edification. Our mission is
+                to provide a safe and welcoming space where women from all walks
+                of life can come together to explore and deepen their spiritual
+                connections, share their stories, and find strength and
+                inspiration in the collective wisdom of our diverse sisterhood,
+                through our prayer meetings, outreaches, online platforms and
+                resources we strive to empower women to embrace their
+                spirituality, cultivate mindfulness, and live with purpose and
+                authenticity. Whether you’re seeking fellowship, guidance or
+                solace, Faith Sisters is here to accompany you on your journey.
+                Join us as we embark on a transformative voyage of faith, love,
+                and sisterhood. Together, let's illuminate the world with our
+                shared light and make a difference in the lives of others.
+              </p>
+
+              <a href="about.html" class="btn btn-hero-primary mt-4">
+                Learn More About Us
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== IMPACT HIGHLIGHTS SECTION ===== -->
+    <section class="section-padding impact-highlights-section">
+      <div class="impact-highlights-bg">
+        <div class="impact-glow impact-glow-one"></div>
+        <div class="impact-glow impact-glow-two"></div>
+        <div class="impact-grid-lines"></div>
+      </div>
+      <div class="container">
+        <div class="impact-highlights-header reveal-on-scroll">
+          <span class="section-eyebrow">Our Journey in Motion</span>
+          <h2 class="section-title">
+            A Growing Story of Faith, Fellowship & Outreach
+          </h2>
+          <p class="section-subtitle">
+            Every prayer gathering, outreach mission, and sister who joins us
+            adds to a beautiful testimony of impact.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center impact-highlights-grid">
+          <div class="col-md-6 col-xl-4">
+            <article class="impact-card reveal-on-scroll">
+              <div class="impact-card-orbit"></div>
+              <div class="impact-card-icon">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <div class="impact-card-copy">
+                <span class="impact-card-number" data-count="20">0</span>
+                <h3>Members</h3>
+                <p>
+                  A vibrant sisterhood growing together in faith, prayer, and
+                  purpose.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="impact-card reveal-on-scroll impact-card-featured">
+              <div class="impact-card-orbit"></div>
+              <div class="impact-card-icon">
+                <i class="bi bi-globe2"></i>
+              </div>
+              <div class="impact-card-copy">
+                <span class="impact-card-number" data-count="6">0</span>
+                <h3>Outreaches</h3>
+                <p>
+                  Intentional missions bringing compassion, support, and the
+                  love of Christ to communities.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="impact-card reveal-on-scroll">
+              <div class="impact-card-orbit"></div>
+              <div class="impact-card-icon">
+                <i class="bi bi-calendar4-week"></i>
+              </div>
+              <div class="impact-card-copy">
+                <span class="impact-card-number" data-count="50">0</span>
+                <h3>Meetings</h3>
+                <p>
+                  Moments of prayer, study, and shared encouragement that keep
+                  the vision alive.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VIDEO SHOWCASE SECTION ===== -->
+    <section class="section-padding video-showcase-section">
+      <div class="video-showcase-bg">
+        <div class="video-aurora video-aurora-one"></div>
+        <div class="video-aurora video-aurora-two"></div>
+        <div class="video-rings"></div>
+      </div>
+      <div class="container">
+        <div class="video-showcase-header reveal-on-scroll">
+          <span class="section-eyebrow">Videos</span>
+          <h2 class="section-title">Check Our Videos</h2>
+          <p class="section-subtitle">
+            Watch moments of outreach, education, celebration, and testimonies
+            from the Faith Sisters Global Mission journey.
+          </p>
+        </div>
+
+        <div class="video-showcase-layout">
+          <a
+            class="video-feature-card reveal-on-scroll"
+            href="https://www.youtube.com/watch?v=KEbdeptsIUI"
+            target="_blank"
+          >
+            <div class="video-feature-thumb">
+              <img
+                src="https://img.youtube.com/vi/KEbdeptsIUI/hqdefault.jpg"
+                alt="Faith Sisters video feature"
+              />
+              <div class="video-card-overlay"></div>
+              <div class="video-play-button">
+                <i class="bi bi-play-fill"></i>
+              </div>
+            </div>
+            <div class="video-feature-copy">
+              <span class="video-kicker">Featured Story</span>
+              <h3>Faith Sisters Global Mission on YouTube</h3>
+              <p>
+                Start with our top-priority highlight and step into the heart of
+                our mission in motion.
+              </p>
+            </div>
+          </a>
+
+          <div class="video-mosaic">
+            <a
+              class="video-mini-card reveal-on-scroll"
+              href="https://www.youtube.com/watch?v=UiFnGrLSoao"
+              target="_blank"
+            >
+              <div class="video-mini-thumb">
+                <img
+                  src="https://img.youtube.com/vi/UiFnGrLSoao/hqdefault.jpg"
+                  alt="Faith Sisters video"
+                />
+                <div class="video-card-overlay"></div>
+                <div class="video-play-pill">
+                  <i class="bi bi-play-fill"></i>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="video-mini-card reveal-on-scroll"
+              href="https://youtu.be/NXftd91cfYY"
+              target="_blank"
+            >
+              <div class="video-mini-thumb">
+                <img
+                  src="https://img.youtube.com/vi/NXftd91cfYY/hqdefault.jpg"
+                  alt="Faith Sisters video"
+                />
+                <div class="video-card-overlay"></div>
+                <div class="video-play-pill">
+                  <i class="bi bi-play-fill"></i>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="video-mini-card reveal-on-scroll"
+              href="https://youtu.be/PwHppKBwp2g"
+              target="_blank"
+            >
+              <div class="video-mini-thumb">
+                <img
+                  src="https://img.youtube.com/vi/PwHppKBwp2g/hqdefault.jpg"
+                  alt="Faith Sisters video"
+                />
+                <div class="video-card-overlay"></div>
+                <div class="video-play-pill">
+                  <i class="bi bi-play-fill"></i>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="video-mini-card reveal-on-scroll"
+              href="https://youtu.be/UMu_Kctu9yc"
+              target="_blank"
+            >
+              <div class="video-mini-thumb">
+                <img
+                  src="https://img.youtube.com/vi/UMu_Kctu9yc/hqdefault.jpg"
+                  alt="Faith Sisters video"
+                />
+                <div class="video-card-overlay"></div>
+                <div class="video-play-pill">
+                  <i class="bi bi-play-fill"></i>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="video-mini-card reveal-on-scroll"
+              href="https://youtu.be/O4jCJANzFwY"
+              target="_blank"
+            >
+              <div class="video-mini-thumb">
+                <img
+                  src="https://img.youtube.com/vi/O4jCJANzFwY/hqdefault.jpg"
+                  alt="Faith Sisters video"
+                />
+                <div class="video-card-overlay"></div>
+                <div class="video-play-pill">
+                  <i class="bi bi-play-fill"></i>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="video-mini-card reveal-on-scroll"
+              href="https://youtu.be/MttMQybt6uk"
+              target="_blank"
+            >
+              <div class="video-mini-thumb">
+                <img
+                  src="https://img.youtube.com/vi/MttMQybt6uk/hqdefault.jpg"
+                  alt="Faith Sisters video"
+                />
+                <div class="video-card-overlay"></div>
+                <div class="video-play-pill">
+                  <i class="bi bi-play-fill"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="video-showcase-cta reveal-on-scroll">
+          <a
+            href="https://youtube.com/@FaithSistersGlobal?si=tXAMfrDUqs1A-PYb"
+            target="_blank"
+            class="btn btn-video-showcase"
+          >
+            <i class="bi bi-youtube me-2"></i>Watch on YouTube
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- ===== OUTREACH PROGRAMS SECTION ===== -->
     <section class="section-padding programs-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">Our Programs</span>
-                <h2 class="section-title">Making a Difference</h2>
-                <p class="section-subtitle">
-                    Through our various outreach programs, we touch lives and transform communities 
-                    with the love of Christ.
-                </p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="program-card">
-                        <div class="program-image">
-                            <img src="images/gallery_education.jpg" alt="Education">
-                            <div class="program-icon">
-                                <i class="bi bi-book"></i>
-                            </div>
-                        </div>
-                        <div class="program-content">
-                            <h4>Education Outreach</h4>
-                            <p>Providing school supplies, scholarships, and educational support to underprivileged children.</p>
-                            <a href="outreach.html" class="program-link">
-                                Learn More <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="program-card">
-                        <div class="program-image">
-                            <img src="images/gallery_healthcare.jpg" alt="Healthcare">
-                            <div class="program-icon">
-                                <i class="bi bi-heart-pulse"></i>
-                            </div>
-                        </div>
-                        <div class="program-content">
-                            <h4>Healthcare Outreach</h4>
-                            <p>Organizing medical camps and providing healthcare services to underserved communities.</p>
-                            <a href="outreach.html" class="program-link">
-                                Learn More <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="program-card">
-                        <div class="program-image">
-                            <img src="images/outreach_orphanage.jpg" alt="Orphanage">
-                            <div class="program-icon">
-                                <i class="bi bi-house-heart"></i>
-                            </div>
-                        </div>
-                        <div class="program-content">
-                            <h4>Orphanage Support</h4>
-                            <p>Visiting and supporting orphanages with essential supplies, love, and companionship.</p>
-                            <a href="outreach.html" class="program-link">
-                                Learn More <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <a href="outreach.html" class="btn btn-hero-primary">
-                    View All Programs
-                </a>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Our Programs</span>
+          <h2 class="section-title">Making a Difference</h2>
+          <p class="section-subtitle">
+            Through our various outreach programs, we touch lives and transform
+            communities with the love of Christ.
+          </p>
         </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="program-card">
+              <div class="program-image">
+                <img src="images/gallery_education.jpg" alt="Education" />
+                <div class="program-icon">
+                  <i class="bi bi-book"></i>
+                </div>
+              </div>
+              <div class="program-content">
+                <h4>Education Outreach</h4>
+                <p>
+                  Providing school supplies, scholarships, and educational
+                  support to underprivileged children.
+                </p>
+                <a href="outreach.html" class="program-link">
+                  Learn More <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="program-card">
+              <div class="program-image">
+                <img src="images/gallery_healthcare.jpg" alt="Healthcare" />
+                <div class="program-icon">
+                  <i class="bi bi-heart-pulse"></i>
+                </div>
+              </div>
+              <div class="program-content">
+                <h4>Healthcare Outreach</h4>
+                <p>
+                  Organizing medical camps and providing healthcare services to
+                  underserved communities.
+                </p>
+                <a href="outreach.html" class="program-link">
+                  Learn More <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="program-card">
+              <div class="program-image">
+                <img src="images/outreach_orphanage.jpg" alt="Orphanage" />
+                <div class="program-icon">
+                  <i class="bi bi-house-heart"></i>
+                </div>
+              </div>
+              <div class="program-content">
+                <h4>Orphanage Support</h4>
+                <p>
+                  Visiting and supporting orphanages with essential supplies,
+                  love, and companionship.
+                </p>
+                <a href="outreach.html" class="program-link">
+                  Learn More <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="outreach.html" class="btn btn-hero-primary">
+            View All Programs
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- ===== GALLERY PREVIEW SECTION ===== -->
     <section class="section-padding gallery-preview-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">Gallery</span>
-                <h2 class="section-title">Moments of Impact</h2>
-                <p class="section-subtitle">
-                    Explore moments of faith, community, and transformation through our journey.
-                </p>
-            </div>
-            
-            <div class="gallery-preview-grid">
-                <div class="gallery-preview-item">
-                    <img src="images/gallery_worship.jpg" alt="Worship">
-                    <div class="gallery-preview-overlay">
-                        <div>
-                            <span>Worship</span>
-                            <h5>Circle of Prayer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-preview-item">
-                    <img src="images/gallery_education.jpg" alt="Education">
-                    <div class="gallery-preview-overlay">
-                        <div>
-                            <span>Education</span>
-                            <h5>Knowledge & Grace</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-preview-item">
-                    <img src="images/gallery_healthcare.jpg" alt="Healthcare">
-                    <div class="gallery-preview-overlay">
-                        <div>
-                            <span>Healthcare</span>
-                            <h5>Healing Hands</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-preview-item">
-                    <img src="images/gallery_celebration.jpg" alt="Celebration">
-                    <div class="gallery-preview-overlay">
-                        <div>
-                            <span>Community</span>
-                            <h5>Celebration of Unity</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-preview-item">
-                    <img src="images/gallery_outreach.jpg" alt="Outreach">
-                    <div class="gallery-preview-overlay">
-                        <div>
-                            <span>Outreach</span>
-                            <h5>Love in Action</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <a href="gallery.html" class="btn btn-hero-secondary">
-                    <i class="bi bi-images me-2"></i>View Full Gallery
-                </a>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Gallery</span>
+          <h2 class="section-title">Moments of Impact</h2>
+          <p class="section-subtitle">
+            Explore moments of faith, community, and transformation through our
+            journey.
+          </p>
         </div>
+
+        <div class="gallery-preview-grid">
+          <div class="gallery-preview-item">
+            <img src="images/gallery_worship.jpg" alt="Worship" />
+            <div class="gallery-preview-overlay">
+              <div>
+                <span>Worship</span>
+                <h5>Circle of Prayer</h5>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-preview-item">
+            <img src="images/gallery_education.jpg" alt="Education" />
+            <div class="gallery-preview-overlay">
+              <div>
+                <span>Education</span>
+                <h5>Knowledge & Grace</h5>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-preview-item">
+            <img src="images/gallery_healthcare.jpg" alt="Healthcare" />
+            <div class="gallery-preview-overlay">
+              <div>
+                <span>Healthcare</span>
+                <h5>Healing Hands</h5>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-preview-item">
+            <img src="images/gallery_celebration.jpg" alt="Celebration" />
+            <div class="gallery-preview-overlay">
+              <div>
+                <span>Community</span>
+                <h5>Celebration of Unity</h5>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-preview-item">
+            <img src="images/gallery_outreach.jpg" alt="Outreach" />
+            <div class="gallery-preview-overlay">
+              <div>
+                <span>Outreach</span>
+                <h5>Love in Action</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="gallery.html" class="btn btn-hero-secondary">
+            <i class="bi bi-images me-2"></i>View Full Gallery
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- ===== CTA SECTION ===== -->
     <section class="section-padding cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Be Part of the Mission</h2>
-                <p>
-                    Join us in making a difference. Whether through volunteering, partnering, or donating, 
-                    your contribution helps us spread love and transform lives.
-                </p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank" class="btn btn-cta">
-                        <i class="bi bi-heart-fill me-2"></i>Join Us
-                    </a>
-                    <a href="partners.html" class="btn btn-cta">
-                        <i class="bi bi-handshake me-2"></i>Partner With Us
-                    </a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>Be Part of the Mission</h2>
+          <p>
+            Join us in making a difference. Whether through volunteering,
+            partnering, or donating, your contribution helps us spread love and
+            transform lives.
+          </p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a
+              href="https://forms.gle/Xf2UDiuCFTPhiDVq7"
+              target="_blank"
+              class="btn btn-cta"
+            >
+              <i class="bi bi-heart-fill me-2"></i>Join Us
+            </a>
+            <a href="partners.html" class="btn btn-cta">
+              <i class="bi bi-handshake me-2"></i>Partner With Us
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="footer-brand">
-                        <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <path class="orange" d="M50 15 C55 15 60 20 60 30 C60 40 55 50 50 55 C45 50 40 40 40 30 C40 20 45 15 50 15 Z"/>
-                            <path class="blue" d="M25 35 C30 35 35 40 35 50 C35 60 30 70 25 75 C20 70 15 60 15 50 C15 40 20 35 25 35 Z"/>
-                            <path class="blue-dark" d="M75 35 C80 35 85 40 85 50 C85 60 80 70 75 75 C70 70 65 60 65 50 C65 40 70 35 75 35 Z"/>
-                            <circle class="orange" cx="50" cy="25" r="8"/>
-                            <circle class="blue" cx="25" cy="45" r="7"/>
-                            <circle class="blue-dark" cx="75" cy="45" r="7"/>
-                        </svg>
-                        <div>
-                            <h4>Faith Sisters</h4>
-                            <span>Global Mission</span>
-                        </div>
-                    </div>
-                    <div class="footer-about">
-                        <p>
-                            Living for Christ, taking the gospel to the nations. 
-                            Join us in our mission to transform lives through faith, love, and service.
-                        </p>
-                        <div class="social-links">
-                            <a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a>
-                            <a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a>
-                            <a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a>
-                            <a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-4">
-                    <div class="footer-links">
-                        <h5>Quick Links</h5>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="outreach.html">Outreach Programs</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-4">
-                    <div class="footer-links">
-                        <h5>Get Involved</h5>
-                        <ul>
-                            <li><a href="partners.html">Partners & Sponsors</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">Join Us</a></li>
-                            <li><a href="https://youtube.com/@FaithSistersGlobal" target="_blank">YouTube Channel</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-4">
-                    <div class="footer-links">
-                        <h5>Contact Info</h5>
-                        <div class="footer-contact">
-                            <p>
-                                <i class="bi bi-geo-alt"></i>
-                                9 Adamu Chiroma Crescent, Jabi District, Abuja, Nigeria
-                            </p>
-                            <p>
-                                <i class="bi bi-telephone"></i>
-                                +234 815 944 8287
-                            </p>
-                            <p>
-                                <i class="bi bi-envelope"></i>
-                                wearefaithsisters@gmail.com
-                            </p>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <div class="footer-brand">
+              <img
+                class="brand-logo"
+                src="images/logo.png"
+                alt="Faith Sisters Global Mission logo"
+              />
+              <div>
+                <h4>Faith Sisters</h4>
+                <span>Global Mission</span>
+              </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Faith Sisters Global Mission. All rights reserved. | Living for Christ, Taking the Gospel to the Nations!</p>
+            <div class="footer-about">
+              <p>
+                Living for Christ, taking the gospel to the nations. Join us in
+                our mission to transform lives through faith, love, and service.
+              </p>
+              <div class="social-links">
+                <a href="https://facebook.com/faithsisters" target="_blank"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a
+                  href="https://instagram.com/faithsistersglobal"
+                  target="_blank"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a
+                  href="https://youtube.com/@FaithSistersGlobal"
+                  target="_blank"
+                  ><i class="bi bi-youtube"></i
+                ></a>
+                <a href="https://x.com/faithsisters01" target="_blank"
+                  ><i class="bi bi-twitter-x"></i
+                ></a>
+              </div>
             </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4">
+            <div class="footer-links">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="outreach.html">Outreach Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4">
+            <div class="footer-links">
+              <h5>Get Involved</h5>
+              <ul>
+                <li><a href="partners.html">Partners & Sponsors</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li>
+                  <a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank"
+                    >Join Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://youtube.com/@FaithSistersGlobal"
+                    target="_blank"
+                    >YouTube Channel</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4">
+            <div class="footer-links">
+              <h5>Contact Info</h5>
+              <div class="footer-contact">
+                <p>
+                  <i class="bi bi-geo-alt"></i>
+                  9 Adamu Chiroma Crescent, Jabi District, Abuja, Nigeria
+                </p>
+                <p>
+                  <i class="bi bi-telephone"></i>
+                  +234 815 944 8287
+                </p>
+                <p>
+                  <i class="bi bi-envelope"></i>
+                  wearefaithsisters@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 Faith Sisters Global Mission. All rights reserved. |
+            Living for Christ, Taking the Gospel to the Nations!
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Create floating particles
+      function createParticles() {
+        const container = document.getElementById("particles");
+        const particleCount = 25;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 15 + "s";
+          particle.style.animationDuration = 10 + Math.random() * 10 + "s";
+          particle.style.width = 3 + Math.random() * 4 + "px";
+          particle.style.height = particle.style.width;
+          particle.style.opacity = 0.3 + Math.random() * 0.5;
+          container.appendChild(particle);
+        }
+      }
+      createParticles();
+
+      // Animated Counter
+      function animateCounters() {
+        const counters = document.querySelectorAll(
+          ".stat-number, .impact-card-number",
+        );
+
+        counters.forEach((counter) => {
+          const target = parseInt(counter.getAttribute("data-count"));
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let current = 0;
+
+          const updateCounter = () => {
+            current += step;
+            if (current < target) {
+              counter.textContent = Math.floor(current).toLocaleString() + "+";
+              requestAnimationFrame(updateCounter);
             } else {
-                navbar.classList.remove('scrolled');
+              counter.textContent = target.toLocaleString() + "+";
             }
+          };
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  updateCounter();
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.5 },
+          );
+
+          observer.observe(counter);
         });
-        
-        // Create floating particles
-        function createParticles() {
-            const container = document.getElementById('particles');
-            const particleCount = 25;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 15 + 's';
-                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
-                particle.style.width = (3 + Math.random() * 4) + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.opacity = 0.3 + Math.random() * 0.5;
-                container.appendChild(particle);
-            }
-        }
-        createParticles();
-        
-        // Animated Counter
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-count'));
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-                
-                const updateCounter = () => {
-                    current += step;
-                    if (current < target) {
-                        counter.textContent = Math.floor(current).toLocaleString() + '+';
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target.toLocaleString() + '+';
-                    }
-                };
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            updateCounter();
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-                
-                observer.observe(counter);
+      }
+      animateCounters();
+
+      // Reveal on scroll
+      function initRevealOnScroll() {
+        const revealItems = document.querySelectorAll(".reveal-on-scroll");
+
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+              }
             });
-        }
-        animateCounters();
+          },
+          { threshold: 0.18 },
+        );
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+      }
+      initRevealOnScroll();
     </script>
-</body>
+  </body>
 </html>
