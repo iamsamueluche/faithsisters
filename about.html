@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Faith Sisters Global Mission</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .brand-logo-svg { width: 50px; height: 50px; }
+        .brand-logo-svg .orange { fill: #F26522; }
+        .brand-logo-svg .blue { fill: #00AEEF; }
+        .brand-logo-svg .blue-dark { fill: #0088BB; }
+        
+        .mission-card, .vision-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .mission-card i, .vision-card i {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .value-card .icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.75rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #F26522 0%, #00AEEF 100%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            background: #F26522;
+            border-radius: 50%;
+            transform: translateX(-6px);
+        }
+        
+        .timeline-item h5 {
+            color: #F26522;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .team-info h5 {
+            margin-bottom: 0.25rem;
+        }
+        
+        .team-info span {
+            color: #6C757D;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolled">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path class="orange" d="M50 15 C55 15 60 20 60 30 C60 40 55 50 50 55 C45 50 40 40 40 30 C40 20 45 15 50 15 Z"/>
+                    <path class="blue" d="M25 35 C30 35 35 40 35 50 C35 60 30 70 25 75 C20 70 15 60 15 50 C15 40 20 35 25 35 Z"/>
+                    <path class="blue-dark" d="M75 35 C80 35 85 40 85 50 C85 60 80 70 75 75 C70 70 65 60 65 50 C65 40 70 35 75 35 Z"/>
+                    <circle class="orange" cx="50" cy="25" r="8"/>
+                    <circle class="blue" cx="25" cy="45" r="7"/>
+                    <circle class="blue-dark" cx="75" cy="45" r="7"/>
+                </svg>
+                <div class="brand-text" style="color: #1A1A2E;">
+                    Faith Sisters
+                    <span>Global Mission</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link btn-join" href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">
+                            <i class="bi bi-heart-fill me-1"></i>Join Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="images/about_worship.jpg" alt="About Us">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="container page-header-content">
+            <h1>About Us</h1>
+            <p>Discover our story, mission, and the values that drive us to make a difference.</p>
+        </div>
+    </section>
+
+    <!-- ===== WHO WE ARE SECTION ===== -->
+    <section class="section-padding" style="background: #F8F9FA;">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="section-eyebrow">Who We Are</span>
+                    <h2 class="section-title" style="text-align: left;">A Sisterhood United by Faith</h2>
+                    <p style="color: #6C757D;">
+                        Faith Sisters Global Mission is a faith-based nonprofit organization founded on January 1, 2020. 
+                        We are a diverse group of women united by our shared commitment to uplifting one another and 
+                        fostering spiritual growth in Christ Jesus.
+                    </p>
+                    <p style="color: #6C757D;">
+                        We gather together every first Saturday of the month for prayer, Bible study, and mutual edification. 
+                        Our mission is to provide a safe and welcoming space where women from all walks of life can come 
+                        together to explore and deepen their spiritual connections, share their stories, and find strength 
+                        and inspiration in the collective wisdom of our diverse sisterhood.
+                    </p>
+                    <p style="color: #6C757D;">
+                        Through our prayer meetings, outreaches, online platforms, and resources, we strive to empower 
+                        women to embrace their spirituality, cultivate mindfulness, and live with purpose and authenticity.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="images/hero_group.jpg" alt="Faith Sisters Group">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MISSION & VISION ===== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Our Purpose</span>
+                <h2 class="section-title">Mission & Vision</h2>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="mission-card">
+                        <i class="bi bi-bullseye"></i>
+                        <h3>Our Mission</h3>
+                        <p>
+                            To nurture spiritual growth, foster sisterhood, and spread love and compassion to all. 
+                            We are dedicated to providing a nurturing environment where individuals from all walks 
+                            of life can come together to explore and strengthen their faith, find support during 
+                            challenging times, and celebrate the joys of life's journey.
+                        </p>
+                        <p>
+                            Through our various outreach programs, we aim to touch lives and transform communities 
+                            with the love of Christ, making a tangible difference in the lives of those we serve.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="vision-card">
+                        <i class="bi bi-eye"></i>
+                        <h3>Our Vision</h3>
+                        <p>
+                            To be a global community of women living for Christ and taking the gospel to the nations. 
+                            We envision a world where every woman has the opportunity to grow spiritually, find 
+                            sisterhood, and live a life of purpose and authenticity.
+                        </p>
+                        <p>
+                            We aspire to create a ripple effect of positive change, where empowered women empower 
+                            others, creating a global movement of faith, love, and service that transforms communities 
+                            and impacts generations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR VALUES ===== -->
+    <section class="section-padding" style="background: #F8F9FA;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">What We Stand For</span>
+                <h2 class="section-title">Our Core Values</h2>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card">
+                        <div class="icon"><i class="bi bi-heart-fill"></i></div>
+                        <h5>Love</h5>
+                        <p>We believe in unconditional love as the foundation of all our actions and relationships.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card">
+                        <div class="icon"><i class="bi bi-people-fill"></i></div>
+                        <h5>Community</h5>
+                        <p>We foster a sense of belonging and support among all members of our sisterhood.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card">
+                        <div class="icon"><i class="bi bi-book-fill"></i></div>
+                        <h5>Faith</h5>
+                        <p>We are grounded in our faith in Christ and committed to living according to His teachings.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="value-card">
+                        <div class="icon"><i class="bi bi-hand-thumbs-up-fill"></i></div>
+                        <h5>Service</h5>
+                        <p>We are dedicated to serving others and making a positive impact in our communities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR JOURNEY ===== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <span class="section-eyebrow">Our Story</span>
+                    <h2 class="section-title" style="text-align: left;">Our Journey</h2>
+                    <p style="color: #6C757D;">
+                        From a small group of women with a shared vision to a growing community making 
+                        impact across Africa, our journey has been one of faith, growth, and transformation.
+                    </p>
+                    
+                    <div class="timeline mt-5">
+                        <div class="timeline-item">
+                            <h5>January 2020</h5>
+                            <p>Faith Sisters Global Mission was founded with a vision to create a community of women united by faith.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>June 2020</h5>
+                            <p>Launched our first community outreach program, providing food and supplies to families in need.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>December 2021</h5>
+                            <p>Expanded our reach to multiple communities across Nigeria, impacting over 500 lives.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>March 2023</h5>
+                            <p>Launched our education support program, providing scholarships and school supplies to children.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>Today</h5>
+                            <p>Continuing to grow and expand our impact, touching thousands of lives across Africa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/gallery_bible.jpg" alt="Our Journey" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="section-padding cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Sisterhood</h2>
+                <p>
+                    Be part of a community that supports, uplifts, and empowers women to live their best lives in Christ.
+                </p>
+                <a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank" class="btn btn-cta">
+                    <i class="bi bi-heart-fill me-2"></i>Become a Member
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path class="orange" d="M50 15 C55 15 60 20 60 30 C60 40 55 50 50 55 C45 50 40 40 40 30 C40 20 45 15 50 15 Z"/>
+                            <path class="blue" d="M25 35 C30 35 35 40 35 50 C35 60 30 70 25 75 C20 70 15 60 15 50 C15 40 20 35 25 35 Z"/>
+                            <path class="blue-dark" d="M75 35 C80 35 85 40 85 50 C85 60 80 70 75 75 C70 70 65 60 65 50 C65 40 70 35 75 35 Z"/>
+                            <circle class="orange" cx="50" cy="25" r="8"/>
+                            <circle class="blue" cx="25" cy="45" r="7"/>
+                            <circle class="blue-dark" cx="75" cy="45" r="7"/>
+                        </svg>
+                        <div>
+                            <h4>Faith Sisters</h4>
+                            <span>Global Mission</span>
+                        </div>
+                    </div>
+                    <div class="footer-about">
+                        <p>Living for Christ, taking the gospel to the nations.</p>
+                        <div class="social-links">
+                            <a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a>
+                            <a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="outreach.html">Outreach Programs</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Get Involved</h5>
+                        <ul>
+                            <li><a href="partners.html">Partners & Sponsors</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">Join Us</a></li>
+                            <li><a href="https://youtube.com/@FaithSistersGlobal" target="_blank">YouTube Channel</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <div class="footer-contact">
+                            <p><i class="bi bi-geo-alt"></i> 9 Adamu Chiroma Crescent, Jabi, Abuja, Nigeria</p>
+                            <p><i class="bi bi-telephone"></i> +234 815 944 8287</p>
+                            <p><i class="bi bi-envelope"></i> wearefaithsisters@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Faith Sisters Global Mission. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

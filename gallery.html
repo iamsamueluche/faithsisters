@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Faith Sisters Global Mission</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .brand-logo-svg { width: 50px; height: 50px; }
+        .brand-logo-svg .orange { fill: #F26522; }
+        .brand-logo-svg .blue { fill: #00AEEF; }
+        .brand-logo-svg .blue-dark { fill: #0088BB; }
+        
+        /* Gallery Page Styles */
+        .gallery-page {
+            background: #1A1A2E;
+            min-height: 100vh;
+            padding: 6rem 0;
+        }
+        
+        .gallery-page .section-title,
+        .gallery-page .section-subtitle {
+            color: white;
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .gallery-filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-filter-btn:hover,
+        .gallery-filter-btn.active {
+            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
+            border-color: transparent;
+            color: white;
+        }
+        
+        .gallery-masonry {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+        
+        @media (max-width: 991px) {
+            .gallery-masonry {
+                column-count: 2;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .gallery-masonry {
+                column-count: 1;
+            }
+        }
+        
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: all 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item-category {
+            color: #F26522;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .gallery-item-title {
+            color: white;
+            font-size: 1.125rem;
+            margin: 0.5rem 0 0;
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        
+        .lightbox img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 16px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox-nav:hover {
+            background: #F26522;
+        }
+        
+        .lightbox-prev { left: -80px; }
+        .lightbox-next { right: -80px; }
+        
+        @media (max-width: 767px) {
+            .lightbox-prev { left: 10px; }
+            .lightbox-next { right: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolled">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path class="orange" d="M50 15 C55 15 60 20 60 30 C60 40 55 50 50 55 C45 50 40 40 40 30 C40 20 45 15 50 15 Z"/>
+                    <path class="blue" d="M25 35 C30 35 35 40 35 50 C35 60 30 70 25 75 C20 70 15 60 15 50 C15 40 20 35 25 35 Z"/>
+                    <path class="blue-dark" d="M75 35 C80 35 85 40 85 50 C85 60 80 70 75 75 C70 70 65 60 65 50 C65 40 70 35 75 35 Z"/>
+                    <circle class="orange" cx="50" cy="25" r="8"/>
+                    <circle class="blue" cx="25" cy="45" r="7"/>
+                    <circle class="blue-dark" cx="75" cy="45" r="7"/>
+                </svg>
+                <div class="brand-text" style="color: #1A1A2E;">
+                    Faith Sisters
+                    <span>Global Mission</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link btn-join" href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">
+                            <i class="bi bi-heart-fill me-1"></i>Join Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header" style="min-height: 40vh;">
+        <div class="page-header-bg">
+            <img src="images/gallery_celebration.jpg" alt="Gallery">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="container page-header-content">
+            <h1>Our Gallery</h1>
+            <p>Moments of faith, community, and transformation captured through our journey.</p>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY SECTION ===== -->
+    <section class="gallery-page">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow" style="color: #F26522;">Explore</span>
+                <h2 class="section-title">Moments of Impact</h2>
+                <p class="section-subtitle">
+                    Browse through our collection of photos showcasing our outreach programs, 
+                    community events, and the lives we've touched.
+                </p>
+            </div>
+            
+            <!-- Filters -->
+            <div class="gallery-filters">
+                <button class="gallery-filter-btn active" data-filter="all">All</button>
+                <button class="gallery-filter-btn" data-filter="worship">Worship</button>
+                <button class="gallery-filter-btn" data-filter="education">Education</button>
+                <button class="gallery-filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="gallery-filter-btn" data-filter="outreach">Outreach</button>
+                <button class="gallery-filter-btn" data-filter="community">Community</button>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-masonry" id="galleryGrid">
+                <div class="gallery-item" data-category="worship">
+                    <img src="images/gallery_worship.jpg" alt="Worship">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Worship</span>
+                        <h5 class="gallery-item-title">Circle of Prayer</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="education">
+                    <img src="images/gallery_education.jpg" alt="Education">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Education</span>
+                        <h5 class="gallery-item-title">Knowledge & Grace</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="healthcare">
+                    <img src="images/gallery_healthcare.jpg" alt="Healthcare">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Healthcare</span>
+                        <h5 class="gallery-item-title">Healing Hands</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="community">
+                    <img src="images/gallery_celebration.jpg" alt="Celebration">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Community</span>
+                        <h5 class="gallery-item-title">Celebration of Unity</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="outreach">
+                    <img src="images/gallery_outreach.jpg" alt="Outreach">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Outreach</span>
+                        <h5 class="gallery-item-title">Love in Action</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="education">
+                    <img src="images/gallery_youth.jpg" alt="Youth">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Education</span>
+                        <h5 class="gallery-item-title">Future Leaders</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="healthcare">
+                    <img src="images/outreach_health.jpg" alt="Health Camp">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Healthcare</span>
+                        <h5 class="gallery-item-title">Community Health Fair</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="worship">
+                    <img src="images/gallery_bible.jpg" alt="Bible Study">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Worship</span>
+                        <h5 class="gallery-item-title">Word & Fellowship</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="community">
+                    <img src="images/gallery_leadership.jpg" alt="Leadership">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Community</span>
+                        <h5 class="gallery-item-title">Rising Leaders</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="outreach">
+                    <img src="images/outreach_orphanage.jpg" alt="Orphanage">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Outreach</span>
+                        <h5 class="gallery-item-title">Orphanage Visit</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="education">
+                    <img src="images/outreach_education.jpg" alt="School Support">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Education</span>
+                        <h5 class="gallery-item-title">School Supplies Distribution</h5>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="worship">
+                    <img src="images/about_worship.jpg" alt="Prayer">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-category">Worship</span>
+                        <h5 class="gallery-item-title">Sunset Prayer</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+            <img src="" alt="Lightbox Image" id="lightboxImage">
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path class="orange" d="M50 15 C55 15 60 20 60 30 C60 40 55 50 50 55 C45 50 40 40 40 30 C40 20 45 15 50 15 Z"/>
+                            <path class="blue" d="M25 35 C30 35 35 40 35 50 C35 60 30 70 25 75 C20 70 15 60 15 50 C15 40 20 35 25 35 Z"/>
+                            <path class="blue-dark" d="M75 35 C80 35 85 40 85 50 C85 60 80 70 75 75 C70 70 65 60 65 50 C65 40 70 35 75 35 Z"/>
+                            <circle class="orange" cx="50" cy="25" r="8"/>
+                            <circle class="blue" cx="25" cy="45" r="7"/>
+                            <circle class="blue-dark" cx="75" cy="45" r="7"/>
+                        </svg>
+                        <div>
+                            <h4>Faith Sisters</h4>
+                            <span>Global Mission</span>
+                        </div>
+                    </div>
+                    <div class="footer-about">
+                        <p>Living for Christ, taking the gospel to the nations.</p>
+                        <div class="social-links">
+                            <a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a>
+                            <a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="outreach.html">Outreach Programs</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Get Involved</h5>
+                        <ul>
+                            <li><a href="partners.html">Partners & Sponsors</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">Join Us</a></li>
+                            <li><a href="https://youtube.com/@FaithSistersGlobal" target="_blank">YouTube Channel</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <div class="footer-contact">
+                            <p><i class="bi bi-geo-alt"></i> 9 Adamu Chiroma Crescent, Jabi, Abuja, Nigeria</p>
+                            <p><i class="bi bi-telephone"></i> +234 815 944 8287</p>
+                            <p><i class="bi bi-envelope"></i> wearefaithsisters@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Faith Sisters Global Mission. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Gallery Filter
+        const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    
+                    if (filter === 'all' || category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        let currentImageIndex = 0;
+        const visibleItems = () => Array.from(galleryItems).filter(item => item.style.display !== 'none');
+        
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                lightboxImage.src = img.src;
+                currentImageIndex = index;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        lightboxPrev.addEventListener('click', () => {
+            const items = visibleItems();
+            const currentItem = galleryItems[currentImageIndex];
+            let currentVisibleIndex = items.indexOf(currentItem);
+            currentVisibleIndex = (currentVisibleIndex - 1 + items.length) % items.length;
+            const newItem = items[currentVisibleIndex];
+            lightboxImage.src = newItem.querySelector('img').src;
+            currentImageIndex = Array.from(galleryItems).indexOf(newItem);
+        });
+        
+        lightboxNext.addEventListener('click', () => {
+            const items = visibleItems();
+            const currentItem = galleryItems[currentImageIndex];
+            let currentVisibleIndex = items.indexOf(currentItem);
+            currentVisibleIndex = (currentVisibleIndex + 1) % items.length;
+            const newItem = items[currentVisibleIndex];
+            lightboxImage.src = newItem.querySelector('img').src;
+            currentImageIndex = Array.from(galleryItems).indexOf(newItem);
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lightboxPrev.click();
+            if (e.key === 'ArrowRight') lightboxNext.click();
+        });
+    </script>
+</body>
+</html>

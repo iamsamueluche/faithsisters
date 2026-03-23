@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outreach Programs | Faith Sisters Global Mission</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .brand-logo-svg { width: 50px; height: 50px; }
+        .brand-logo-svg .orange { fill: #F26522; }
+        .brand-logo-svg .blue { fill: #00AEEF; }
+        .brand-logo-svg .blue-dark { fill: #0088BB; }
+        
+        .program-detail-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .program-detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .program-detail-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .program-detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .program-detail-card:hover .program-detail-image img {
+            transform: scale(1.05);
+        }
+        
+        .program-detail-content {
+            padding: 2rem;
+        }
+        
+        .program-detail-content h3 {
+            margin-bottom: 1rem;
+            color: #1A1A2E;
+        }
+        
+        .program-detail-content p {
+            color: #6C757D;
+            margin-bottom: 1.5rem;
+        }
+        
+        .program-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .program-stat {
+            text-align: center;
+        }
+        
+        .program-stat .number {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .program-stat .label {
+            font-size: 0.8rem;
+            color: #6C757D;
+            text-transform: uppercase;
+        }
+        
+        .impact-card {
+            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            height: 100%;
+        }
+        
+        .impact-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .impact-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .impact-card p {
+            opacity: 0.9;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            height: 100%;
+        }
+        
+        .testimonial-card i {
+            font-size: 2rem;
+            color: #F26522;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card p {
+            color: #6C757D;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .testimonial-author h6 {
+            margin: 0;
+        }
+        
+        .testimonial-author span {
+            font-size: 0.85rem;
+            color: #6C757D;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolled">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path class="orange" d="M50 15 C55 15 60 20 60 30 C60 40 55 50 50 55 C45 50 40 40 40 30 C40 20 45 15 50 15 Z"/>
+                    <path class="blue" d="M25 35 C30 35 35 40 35 50 C35 60 30 70 25 75 C20 70 15 60 15 50 C15 40 20 35 25 35 Z"/>
+                    <path class="blue-dark" d="M75 35 C80 35 85 40 85 50 C85 60 80 70 75 75 C70 70 65 60 65 50 C65 40 70 35 75 35 Z"/>
+                    <circle class="orange" cx="50" cy="25" r="8"/>
+                    <circle class="blue" cx="25" cy="45" r="7"/>
+                    <circle class="blue-dark" cx="75" cy="45" r="7"/>
+                </svg>
+                <div class="brand-text" style="color: #1A1A2E;">
+                    Faith Sisters
+                    <span>Global Mission</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="outreach.html">Outreach Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link btn-join" href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">
+                            <i class="bi bi-heart-fill me-1"></i>Join Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="images/gallery_outreach.jpg" alt="Outreach Programs">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="container page-header-content">
+            <h1>Outreach Programs</h1>
+            <p>Touching lives and transforming communities through love, service, and faith.</p>
+        </div>
+    </section>
+
+    <!-- ===== IMPACT STATS ===== -->
+    <section class="section-padding" style="background: #F8F9FA;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="impact-card">
+                        <i class="bi bi-heart-fill"></i>
+                        <h3>2,500+</h3>
+                        <p>Lives Impacted</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="impact-card">
+                        <i class="bi bi-people-fill"></i>
+                        <h3>50+</h3>
+                        <p>Communities Reached</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="impact-card">
+                        <i class="bi bi-calendar-check-fill"></i>
+                        <h3>100+</h3>
+                        <p>Outreach Events</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="impact-card">
+                        <i class="bi bi-globe-africa"></i>
+                        <h3>6</h3>
+                        <p>States Covered</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROGRAMS DETAILS ===== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">What We Do</span>
+                <h2 class="section-title">Our Programs</h2>
+                <p class="section-subtitle">
+                    Through our various outreach programs, we address the needs of communities 
+                    and spread the love of Christ in tangible ways.
+                </p>
+            </div>
+            
+            <!-- Education Program -->
+            <div class="program-detail-card">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="program-detail-image">
+                            <img src="images/outreach_education.jpg" alt="Education Outreach">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="program-detail-content">
+                            <h3><i class="bi bi-book me-2" style="color: #F26522;"></i>Education Outreach</h3>
+                            <p>
+                                Our education outreach program is dedicated to providing educational support to 
+                                underprivileged children. We believe that every child deserves access to quality 
+                                education, regardless of their background.
+                            </p>
+                            <p>
+                                Through this program, we provide school supplies, scholarships, and educational 
+                                resources to children in need. We also organize tutoring sessions and mentorship 
+                                programs to help children excel academically.
+                            </p>
+                            <div class="program-stats">
+                                <div class="program-stat">
+                                    <div class="number">500+</div>
+                                    <div class="label">Children Supported</div>
+                                </div>
+                                <div class="program-stat">
+                                    <div class="number">20</div>
+                                    <div class="label">Schools Partnered</div>
+                                </div>
+                                <div class="program-stat">
+                                    <div class="number">100+</div>
+                                    <div class="label">Scholarships</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-hero-primary">Support Education</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Healthcare Program -->
+            <div class="program-detail-card">
+                <div class="row g-0 flex-row-reverse">
+                    <div class="col-lg-6">
+                        <div class="program-detail-image">
+                            <img src="images/outreach_health.jpg" alt="Healthcare Outreach">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="program-detail-content">
+                            <h3><i class="bi bi-heart-pulse me-2" style="color: #00AEEF;"></i>Healthcare Outreach</h3>
+                            <p>
+                                Our healthcare outreach program organizes medical camps and provides healthcare 
+                                services to underserved communities. We believe that good health is a fundamental 
+                                right for everyone.
+                            </p>
+                            <p>
+                                Through this program, we provide free medical consultations, distribute medications, 
+                                and conduct health education workshops. We also partner with local healthcare providers 
+                                to ensure sustainable healthcare access.
+                            </p>
+                            <div class="program-stats">
+                                <div class="program-stat">
+                                    <div class="number">2,000+</div>
+                                    <div class="label">Patients Treated</div>
+                                </div>
+                                <div class="program-stat">
+                                    <div class="number">30</div>
+                                    <div class="label">Medical Camps</div>
+                                </div>
+                                <div class="program-stat">
+                                    <div class="number">15</div>
+                                    <div class="label">Communities</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-hero-primary">Support Healthcare</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Orphanage Support -->
+            <div class="program-detail-card">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="program-detail-image">
+                            <img src="images/outreach_orphanage.jpg" alt="Orphanage Support">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="program-detail-content">
+                            <h3><i class="bi bi-house-heart me-2" style="color: #F26522;"></i>Orphanage Support</h3>
+                            <p>
+                                Our orphanage support program focuses on providing love, care, and essential 
+                                supplies to children in orphanages. We believe that every child deserves to feel 
+                                loved and supported.
+                            </p>
+                            <p>
+                                Through this program, we organize regular visits to orphanages, providing food, 
+                                clothing, educational materials, and companionship. We also organize special events 
+                                and celebrations to bring joy to the children.
+                            </p>
+                            <div class="program-stats">
+                                <div class="program-stat">
+                                    <div class="number">10</div>
+                                    <div class="label">Orphanages</div>
+                                </div>
+                                <div class="program-stat">
+                                    <div class="number">300+</div>
+                                    <div class="label">Children Supported</div>
+                                </div>
+                                <div class="program-stat">
+                                    <div class="number">50+</div>
+                                    <div class="label">Monthly Visits</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-hero-primary">Support Orphanages</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Food Distribution -->
+            <div class="program-detail-card">
+                <div class="row g-0 flex-row-reverse">
+                    <div class="col-lg-6">
+                        <div class="program-detail-image">
+                            <img src="images/gallery_outreach.jpg" alt="Food Distribution">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="program-detail-content">
+                            <h3><i class="bi bi-basket-fill me-2" style="color: #00AEEF;"></i>Food Distribution</h3>
+                            <p>
+                                Our food distribution program provides essential food supplies to families in need. 
+                                We believe that no one should go hungry, and we are committed to fighting food 
+                                insecurity in our communities.
+                            </p>
+                            <p>
+                                Through this program, we organize regular food drives and distribution events, 
+                                providing nutritious food packages to vulnerable families. We also partner with 
+                                local farms and businesses to ensure sustainable food support.
+                            </p>
+                            <div class="program-stats">
+                                <div class="program-stat">
+                                    <div class="number">1,000+</div>
+                                    <div class="label">Families Fed</div>
+                                </div>
+                                <div class="program-stat">
+                                    <div class="number">25</div>
+                                    <div class="label">Communities</div>
+                                </div>
+                                <div class="program-stat">
+                                    <div class="number">5,000+</div>
+                                    <div class="label">Food Packages</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-hero-primary">Support Food Program</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="section-padding cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Support Our Outreach Programs</h2>
+                <p>
+                    Your support helps us continue touching lives and transforming communities. 
+                    Partner with us in making a difference.
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="partners.html" class="btn btn-cta">
+                        <i class="bi bi-handshake me-2"></i>Become a Partner
+                    </a>
+                    <a href="contact.html" class="btn btn-cta">
+                        <i class="bi bi-envelope me-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path class="orange" d="M50 15 C55 15 60 20 60 30 C60 40 55 50 50 55 C45 50 40 40 40 30 C40 20 45 15 50 15 Z"/>
+                            <path class="blue" d="M25 35 C30 35 35 40 35 50 C35 60 30 70 25 75 C20 70 15 60 15 50 C15 40 20 35 25 35 Z"/>
+                            <path class="blue-dark" d="M75 35 C80 35 85 40 85 50 C85 60 80 70 75 75 C70 70 65 60 65 50 C65 40 70 35 75 35 Z"/>
+                            <circle class="orange" cx="50" cy="25" r="8"/>
+                            <circle class="blue" cx="25" cy="45" r="7"/>
+                            <circle class="blue-dark" cx="75" cy="45" r="7"/>
+                        </svg>
+                        <div>
+                            <h4>Faith Sisters</h4>
+                            <span>Global Mission</span>
+                        </div>
+                    </div>
+                    <div class="footer-about">
+                        <p>Living for Christ, taking the gospel to the nations.</p>
+                        <div class="social-links">
+                            <a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a>
+                            <a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="outreach.html">Outreach Programs</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Get Involved</h5>
+                        <ul>
+                            <li><a href="partners.html">Partners & Sponsors</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">Join Us</a></li>
+                            <li><a href="https://youtube.com/@FaithSistersGlobal" target="_blank">YouTube Channel</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <div class="footer-contact">
+                            <p><i class="bi bi-geo-alt"></i> 9 Adamu Chiroma Crescent, Jabi, Abuja, Nigeria</p>
+                            <p><i class="bi bi-telephone"></i> +234 815 944 8287</p>
+                            <p><i class="bi bi-envelope"></i> wearefaithsisters@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Faith Sisters Global Mission. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

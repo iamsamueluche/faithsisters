@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners & Sponsors | Faith Sisters Global Mission</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .brand-logo-svg { width: 50px; height: 50px; }
+        .brand-logo-svg .orange { fill: #F26522; }
+        .brand-logo-svg .blue { fill: #00AEEF; }
+        .brand-logo-svg .blue-dark { fill: #0088BB; }
+        
+        .partner-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .partner-logo {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .partner-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .partner-card p {
+            color: #6C757D;
+            font-size: 0.95rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .benefit-card i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h5 {
+            margin-bottom: 0.75rem;
+        }
+        
+        .benefit-card p {
+            color: #6C757D;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        .sponsor-tier {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .sponsor-tier:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .sponsor-tier.featured {
+            border-color: #F26522;
+            position: relative;
+        }
+        
+        .sponsor-tier.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .sponsor-tier h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .sponsor-tier .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        .sponsor-tier ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .sponsor-tier ul li {
+            padding: 0.5rem 0;
+            color: #6C757D;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .sponsor-tier ul li i {
+            color: #F26522;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolled">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path class="orange" d="M50 15 C55 15 60 20 60 30 C60 40 55 50 50 55 C45 50 40 40 40 30 C40 20 45 15 50 15 Z"/>
+                    <path class="blue" d="M25 35 C30 35 35 40 35 50 C35 60 30 70 25 75 C20 70 15 60 15 50 C15 40 20 35 25 35 Z"/>
+                    <path class="blue-dark" d="M75 35 C80 35 85 40 85 50 C85 60 80 70 75 75 C70 70 65 60 65 50 C65 40 70 35 75 35 Z"/>
+                    <circle class="orange" cx="50" cy="25" r="8"/>
+                    <circle class="blue" cx="25" cy="45" r="7"/>
+                    <circle class="blue-dark" cx="75" cy="45" r="7"/>
+                </svg>
+                <div class="brand-text" style="color: #1A1A2E;">
+                    Faith Sisters
+                    <span>Global Mission</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="partners.html">Partners & Sponsors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link btn-join" href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">
+                            <i class="bi bi-heart-fill me-1"></i>Join Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="images/gallery_leadership.jpg" alt="Partners">
+        </div>
+        <div class="page-header-overlay"></div>
+        <div class="container page-header-content">
+            <h1>Partners & Sponsors</h1>
+            <p>Together, we can make a greater impact. Partner with us in transforming lives.</p>
+        </div>
+    </section>
+
+    <!-- ===== WHY PARTNER ===== -->
+    <section class="section-padding" style="background: #F8F9FA;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Why Partner</span>
+                <h2 class="section-title">Benefits of Partnership</h2>
+                <p class="section-subtitle">
+                    Partnering with Faith Sisters Global Mission offers numerous benefits for your organization 
+                    while making a meaningful impact in communities.
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <i class="bi bi-globe"></i>
+                        <h5>Brand Visibility</h5>
+                        <p>Gain exposure to our growing community and showcase your commitment to social impact.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <i class="bi bi-heart"></i>
+                        <h5>Social Impact</h5>
+                        <p>Make a tangible difference in the lives of those in need through our outreach programs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <i class="bi bi-people"></i>
+                        <h5>Network Expansion</h5>
+                        <p>Connect with like-minded organizations and individuals committed to positive change.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <i class="bi bi-award"></i>
+                        <h5>Recognition</h5>
+                        <p>Receive recognition on our website, events, and promotional materials.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <i class="bi bi-graph-up"></i>
+                        <h5>Impact Reports</h5>
+                        <p>Receive detailed reports on how your contribution is making a difference.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card">
+                        <i class="bi bi-calendar-event"></i>
+                        <h5>Event Access</h5>
+                        <p>Get exclusive access to our events and community gatherings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SPONSORSHIP TIERS ===== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Get Involved</span>
+                <h2 class="section-title">Sponsorship Tiers</h2>
+                <p class="section-subtitle">
+                    Choose a sponsorship level that aligns with your organization's goals and budget.
+                </p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="sponsor-tier">
+                        <h4>Bronze Partner</h4>
+                        <div class="price">₦50,000</div>
+                        <ul>
+                            <li><i class="bi bi-check-circle-fill"></i> Logo on website</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Social media mention</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Quarterly impact report</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Event invitation</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-hero-primary w-100">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="sponsor-tier featured">
+                        <h4>Silver Partner</h4>
+                        <div class="price">₦100,000</div>
+                        <ul>
+                            <li><i class="bi bi-check-circle-fill"></i> All Bronze benefits</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Logo on event materials</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Monthly impact report</li>
+                            <li><i class="bi bi-check-circle-fill"></i> VIP event access</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Press release feature</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-hero-primary w-100">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="sponsor-tier">
+                        <h4>Gold Partner</h4>
+                        <div class="price">₦250,000</div>
+                        <ul>
+                            <li><i class="bi bi-check-circle-fill"></i> All Silver benefits</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Named program sponsorship</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Custom impact report</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Board representation</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Exclusive partnership events</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-hero-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR PARTNERS ===== -->
+    <section class="section-padding" style="background: #F8F9FA;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Our Network</span>
+                <h2 class="section-title">Our Partners</h2>
+                <p class="section-subtitle">
+                    We are grateful to partner with organizations that share our vision of making a difference.
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h4>Community Church</h4>
+                        <p>Faith Partner</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h4>HealthFirst NGO</h4>
+                        <p>Healthcare Partner</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <i class="bi bi-book"></i>
+                        </div>
+                        <h4>Education For All</h4>
+                        <p>Education Partner</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <i class="bi bi-shop"></i>
+                        </div>
+                        <h4>Local Businesses</h4>
+                        <p>Community Partners</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="section-padding cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Become a Partner Today</h2>
+                <p>
+                    Join us in our mission to transform lives and communities. 
+                    Every partnership makes a difference.
+                </p>
+                <a href="contact.html" class="btn btn-cta">
+                    <i class="bi bi-handshake me-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path class="orange" d="M50 15 C55 15 60 20 60 30 C60 40 55 50 50 55 C45 50 40 40 40 30 C40 20 45 15 50 15 Z"/>
+                            <path class="blue" d="M25 35 C30 35 35 40 35 50 C35 60 30 70 25 75 C20 70 15 60 15 50 C15 40 20 35 25 35 Z"/>
+                            <path class="blue-dark" d="M75 35 C80 35 85 40 85 50 C85 60 80 70 75 75 C70 70 65 60 65 50 C65 40 70 35 75 35 Z"/>
+                            <circle class="orange" cx="50" cy="25" r="8"/>
+                            <circle class="blue" cx="25" cy="45" r="7"/>
+                            <circle class="blue-dark" cx="75" cy="45" r="7"/>
+                        </svg>
+                        <div>
+                            <h4>Faith Sisters</h4>
+                            <span>Global Mission</span>
+                        </div>
+                    </div>
+                    <div class="footer-about">
+                        <p>Living for Christ, taking the gospel to the nations.</p>
+                        <div class="social-links">
+                            <a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a>
+                            <a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="outreach.html">Outreach Programs</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Get Involved</h5>
+                        <ul>
+                            <li><a href="partners.html">Partners & Sponsors</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">Join Us</a></li>
+                            <li><a href="https://youtube.com/@FaithSistersGlobal" target="_blank">YouTube Channel</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <div class="footer-contact">
+                            <p><i class="bi bi-geo-alt"></i> 9 Adamu Chiroma Crescent, Jabi, Abuja, Nigeria</p>
+                            <p><i class="bi bi-telephone"></i> +234 815 944 8287</p>
+                            <p><i class="bi bi-envelope"></i> wearefaithsisters@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Faith Sisters Global Mission. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
