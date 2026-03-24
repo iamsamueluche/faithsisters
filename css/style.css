@@ -1911,6 +1911,13 @@ a {
         padding: 4rem 0;
     }
 
+    .about-content h3,
+    .about-content h4,
+    .about-content h5 {
+        font-size: 1.5rem;
+        line-height: 1.35;
+    }
+
     .hero-section {
         min-height: 100vh;
         display: flex;
