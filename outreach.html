@@ -80,11 +80,13 @@
       .program-stats {
         display: flex;
         gap: 2rem;
+        flex-wrap: wrap;
         margin-bottom: 1.5rem;
       }
 
       .program-stat {
         text-align: center;
+        flex: 1 1 140px;
       }
 
       .program-stat .number {
@@ -165,6 +167,68 @@
         font-size: 0.85rem;
         color: #6c757d;
       }
+
+      @media (max-width: 991px) {
+        .program-detail-image {
+          min-height: 260px;
+        }
+
+        .program-detail-content {
+          padding: 1.75rem;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .program-detail-card {
+          border-radius: 18px;
+        }
+
+        .program-detail-image {
+          min-height: 220px;
+        }
+
+        .program-detail-content {
+          padding: 1.4rem;
+        }
+
+        .program-detail-content h3 {
+          font-size: 1.35rem;
+          line-height: 1.35;
+        }
+
+        .program-stats {
+          gap: 1rem;
+          justify-content: center;
+        }
+
+        .program-stat {
+          flex: 1 1 calc(50% - 0.5rem);
+          min-width: 120px;
+        }
+
+        .program-stat .number {
+          font-size: 1.5rem;
+        }
+
+        .impact-card {
+          padding: 2.25rem 1.5rem;
+        }
+
+        .impact-card h3 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .program-stat {
+          flex-basis: 100%;
+        }
+
+        .program-detail-content .btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
     </style>
   </head>
   <body>
@@ -188,8 +252,17 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggle-box" aria-hidden="true">
+            <span class="navbar-toggle-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
