@@ -1,435 +1,1324 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | Faith Sisters Global Mission</title>
-    
+
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/style.css" />
+
     <style>
-        .mission-card, .vision-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            height: 100%;
-            transition: all 0.3s ease;
+      .mission-card,
+      .vision-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 24px;
+        padding: 2.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 18px 42px rgba(15, 23, 38, 0.1);
+        backdrop-filter: blur(14px);
+        height: 100%;
+        overflow: hidden;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        animation: purposeCardFloat 6s ease-in-out infinite;
+      }
+
+      .mission-card:hover,
+      .vision-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 24px 56px rgba(15, 23, 38, 0.16);
+      }
+
+      .mission-card i,
+      .vision-card i {
+        position: relative;
+        z-index: 1;
+        font-size: 3rem;
+        background: linear-gradient(135deg, #f26522 0%, #00aeef 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1.5rem;
+        animation: purposeIconPulse 4.5s ease-in-out infinite;
+      }
+
+      .mission-card::before,
+      .vision-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at top right, rgba(0, 174, 239, 0.12), transparent 30%),
+          radial-gradient(circle at bottom left, rgba(242, 101, 34, 0.1), transparent 32%);
+        pointer-events: none;
+      }
+
+      .mission-card::after,
+      .vision-card::after {
+        content: "";
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        right: -36px;
+        top: -32px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 70%);
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      .vision-card {
+        animation-delay: 0.45s;
+      }
+
+      .vision-card i {
+        animation-delay: 0.3s;
+      }
+
+      .purpose-section {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(242, 101, 34, 0.1), transparent 22%),
+          radial-gradient(circle at 88% 28%, rgba(0, 174, 239, 0.1), transparent 24%),
+          linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      }
+
+      .purpose-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(rgba(26, 26, 46, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(26, 26, 46, 0.03) 1px, transparent 1px);
+        background-size: 28px 28px;
+        opacity: 0.28;
+        pointer-events: none;
+      }
+
+      .purpose-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .purpose-section .section-header {
+        position: relative;
+      }
+
+      .purpose-section .section-header::before {
+        content: "";
+        width: 88px;
+        height: 88px;
+        position: absolute;
+        left: 50%;
+        top: -1.6rem;
+        transform: translateX(-50%);
+        border-radius: 24px;
+        background: linear-gradient(135deg, rgba(242, 101, 34, 0.14), rgba(0, 174, 239, 0.14));
+        filter: blur(2px);
+        animation: purposeBadgeFloat 7s ease-in-out infinite;
+        z-index: -1;
+      }
+
+      .purpose-section .section-title {
+        position: relative;
+      }
+
+      .purpose-section .section-title::after {
+        content: "";
+        display: block;
+        width: 92px;
+        height: 4px;
+        margin: 1rem auto 0;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #f26522, #00aeef);
+        animation: purposeLineGlow 5s ease-in-out infinite;
+      }
+
+      .mission-card h3,
+      .vision-card h3,
+      .mission-card p,
+      .vision-card p {
+        position: relative;
+        z-index: 1;
+      }
+
+      @keyframes purposeCardFloat {
+        0%,
+        100% {
+          transform: translateY(0);
         }
-        
-        .mission-card:hover, .vision-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        50% {
+          transform: translateY(-6px);
         }
-        
-        .mission-card i, .vision-card i {
-            font-size: 3rem;
-            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
+      }
+
+      @keyframes purposeIconPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 0 rgba(0, 174, 239, 0));
         }
-        
-        .value-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            height: 100%;
+        50% {
+          transform: scale(1.08);
+          filter: drop-shadow(0 10px 18px rgba(0, 174, 239, 0.16));
         }
-        
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      @keyframes purposeBadgeFloat {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
         }
-        
-        .value-card .icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 1.75rem;
+        50% {
+          transform: translateX(-50%) translateY(10px);
         }
-        
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
+      }
+
+      @keyframes purposeLineGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 0 rgba(0, 174, 239, 0);
         }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, #F26522 0%, #00AEEF 100%);
+        50% {
+          box-shadow: 0 8px 20px rgba(0, 174, 239, 0.18);
         }
-        
-        .timeline-item {
-            position: relative;
-            padding-bottom: 2rem;
+      }
+
+      .values-section {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 14% 18%, rgba(242, 101, 34, 0.12), transparent 20%),
+          radial-gradient(circle at 84% 24%, rgba(0, 174, 239, 0.12), transparent 24%),
+          linear-gradient(180deg, #f7fbff 0%, #eef5fb 100%);
+      }
+
+      .values-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(rgba(26, 26, 46, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(26, 26, 46, 0.03) 1px, transparent 1px);
+        background-size: 30px 30px;
+        opacity: 0.24;
+        pointer-events: none;
+      }
+
+      .values-section::after {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        right: -90px;
+        bottom: -120px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0, 174, 239, 0.16), transparent 72%);
+        filter: blur(8px);
+        animation: valuesAuraDrift 10s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .values-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .values-section .section-header {
+        position: relative;
+      }
+
+      .values-section .section-title::after {
+        content: "";
+        display: block;
+        width: 96px;
+        height: 4px;
+        margin: 1rem auto 0;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #f26522, #00aeef);
+        animation: valuesLinePulse 5.5s ease-in-out infinite;
+      }
+
+      .value-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 22px;
+        padding: 2rem;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        box-shadow: 0 18px 38px rgba(15, 23, 38, 0.08);
+        backdrop-filter: blur(12px);
+        transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        height: 100%;
+        overflow: hidden;
+        animation: valueCardFloat 6s ease-in-out infinite;
+      }
+
+      .value-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 46px rgba(15, 23, 38, 0.14);
+        border-color: rgba(0, 174, 239, 0.18);
+      }
+
+      .value-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at top right, rgba(0, 174, 239, 0.12), transparent 28%),
+          radial-gradient(circle at bottom left, rgba(242, 101, 34, 0.1), transparent 30%);
+        pointer-events: none;
+      }
+
+      .value-card::after {
+        content: "";
+        position: absolute;
+        inset: auto 1.25rem 0.95rem 1.25rem;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(242, 101, 34, 0.88), rgba(0, 174, 239, 0.88));
+        opacity: 0.9;
+      }
+
+      .value-card .icon {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #f26522 0%, #00aeef 100%);
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        color: white;
+        font-size: 1.75rem;
+        box-shadow: 0 14px 26px rgba(0, 174, 239, 0.18);
+        animation: valueIconPulse 4.5s ease-in-out infinite;
+      }
+
+      .value-card h5,
+      .value-card p,
+      .value-card .icon {
+        z-index: 1;
+      }
+
+      .value-card h5,
+      .value-card p {
+        position: relative;
+      }
+
+      .values-section .col-md-6:nth-child(2) .value-card {
+        animation-delay: 0.18s;
+      }
+
+      .values-section .col-md-6:nth-child(3) .value-card {
+        animation-delay: 0.34s;
+      }
+
+      .values-section .col-md-6:nth-child(4) .value-card {
+        animation-delay: 0.5s;
+      }
+
+      .values-section .col-md-6:nth-child(2) .value-card .icon {
+        animation-delay: 0.15s;
+      }
+
+      .values-section .col-md-6:nth-child(3) .value-card .icon {
+        animation-delay: 0.3s;
+      }
+
+      .values-section .col-md-6:nth-child(4) .value-card .icon {
+        animation-delay: 0.45s;
+      }
+
+      @keyframes valueCardFloat {
+        0%,
+        100% {
+          transform: translateY(0);
         }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2rem;
-            top: 0.5rem;
-            width: 15px;
-            height: 15px;
-            background: #F26522;
-            border-radius: 50%;
-            transform: translateX(-6px);
+        50% {
+          transform: translateY(-6px);
         }
-        
-        .timeline-item h5 {
-            color: #F26522;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
+      }
+
+      @keyframes valueIconPulse {
+        0%,
+        100% {
+          transform: scale(1) rotate(0deg);
+          box-shadow: 0 14px 26px rgba(0, 174, 239, 0.18);
         }
-        
-        .team-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+        50% {
+          transform: scale(1.08) rotate(-3deg);
+          box-shadow: 0 18px 30px rgba(242, 101, 34, 0.2);
         }
-        
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      @keyframes valuesAuraDrift {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) scale(1);
         }
-        
-        .team-card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
+        50% {
+          transform: translate3d(-18px, -12px, 0) scale(1.08);
         }
-        
-        .team-info {
-            padding: 1.5rem;
-            text-align: center;
+      }
+
+      @keyframes valuesLinePulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 rgba(0, 174, 239, 0);
         }
-        
-        .team-info h5 {
-            margin-bottom: 0.25rem;
+        50% {
+          box-shadow: 0 10px 22px rgba(0, 174, 239, 0.16);
         }
-        
-        .team-info span {
-            color: #6C757D;
-            font-size: 0.9rem;
+      }
+
+      .values-showcase-section {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 18% 16%, rgba(242, 101, 34, 0.12), transparent 22%),
+          radial-gradient(circle at 82% 22%, rgba(0, 174, 239, 0.12), transparent 24%),
+          linear-gradient(180deg, #f7fbff 0%, #edf4fb 100%);
+      }
+
+      .values-showcase-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(rgba(26, 26, 46, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(26, 26, 46, 0.03) 1px, transparent 1px);
+        background-size: 32px 32px;
+        opacity: 0.2;
+        pointer-events: none;
+      }
+
+      .values-showcase-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .values-showcase-motion {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .values-showcase-orb,
+      .values-showcase-ring,
+      .values-showcase-wave {
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .values-showcase-orb {
+        border-radius: 50%;
+        filter: blur(10px);
+        opacity: 0.8;
+        animation: valuesShowcaseOrbDrift 14s ease-in-out infinite;
+      }
+
+      .values-showcase-orb.orb-one {
+        width: 170px;
+        height: 170px;
+        top: 7%;
+        left: -40px;
+        background: radial-gradient(circle, rgba(242, 101, 34, 0.18), transparent 72%);
+      }
+
+      .values-showcase-orb.orb-two {
+        width: 220px;
+        height: 220px;
+        top: 18%;
+        right: -70px;
+        background: radial-gradient(circle, rgba(0, 174, 239, 0.18), transparent 72%);
+        animation-delay: -4s;
+      }
+
+      .values-showcase-orb.orb-three {
+        width: 150px;
+        height: 150px;
+        left: 42%;
+        bottom: -30px;
+        background: radial-gradient(circle, rgba(255, 179, 71, 0.14), transparent 72%);
+        animation-delay: -8s;
+      }
+
+      .values-showcase-ring {
+        border-radius: 50%;
+        border: 1px solid rgba(0, 174, 239, 0.12);
+        box-shadow:
+          0 0 0 18px rgba(0, 174, 239, 0.04),
+          0 0 0 36px rgba(242, 101, 34, 0.03);
+        animation: valuesShowcaseRingSpin 18s linear infinite;
+      }
+
+      .values-showcase-ring.ring-one {
+        width: 140px;
+        height: 140px;
+        top: 14%;
+        right: 12%;
+      }
+
+      .values-showcase-ring.ring-two {
+        width: 110px;
+        height: 110px;
+        bottom: 16%;
+        left: 8%;
+        animation-direction: reverse;
+        animation-duration: 15s;
+      }
+
+      .values-showcase-wave {
+        left: -10%;
+        right: -10%;
+        height: 130px;
+        border-radius: 50%;
+        opacity: 0.24;
+        animation: valuesShowcaseWaveFloat 11s ease-in-out infinite;
+      }
+
+      .values-showcase-wave.wave-one {
+        top: 16%;
+        background: radial-gradient(ellipse at center, rgba(255,255,255,0.14), transparent 72%);
+        border: 1px solid rgba(255,255,255,0.18);
+      }
+
+      .values-showcase-wave.wave-two {
+        bottom: 9%;
+        background: radial-gradient(ellipse at center, rgba(0,174,239,0.08), transparent 72%);
+        border: 1px solid rgba(0,174,239,0.1);
+        animation-delay: -5s;
+      }
+
+      @keyframes valuesShowcaseOrbDrift {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) scale(1);
         }
+        50% {
+          transform: translate3d(18px, -14px, 0) scale(1.08);
+        }
+      }
+
+      @keyframes valuesShowcaseRingSpin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes valuesShowcaseWaveFloat {
+        0%,
+        100% {
+          transform: translateY(0) scaleX(1);
+        }
+        50% {
+          transform: translateY(14px) scaleX(1.04);
+        }
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+        z-index: 1;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, #f26522 0%, #00aeef 100%);
+        box-shadow: 0 0 18px rgba(0, 174, 239, 0.14);
+        animation: storyLinePulse 4.8s ease-in-out infinite;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-bottom: 2rem;
+        animation: storyItemFloat 6.2s ease-in-out infinite;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -2rem;
+        top: 0.5rem;
+        width: 15px;
+        height: 15px;
+        background: #f26522;
+        border-radius: 50%;
+        transform: translateX(-6px);
+        box-shadow:
+          0 0 0 6px rgba(242, 101, 34, 0.08),
+          0 0 18px rgba(0, 174, 239, 0.12);
+        animation: storyDotPulse 3.6s ease-in-out infinite;
+      }
+
+      .timeline-item h5 {
+        color: #f26522;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .story-section {
+        position: relative;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .story-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(rgba(26, 26, 46, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(26, 26, 46, 0.02) 1px, transparent 1px);
+        background-size: 34px 34px;
+        opacity: 0.28;
+        pointer-events: none;
+      }
+
+      .story-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .story-motion-layer {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .story-orb,
+      .story-ring,
+      .story-trail {
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .story-orb {
+        border-radius: 50%;
+        filter: blur(10px);
+        opacity: 0.72;
+        animation: storyOrbDrift 13s ease-in-out infinite;
+      }
+
+      .story-orb-one {
+        width: 170px;
+        height: 170px;
+        top: 8%;
+        left: -50px;
+        background: radial-gradient(circle, rgba(242, 101, 34, 0.16), transparent 72%);
+      }
+
+      .story-orb-two {
+        width: 220px;
+        height: 220px;
+        right: -80px;
+        top: 18%;
+        background: radial-gradient(circle, rgba(0, 174, 239, 0.16), transparent 72%);
+        animation-delay: -4s;
+      }
+
+      .story-orb-three {
+        width: 150px;
+        height: 150px;
+        left: 46%;
+        bottom: -35px;
+        background: radial-gradient(circle, rgba(255, 179, 71, 0.12), transparent 72%);
+        animation-delay: -8s;
+      }
+
+      .story-ring {
+        border-radius: 50%;
+        border: 1px solid rgba(0, 174, 239, 0.12);
+        box-shadow:
+          0 0 0 16px rgba(0, 174, 239, 0.04),
+          0 0 0 32px rgba(242, 101, 34, 0.03);
+        animation: storyRingSpin 18s linear infinite;
+      }
+
+      .story-ring-one {
+        width: 132px;
+        height: 132px;
+        right: 10%;
+        bottom: 12%;
+      }
+
+      .story-ring-two {
+        width: 96px;
+        height: 96px;
+        left: 10%;
+        top: 20%;
+        animation-direction: reverse;
+        animation-duration: 14s;
+      }
+
+      .story-trail {
+        left: -8%;
+        right: -8%;
+        height: 120px;
+        border-radius: 50%;
+        opacity: 0.24;
+        animation: storyTrailFloat 10.5s ease-in-out infinite;
+      }
+
+      .story-trail-one {
+        top: 16%;
+        background: radial-gradient(ellipse at center, rgba(255,255,255,0.16), transparent 72%);
+        border: 1px solid rgba(0,174,239,0.1);
+      }
+
+      .story-trail-two {
+        bottom: 8%;
+        background: radial-gradient(ellipse at center, rgba(242,101,34,0.08), transparent 72%);
+        border: 1px solid rgba(242,101,34,0.1);
+        animation-delay: -5s;
+      }
+
+      .story-visual {
+        position: relative;
+        display: inline-block;
+      }
+
+      .story-visual img {
+        position: relative;
+        z-index: 1;
+        animation: storyImageFloat 6.5s ease-in-out infinite;
+      }
+
+      .story-visual::before,
+      .story-visual::after {
+        content: "";
+        position: absolute;
+        border-radius: 24px;
+        pointer-events: none;
+      }
+
+      .story-visual::before {
+        width: 90px;
+        height: 90px;
+        top: -18px;
+        right: -18px;
+        background: linear-gradient(135deg, rgba(0, 174, 239, 0.18), rgba(242, 101, 34, 0.16));
+        animation: storyBadgeFloat 6s ease-in-out infinite;
+      }
+
+      .story-visual::after {
+        width: 120px;
+        height: 120px;
+        left: -24px;
+        bottom: -24px;
+        border: 1px solid rgba(242, 101, 34, 0.16);
+        box-shadow:
+          0 0 0 14px rgba(242, 101, 34, 0.04),
+          0 0 0 28px rgba(0, 174, 239, 0.03);
+        animation: storyFramePulse 7s ease-in-out infinite;
+      }
+
+      .timeline-item:nth-child(2) {
+        animation-delay: 0.16s;
+      }
+
+      .timeline-item:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      .timeline-item:nth-child(4) {
+        animation-delay: 0.44s;
+      }
+
+      .timeline-item:nth-child(5) {
+        animation-delay: 0.58s;
+      }
+
+      @keyframes storyLinePulse {
+        0%,
+        100% {
+          opacity: 1;
+          box-shadow: 0 0 18px rgba(0, 174, 239, 0.14);
+        }
+        50% {
+          opacity: 0.9;
+          box-shadow: 0 0 24px rgba(242, 101, 34, 0.16);
+        }
+      }
+
+      @keyframes storyDotPulse {
+        0%,
+        100% {
+          transform: translateX(-6px) scale(1);
+        }
+        50% {
+          transform: translateX(-6px) scale(1.12);
+        }
+      }
+
+      @keyframes storyItemFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-4px);
+        }
+      }
+
+      @keyframes storyOrbDrift {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: translate3d(16px, -12px, 0) scale(1.08);
+        }
+      }
+
+      @keyframes storyRingSpin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes storyTrailFloat {
+        0%,
+        100% {
+          transform: translateY(0) scaleX(1);
+        }
+        50% {
+          transform: translateY(12px) scaleX(1.04);
+        }
+      }
+
+      @keyframes storyImageFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      @keyframes storyBadgeFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(10px) rotate(6deg);
+        }
+      }
+
+      @keyframes storyFramePulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.9;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+      }
+
+      .team-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .team-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      .team-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+      }
+
+      .team-info {
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .team-info h5 {
+        margin-bottom: 0.25rem;
+      }
+
+      .team-info span {
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+
+      .about-who-title {
+        font-size: 1.9rem;
+      }
+
+      @media (max-width: 767px) {
+        .about-who-title {
+          font-size: 1.45rem;
+          line-height: 1.35;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- ===== NAVIGATION ===== -->
     <nav class="navbar navbar-expand-lg fixed-top scrolled">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo">
-                <div class="brand-text" style="color: #1A1A2E;">
-                    Faith Sisters
-                    <span>Global Mission</span>
-                </div>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggle-box" aria-hidden="true">
-                    <span class="navbar-toggle-lines">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="nav-link btn-join" href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">
-                            <i class="bi bi-heart-fill me-1"></i>Join Us
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            class="brand-logo"
+            src="images/logo.png"
+            alt="Faith Sisters Global Mission logo"
+          />
+          <div class="brand-text" style="color: #1a1a2e">
+            Faith Sisters
+            <span>Global Mission</span>
+          </div>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggle-box" aria-hidden="true">
+            <span class="navbar-toggle-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="outreach.html">Outreach Programs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="partners.html">Partners & Sponsors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a
+                class="nav-link btn-join"
+                href="https://forms.gle/Xf2UDiuCFTPhiDVq7"
+                target="_blank"
+              >
+                <i class="bi bi-heart-fill me-1"></i>Join Us
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- ===== PAGE HEADER ===== -->
     <section class="page-header">
-        <div class="page-header-bg">
-            <img src="images/about_banner.jpg" alt="About Us">
-        </div>
-        <div class="page-header-overlay"></div>
-        <div class="container page-header-content">
-            <h1>About Us</h1>
-            <p>Discover our story, mission, and the values that drive us to make a difference.</p>
-        </div>
+      <div class="page-header-bg">
+        <img src="images/about_banner.jpg" alt="About Us" />
+      </div>
+      <div class="page-header-overlay"></div>
+      <div class="container page-header-content">
+        <h1>About Us</h1>
+        <p>
+          Discover our story, mission, and the values that drive us to make a
+          difference.
+        </p>
+      </div>
     </section>
 
     <!-- ===== WHO WE ARE SECTION ===== -->
-    <section class="section-padding" style="background: #F8F9FA;">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <span class="section-eyebrow">Who We Are</span>
-                    <h2 class="section-title" style="text-align: left;">A Sisterhood United by Faith</h2>
-                    <p style="color: #6C757D;">
-                        Faith Sisters Global Mission is a faith-based nonprofit organization founded on January 1, 2020. 
-                        We are a diverse group of women united by our shared commitment to uplifting one another and 
-                        fostering spiritual growth in Christ Jesus.
-                    </p>
-                    <p style="color: #6C757D;">
-                        We gather together every first Saturday of the month for prayer, Bible study, and mutual edification. 
-                        Our mission is to provide a safe and welcoming space where women from all walks of life can come 
-                        together to explore and deepen their spiritual connections, share their stories, and find strength 
-                        and inspiration in the collective wisdom of our diverse sisterhood.
-                    </p>
-                    <p style="color: #6C757D;">
-                        Through our prayer meetings, outreaches, online platforms, and resources, we strive to empower 
-                        women to embrace their spirituality, cultivate mindfulness, and live with purpose and authenticity.
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-image">
-                        <img src="images/hero_group.jpg" alt="Faith Sisters Group">
-                    </div>
-                </div>
+    <section class="section-padding values-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="section-eyebrow">Who We Are</span>
+            <h4 class="section-title about-who-title" style="text-align: left">
+              A Sisterhood United by Faith
+            </h4>
+            <p style="color: #6c757d">
+              Faith Sisters Global Mission is a faith-based nonprofit
+              organization founded on January 1, 2020. We are a diverse group of
+              women united by our shared commitment to uplifting one another and
+              fostering spiritual growth in Christ Jesus.
+            </p>
+            <p style="color: #6c757d">
+              We gather together every first Saturday of the month for prayer,
+              Bible study, and mutual edification. Our mission is to provide a
+              safe and welcoming space where women from all walks of life can
+              come together to explore and deepen their spiritual connections,
+              share their stories, and find strength and inspiration in the
+              collective wisdom of our diverse sisterhood.
+            </p>
+            <p style="color: #6c757d">
+              Through our prayer meetings, outreaches, online platforms, and
+              resources, we strive to empower women to embrace their
+              spirituality, cultivate mindfulness, and live with purpose and
+              authenticity.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-image">
+              <img src="images/hero_group.jpg" alt="Faith Sisters Group" />
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ===== MISSION & VISION ===== -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">Our Purpose</span>
-                <h2 class="section-title">Mission & Vision</h2>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="mission-card">
-                        <i class="bi bi-bullseye"></i>
-                        <h3>Our Mission</h3>
-                        <p>
-                            To nurture spiritual growth, foster sisterhood, and spread love and compassion to all. 
-                            We are dedicated to providing a nurturing environment where individuals from all walks 
-                            of life can come together to explore and strengthen their faith, find support during 
-                            challenging times, and celebrate the joys of life's journey.
-                        </p>
-                        <p>
-                            Through our various outreach programs, we aim to touch lives and transform communities 
-                            with the love of Christ, making a tangible difference in the lives of those we serve.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="vision-card">
-                        <i class="bi bi-eye"></i>
-                        <h3>Our Vision</h3>
-                        <p>
-                            To be a global community of women living for Christ and taking the gospel to the nations. 
-                            We envision a world where every woman has the opportunity to grow spiritually, find 
-                            sisterhood, and live a life of purpose and authenticity.
-                        </p>
-                        <p>
-                            We aspire to create a ripple effect of positive change, where empowered women empower 
-                            others, creating a global movement of faith, love, and service that transforms communities 
-                            and impacts generations.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <section class="section-padding purpose-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Our Purpose</span>
+          <h2 class="section-title">Mission & Vision</h2>
         </div>
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="mission-card">
+              <i class="bi bi-bullseye"></i>
+              <h3>Our Mission</h3>
+              <p>
+                To nurture spiritual growth, foster sisterhood, and spread love
+                and compassion to all. We are dedicated to providing a nurturing
+                environment where individuals from all walks of life can come
+                together to explore and strengthen their faith, find support
+                during challenging times, and celebrate the joys of life's
+                journey.
+              </p>
+              <p>
+                Through our various outreach programs, we aim to touch lives and
+                transform communities with the love of Christ, making a tangible
+                difference in the lives of those we serve.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="vision-card">
+              <i class="bi bi-eye"></i>
+              <h3>Our Vision</h3>
+              <p>
+                To be a global community of women living for Christ and taking
+                the gospel to the nations. We envision a world where every woman
+                has the opportunity to grow spiritually, find sisterhood, and
+                live a life of purpose and authenticity.
+              </p>
+              <p>
+                We aspire to create a ripple effect of positive change, where
+                empowered women empower others, creating a global movement of
+                faith, love, and service that transforms communities and impacts
+                generations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== OUR VALUES ===== -->
-    <section class="section-padding" style="background: #F8F9FA;">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">What We Stand For</span>
-                <h2 class="section-title">Our Core Values</h2>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="value-card">
-                        <div class="icon"><i class="bi bi-heart-fill"></i></div>
-                        <h5>Love</h5>
-                        <p>We believe in unconditional love as the foundation of all our actions and relationships.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="value-card">
-                        <div class="icon"><i class="bi bi-people-fill"></i></div>
-                        <h5>Community</h5>
-                        <p>We foster a sense of belonging and support among all members of our sisterhood.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="value-card">
-                        <div class="icon"><i class="bi bi-book-fill"></i></div>
-                        <h5>Faith</h5>
-                        <p>We are grounded in our faith in Christ and committed to living according to His teachings.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="value-card">
-                        <div class="icon"><i class="bi bi-hand-thumbs-up-fill"></i></div>
-                        <h5>Service</h5>
-                        <p>We are dedicated to serving others and making a positive impact in our communities.</p>
-                    </div>
-                </div>
-            </div>
+    <section class="section-padding values-showcase-section">
+      <div class="values-showcase-motion" aria-hidden="true">
+        <span class="values-showcase-orb orb-one"></span>
+        <span class="values-showcase-orb orb-two"></span>
+        <span class="values-showcase-orb orb-three"></span>
+        <span class="values-showcase-ring ring-one"></span>
+        <span class="values-showcase-ring ring-two"></span>
+        <span class="values-showcase-wave wave-one"></span>
+        <span class="values-showcase-wave wave-two"></span>
+      </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">What We Stand For</span>
+          <h2 class="section-title">Our Core Values</h2>
         </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="value-card">
+              <div class="icon"><i class="bi bi-heart-fill"></i></div>
+              <h5>Love</h5>
+              <p>
+                We believe in unconditional love as the foundation of all our
+                actions and relationships.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="value-card">
+              <div class="icon"><i class="bi bi-people-fill"></i></div>
+              <h5>Community</h5>
+              <p>
+                We foster a sense of belonging and support among all members of
+                our sisterhood.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="value-card">
+              <div class="icon"><i class="bi bi-book-fill"></i></div>
+              <h5>Faith</h5>
+              <p>
+                We are grounded in our faith in Christ and committed to living
+                according to His teachings.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="value-card">
+              <div class="icon"><i class="bi bi-hand-thumbs-up-fill"></i></div>
+              <h5>Service</h5>
+              <p>
+                We are dedicated to serving others and making a positive impact
+                in our communities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== OUR JOURNEY ===== -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <span class="section-eyebrow">Our Story</span>
-                    <h2 class="section-title" style="text-align: left;">Our Journey</h2>
-                    <p style="color: #6C757D;">
-                        From a small group of women with a shared vision to a growing community making 
-                        impact across Africa, our journey has been one of faith, growth, and transformation.
-                    </p>
-                    
-                    <div class="timeline mt-5">
-                        <div class="timeline-item">
-                            <h5>January 2020</h5>
-                            <p>Faith Sisters Global Mission was founded with a vision to create a community of women united by faith.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h5>June 2020</h5>
-                            <p>Launched our first community outreach program, providing food and supplies to families in need.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h5>December 2021</h5>
-                            <p>Expanded our reach to multiple communities across Nigeria, impacting over 500 lives.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h5>March 2023</h5>
-                            <p>Launched our education support program, providing scholarships and school supplies to children.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h5>Today</h5>
-                            <p>Continuing to grow and expand our impact, touching thousands of lives across Africa.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="images/gallery_bible.jpg" alt="Our Journey" class="img-fluid rounded-4 shadow-lg">
-                </div>
+    <section class="section-padding story-section">
+      <div class="story-motion-layer" aria-hidden="true">
+        <span class="story-orb story-orb-one"></span>
+        <span class="story-orb story-orb-two"></span>
+        <span class="story-orb story-orb-three"></span>
+        <span class="story-ring story-ring-one"></span>
+        <span class="story-ring story-ring-two"></span>
+        <span class="story-trail story-trail-one"></span>
+        <span class="story-trail story-trail-two"></span>
+      </div>
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <span class="section-eyebrow">Our Story</span>
+            <h2 class="section-title" style="text-align: left">Our Journey</h2>
+            <p style="color: #6c757d">
+              From a small group of women with a shared vision to a growing
+              community making impact across Africa, our journey has been one of
+              faith, growth, and transformation.
+            </p>
+
+            <div class="timeline mt-5">
+              <div class="timeline-item">
+                <h5>January 2020</h5>
+                <p>
+                  Faith Sisters Global Mission was founded with a vision to
+                  create a community of women united by faith.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h5>June 2020</h5>
+                <p>
+                  Launched our first community outreach program, providing food
+                  and supplies to families in need.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h5>December 2021</h5>
+                <p>
+                  Expanded our reach to multiple communities across Nigeria,
+                  impacting over 500 lives.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h5>March 2023</h5>
+                <p>
+                  Launched our education support program, providing scholarships
+                  and school supplies to children.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h5>Today</h5>
+                <p>
+                  Continuing to grow and expand our impact, touching thousands
+                  of lives across Africa.
+                </p>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="story-visual">
+              <img
+                src="images/gallery_bible.jpg"
+                alt="Our Journey"
+                class="img-fluid rounded-4 shadow-lg"
+              />
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ===== CTA SECTION ===== -->
     <section class="section-padding cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Join Our Sisterhood</h2>
-                <p>
-                    Be part of a community that supports, uplifts, and empowers women to live their best lives in Christ.
-                </p>
-                <a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank" class="btn btn-cta">
-                    <i class="bi bi-heart-fill me-2"></i>Become a Member
-                </a>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>Join Our Sisterhood</h2>
+          <p>
+            Be part of a community that supports, uplifts, and empowers women to
+            live their best lives in Christ.
+          </p>
+          <a
+            href="https://forms.gle/Xf2UDiuCFTPhiDVq7"
+            target="_blank"
+            class="btn btn-cta"
+          >
+            <i class="bi bi-heart-fill me-2"></i>Become a Member
+          </a>
         </div>
+      </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="footer-brand">
-                        <img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo">
-                        <div>
-                            <h4>Faith Sisters</h4>
-                            <span>Global Mission</span>
-                        </div>
-                    </div>
-                    <div class="footer-about">
-                        <p>Living for Christ, taking the gospel to the nations.</p>
-                        <div class="social-links">
-                            <a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a>
-                            <a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a>
-                            <a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a>
-                            <a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <div class="footer-links">
-                        <h5>Quick Links</h5>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="outreach.html">Outreach Programs</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <div class="footer-links">
-                        <h5>Get Involved</h5>
-                        <ul>
-                            <li><a href="partners.html">Partners & Sponsors</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">Join Us</a></li>
-                            <li><a href="https://youtube.com/@FaithSistersGlobal" target="_blank">YouTube Channel</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="footer-links">
-                        <h5>Contact Info</h5>
-                        <div class="footer-contact">
-                            <p><i class="bi bi-geo-alt"></i> 9 Adamu Chiroma Crescent, Jabi, Abuja, Nigeria</p>
-                            <p><i class="bi bi-telephone"></i> +234 815 944 8287</p>
-                            <p><i class="bi bi-envelope"></i> wearefaithsisters@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <div class="footer-brand">
+              <img
+                class="brand-logo"
+                src="images/logo.png"
+                alt="Faith Sisters Global Mission logo"
+              />
+              <div>
+                <h4>Faith Sisters</h4>
+                <span>Global Mission</span>
+              </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Faith Sisters Global Mission. All rights reserved.</p>
+            <div class="footer-about">
+              <p>Living for Christ, taking the gospel to the nations.</p>
+              <div class="social-links">
+                <a href="https://facebook.com/faithsisters" target="_blank"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a
+                  href="https://instagram.com/faithsistersglobal"
+                  target="_blank"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a
+                  href="https://youtube.com/@FaithSistersGlobal"
+                  target="_blank"
+                  ><i class="bi bi-youtube"></i
+                ></a>
+                <a href="https://x.com/faithsisters01" target="_blank"
+                  ><i class="bi bi-twitter-x"></i
+                ></a>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <div class="footer-links">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="outreach.html">Outreach Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <div class="footer-links">
+              <h5>Get Involved</h5>
+              <ul>
+                <li><a href="partners.html">Partners & Sponsors</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li>
+                  <a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank"
+                    >Join Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://youtube.com/@FaithSistersGlobal"
+                    target="_blank"
+                    >YouTube Channel</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="footer-links">
+              <h5>Contact Info</h5>
+              <div class="footer-contact">
+                <p>
+                  <i class="bi bi-geo-alt"></i> 9 Adamu Chiroma Crescent, Jabi,
+                  Abuja, Nigeria
+                </p>
+                <p><i class="bi bi-telephone"></i> +234 815 944 8287</p>
+                <p>
+                  <i class="bi bi-envelope"></i> wearefaithsisters@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Faith Sisters Global Mission. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
