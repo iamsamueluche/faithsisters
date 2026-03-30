@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Girl Child Initiative | Faith Sisters Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .story-page { background: linear-gradient(180deg, #f6f8fb 0%, #fff 100%); }
+    .story-shell { margin-top: -5rem; position: relative; z-index: 2; }
+    .story-card, .story-gallery-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(21, 34, 56, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(16, 31, 53, 0.08);
+    }
+    .story-card, .story-aside { padding: 2rem; }
+    .story-back {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      color: #f26522;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .story-kicker {
+      display: inline-flex;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(242, 101, 34, 0.1);
+      color: #f26522;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .story-card h1 {
+      color: #152238;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 0.5rem;
+    }
+    .story-meta {
+      color: #5f6d7a;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+    .story-lead, .story-card p, .story-detail-list li, .story-gallery-note {
+      color: #51606f;
+    }
+    .story-detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .story-detail-list i {
+      color: #00AEEF;
+      margin-top: 0.15rem;
+    }
+    .story-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    .story-gallery-item {
+      grid-column: span 4;
+      min-height: 250px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(16, 31, 53, 0.1);
+      display: block;
+    }
+    .story-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .story-gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    .story-gallery-note {
+      margin-top: 0.65rem;
+      margin-bottom: 0;
+    }
+    @media (max-width: 991px) {
+      .story-gallery-item { grid-column: span 6; }
+    }
+    @media (max-width: 767px) {
+      .story-shell { margin-top: -3rem; }
+      .story-card, .story-aside { padding: 1.5rem; }
+      .story-gallery-item { grid-column: span 12; min-height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top scrolled">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo">
+        <div class="brand-text" style="color:#1A1A2E;">Faith Sisters<span>Global Mission</span></div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggle-box" aria-hidden="true">
+          <span class="navbar-toggle-lines"><span></span><span></span><span></span></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header" style="min-height:50vh;">
+    <div class="page-header-bg">
+      <img src="images/gallery/Girl_Child_Initiative/9-1.jpg" alt="Girl Child Initiative">
+    </div>
+    <div class="page-header-overlay"></div>
+    <div class="container page-header-content">
+      <h1>Girl Child Initiative</h1>
+      <p>An education outreach at St. Anglican Girls School in Apo focused on hygiene, identity in Christ, and practical support.</p>
+    </div>
+  </section>
+
+  <main class="story-page section-padding">
+    <div class="container story-shell">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+          <article class="story-card">
+            <a class="story-back" href="gallery.html"><i class="bi bi-arrow-left"></i>Back to Gallery</a>
+            <span class="story-kicker">Education Program</span>
+            <h1>Girl Child Initiative</h1>
+            <div class="story-meta">March 9, 2024 | St. Anglican Girls School, Apo, Abuja</div>
+            <p class="story-lead">Our first inaugural outreach for 2024 occurred on March 9, 2024. The Education Program Outreach at St. Anglican Girls School in Apo, Abuja, themed "The Girl Child Initiative," educated 500 girls on the importance of cleanliness and godliness.</p>
+            <p>Our program featured interactive sessions focusing on menstrual health education, personal hygiene, and identity in Christ Jesus.In addition to our educational sessions, Faith Sisters Global provided the students with 360 sanitary pads, 50 pens, 50 jotters, and 350 educational materials to equip the girls with tools to track their menstrual flow and information on menstrual hygiene, along with light refreshments.</p>
+            <p>The feedback we received from the girls and school administrators was truly heartwarming. They expressed confidence in living healthier and more confident lives and were immensely grateful for the support they received through the generosity of Faith Sisters Global and its partner network.Faith Sisters Global is committed to empowering young girls and women through education and support, making a significant impact on their lives and contributing to the betterment of Africa. We're grateful to our sponsors and partners for their unwavering commitment, time, and resources.</p>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <aside class="story-gallery-card story-aside">
+            <h3>Story Highlights</h3>
+            <ul class="story-detail-list">
+              <li><i class="bi bi-check2-circle"></i><span>500 girls were educated on cleanliness, godliness, menstrual health, personal hygiene, and identity in Christ Jesus.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Faith Sisters Global provided 360 sanitary pads, 50 pens, 50 jotters, 350 educational materials, and light refreshments.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>The outreach strengthened confidence in the girls and reflected the mission's commitment to empowering young girls and women through education and support.</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <section class="story-gallery-card p-4 p-lg-5">
+        <div class="section-header mb-4">
+          <span class="section-eyebrow">Photo Gallery</span>
+          <h2 class="section-title">Images from the outreach</h2>
+          <p class="story-gallery-note">Click any image to open it in full size.</p>
+        </div>
+        <div class="story-gallery-grid">
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/9-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/9-1.jpg" alt="Girl Child Initiative photo 1"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/10-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/10-1.jpg" alt="Girl Child Initiative photo 2"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/11-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/11-1.jpg" alt="Girl Child Initiative photo 3"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/13.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/13.jpg" alt="Girl Child Initiative photo 4"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/14.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/14.jpg" alt="Girl Child Initiative photo 5"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/15.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/15.jpg" alt="Girl Child Initiative photo 6"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/16.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/16.jpg" alt="Girl Child Initiative photo 7"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/17.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/17.jpg" alt="Girl Child Initiative photo 8"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/18.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/18.jpg" alt="Girl Child Initiative photo 9"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/19.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/19.jpg" alt="Girl Child Initiative photo 10"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/20.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/20.jpg" alt="Girl Child Initiative photo 11"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/21.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/21.jpg" alt="Girl Child Initiative photo 12"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/22.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/22.jpg" alt="Girl Child Initiative photo 13"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/23.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/23.jpg" alt="Girl Child Initiative photo 14"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/24.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/24.jpg" alt="Girl Child Initiative photo 15"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/25.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/25.jpg" alt="Girl Child Initiative photo 16"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/27.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/27.jpg" alt="Girl Child Initiative photo 17"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/29.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/29.jpg" alt="Girl Child Initiative photo 18"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/31.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/31.jpg" alt="Girl Child Initiative photo 19"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/33.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/33.jpg" alt="Girl Child Initiative photo 20"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/34.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/34.jpg" alt="Girl Child Initiative photo 21"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/35.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/35.jpg" alt="Girl Child Initiative photo 22"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/IMG-20240321-WA0079.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/IMG-20240321-WA0079.jpg" alt="Girl Child Initiative photo 23"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/IMG-20240321-WA0103.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/IMG-20240321-WA0103.jpg" alt="Girl Child Initiative photo 24"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/IMG-20240321-WA0106.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/IMG-20240321-WA0106.jpg" alt="Girl Child Initiative photo 25"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/IMG-20240321-WA0119.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/IMG-20240321-WA0119.jpg" alt="Girl Child Initiative photo 26"></a>
+          <a class="story-gallery-item" href="images/gallery/Girl_Child_Initiative/IMG-20240321-WA0134.jpg" target="_blank" rel="noopener"><img src="images/gallery/Girl_Child_Initiative/IMG-20240321-WA0134.jpg" alt="Girl Child Initiative photo 27"></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="section-padding cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Continue Exploring Our Outreach Stories</h2>
+        <p>Return to the gallery to discover more moments of service, compassion, and community transformation.</p>
+        <a href="gallery.html" class="btn btn-cta"><i class="bi bi-images me-2"></i>Return to Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

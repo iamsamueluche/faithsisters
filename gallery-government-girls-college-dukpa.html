@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge & Grace Program | Faith Sisters Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .story-page { background: linear-gradient(180deg, #f6f8fb 0%, #fff 100%); }
+    .story-shell { margin-top: -5rem; position: relative; z-index: 2; }
+    .story-card, .story-gallery-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(21, 34, 56, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(16, 31, 53, 0.08);
+    }
+    .story-card, .story-aside { padding: 2rem; }
+    .story-back {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      color: #f26522;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .story-kicker {
+      display: inline-flex;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(242, 101, 34, 0.1);
+      color: #f26522;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .story-card h1 {
+      color: #152238;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 0.5rem;
+    }
+    .story-meta {
+      color: #5f6d7a;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+    .story-lead, .story-card p, .story-detail-list li, .story-gallery-note {
+      color: #51606f;
+    }
+    .story-detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .story-detail-list i {
+      color: #00AEEF;
+      margin-top: 0.15rem;
+    }
+    .story-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    .story-gallery-item {
+      grid-column: span 4;
+      min-height: 250px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(16, 31, 53, 0.1);
+      display: block;
+    }
+    .story-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .story-gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    .story-gallery-note {
+      margin-top: 0.65rem;
+      margin-bottom: 0;
+    }
+    @media (max-width: 991px) {
+      .story-gallery-item { grid-column: span 6; }
+    }
+    @media (max-width: 767px) {
+      .story-shell { margin-top: -3rem; }
+      .story-card, .story-aside { padding: 1.5rem; }
+      .story-gallery-item { grid-column: span 12; min-height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top scrolled">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo">
+        <div class="brand-text" style="color:#1A1A2E;">Faith Sisters<span>Global Mission</span></div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggle-box" aria-hidden="true">
+          <span class="navbar-toggle-lines"><span></span><span></span><span></span></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header" style="min-height:50vh;">
+    <div class="page-header-bg">
+      <img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0001.jpg" alt="Knowledge & Grace Program">
+    </div>
+    <div class="page-header-overlay"></div>
+    <div class="container page-header-content">
+      <h1>Knowledge &amp; Grace Program</h1>
+      <p>An education outreach empowering girls academically, emotionally, and spiritually at Government Girls College, Dukpa.</p>
+    </div>
+  </section>
+
+  <main class="story-page section-padding">
+    <div class="container story-shell">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+          <article class="story-card">
+            <a class="story-back" href="gallery.html"><i class="bi bi-arrow-left"></i>Back to Gallery</a>
+            <span class="story-kicker">Education Outreach</span>
+            <h1>Knowledge &amp; Grace Program</h1>
+            <div class="story-meta">Saturday, 31st May 2025 | Government Girls College, Dukpa, Gwagwalada, FCT, Nigeria</div>
+            <p class="story-lead">On Saturday, 31st May 2025, Faith Sisters Global Mission held her first inaugural outreach for the year the Education Outreach: Knowledge &amp; Grace Program at Government Girls College, Dukpa, Gwagwalada, FCT, Nigeria.</p>
+            <p>This transformative outreach empowered young female students to grow academically, emotionally, and spiritually. Through sessions on technology, innovation, and faith, the girls were reminded that true success requires both knowledge and grace. A central teaching on &ldquo;Increasing in Knowledge and Grace&rdquo; emphasized identity in Christ, personal growth, and walking boldly in purpose, even amid life's challenges.</p>
+            <p>A special highlight of the outreach was the presentation of the Faith Sisters Scholarship Award to fourteen (14) exceptional students &mdash; a carefully selected mix of high-achievers, deserving girls, and rising talents from economically disadvantaged backgrounds. The award honored more than academic success; it celebrated resilience, leadership potential, and a deep desire for personal growth. It stood as a beacon of hope, affirming that with diligence, grace, and faith, any girl can rise above limitations and achieve greatness. The entire school community expressed heartfelt appreciation, finding renewed encouragement and inspiration in the message and impact of the program. Faith Sisters Global is thankful to our phenomenal members, committed sponsors and partners whose generosity and support continue to make outreaches like this possible.</p>
+            <p>As always, Faith Sisters Global Mission remains devoted to spreading the gospel and empowering lives from schools to communities raising young women who shine with knowledge, grace, and purpose.</p>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <aside class="story-gallery-card story-aside">
+            <h3>Story Highlights</h3>
+            <ul class="story-detail-list">
+              <li><i class="bi bi-check2-circle"></i><span>The outreach equipped students through teaching on technology, innovation, faith, identity in Christ, and personal growth.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Fourteen exceptional students received the Faith Sisters Scholarship Award as a celebration of resilience, promise, and leadership potential.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>The program renewed hope across the school community and reflected the mission to raise young women who shine with knowledge, grace, and purpose.</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <section class="story-gallery-card p-4 p-lg-5">
+        <div class="section-header mb-4">
+          <span class="section-eyebrow">Photo Gallery</span>
+          <h2 class="section-title">Images from the outreach</h2>
+          <p class="story-gallery-note">Click any image to open it in full size.</p>
+        </div>
+        <div class="story-gallery-grid">
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0001.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0001.jpg" alt="Knowledge and Grace Program photo 1"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0003.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0003.jpg" alt="Knowledge and Grace Program photo 2"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0018.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0018.jpg" alt="Knowledge and Grace Program photo 3"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0020.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0020.jpg" alt="Knowledge and Grace Program photo 4"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0022-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0022-1.jpg" alt="Knowledge and Grace Program photo 5"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0022.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0022.jpg" alt="Knowledge and Grace Program photo 6"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0024-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0024-1.jpg" alt="Knowledge and Grace Program photo 7"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0024.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0024.jpg" alt="Knowledge and Grace Program photo 8"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0028-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0028-1.jpg" alt="Knowledge and Grace Program photo 9"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0032-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0032-1.jpg" alt="Knowledge and Grace Program photo 10"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0032.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0032.jpg" alt="Knowledge and Grace Program photo 11"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0033-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0033-1.jpg" alt="Knowledge and Grace Program photo 12"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0033.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0033.jpg" alt="Knowledge and Grace Program photo 13"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0034-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0034-1.jpg" alt="Knowledge and Grace Program photo 14"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0034.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0034.jpg" alt="Knowledge and Grace Program photo 15"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0035-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0035-1.jpg" alt="Knowledge and Grace Program photo 16"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0035.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0035.jpg" alt="Knowledge and Grace Program photo 17"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0039-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0039-1.jpg" alt="Knowledge and Grace Program photo 18"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0039.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0039.jpg" alt="Knowledge and Grace Program photo 19"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0041.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0041.jpg" alt="Knowledge and Grace Program photo 20"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0044.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0044.jpg" alt="Knowledge and Grace Program photo 21"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0049.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0049.jpg" alt="Knowledge and Grace Program photo 22"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0054.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0054.jpg" alt="Knowledge and Grace Program photo 23"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0055.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0055.jpg" alt="Knowledge and Grace Program photo 24"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0060.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0060.jpg" alt="Knowledge and Grace Program photo 25"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0113.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0113.jpg" alt="Knowledge and Grace Program photo 26"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0114.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0114.jpg" alt="Knowledge and Grace Program photo 27"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0115.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0115.jpg" alt="Knowledge and Grace Program photo 28"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0116.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0116.jpg" alt="Knowledge and Grace Program photo 29"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0118.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0118.jpg" alt="Knowledge and Grace Program photo 30"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0119.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0119.jpg" alt="Knowledge and Grace Program photo 31"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0120.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0120.jpg" alt="Knowledge and Grace Program photo 32"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0121.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0121.jpg" alt="Knowledge and Grace Program photo 33"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0122-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0122-1.jpg" alt="Knowledge and Grace Program photo 34"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0123-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0123-1.jpg" alt="Knowledge and Grace Program photo 35"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0124.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0124.jpg" alt="Knowledge and Grace Program photo 36"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0125-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0125-1.jpg" alt="Knowledge and Grace Program photo 37"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0126-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0126-1.jpg" alt="Knowledge and Grace Program photo 38"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0127.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0127.jpg" alt="Knowledge and Grace Program photo 39"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0128.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0128.jpg" alt="Knowledge and Grace Program photo 40"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0129-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0129-1.jpg" alt="Knowledge and Grace Program photo 41"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0130.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0130.jpg" alt="Knowledge and Grace Program photo 42"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0131.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0131.jpg" alt="Knowledge and Grace Program photo 43"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0132.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0132.jpg" alt="Knowledge and Grace Program photo 44"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0133.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0133.jpg" alt="Knowledge and Grace Program photo 45"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0134.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0134.jpg" alt="Knowledge and Grace Program photo 46"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0135.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0135.jpg" alt="Knowledge and Grace Program photo 47"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0136.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0136.jpg" alt="Knowledge and Grace Program photo 48"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0137.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0137.jpg" alt="Knowledge and Grace Program photo 49"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0138.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0138.jpg" alt="Knowledge and Grace Program photo 50"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0139.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0139.jpg" alt="Knowledge and Grace Program photo 51"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0141.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0141.jpg" alt="Knowledge and Grace Program photo 52"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0142.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0142.jpg" alt="Knowledge and Grace Program photo 53"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0147.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0147.jpg" alt="Knowledge and Grace Program photo 54"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0148.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0148.jpg" alt="Knowledge and Grace Program photo 55"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0149.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0149.jpg" alt="Knowledge and Grace Program photo 56"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0150.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0150.jpg" alt="Knowledge and Grace Program photo 57"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0151.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0151.jpg" alt="Knowledge and Grace Program photo 58"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0152.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0152.jpg" alt="Knowledge and Grace Program photo 59"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0153.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0153.jpg" alt="Knowledge and Grace Program photo 60"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0154-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0154-1.jpg" alt="Knowledge and Grace Program photo 61"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0154.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0154.jpg" alt="Knowledge and Grace Program photo 62"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0155.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0155.jpg" alt="Knowledge and Grace Program photo 63"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0156.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0156.jpg" alt="Knowledge and Grace Program photo 64"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0157.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0157.jpg" alt="Knowledge and Grace Program photo 65"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0158.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/IMG-20250603-WA0158.jpg" alt="Knowledge and Grace Program photo 66"></a>
+          <a class="story-gallery-item" href="images/gallery/Knowledge_n_Grace_Program/WhatsApp-Image-2025-06-03-at-08.12.33_10af1281.jpg" target="_blank" rel="noopener"><img src="images/gallery/Knowledge_n_Grace_Program/WhatsApp-Image-2025-06-03-at-08.12.33_10af1281.jpg" alt="Knowledge and Grace Program photo 67"></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="section-padding cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Continue Exploring Our Outreach Stories</h2>
+        <p>Return to the gallery to discover more moments of service, compassion, and community transformation.</p>
+        <a href="gallery.html" class="btn btn-cta"><i class="bi bi-images me-2"></i>Return to Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

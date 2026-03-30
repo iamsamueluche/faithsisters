@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mother Theresa Children's Home Visit | Faith Sisters Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .story-page { background: linear-gradient(180deg, #f6f8fb 0%, #fff 100%); }
+    .story-shell { margin-top: -5rem; position: relative; z-index: 2; }
+    .story-card, .story-gallery-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(21, 34, 56, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(16, 31, 53, 0.08);
+    }
+    .story-card, .story-aside { padding: 2rem; }
+    .story-back {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      color: #f26522;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .story-kicker {
+      display: inline-flex;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(242, 101, 34, 0.1);
+      color: #f26522;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .story-card h1 {
+      color: #152238;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 0.5rem;
+    }
+    .story-meta {
+      color: #5f6d7a;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+    .story-lead, .story-card p, .story-detail-list li, .story-gallery-note {
+      color: #51606f;
+    }
+    .story-detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .story-detail-list i {
+      color: #00AEEF;
+      margin-top: 0.15rem;
+    }
+    .story-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    .story-gallery-item {
+      grid-column: span 4;
+      min-height: 250px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(16, 31, 53, 0.1);
+      display: block;
+    }
+    .story-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .story-gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    .story-gallery-note {
+      margin-top: 0.65rem;
+      margin-bottom: 0;
+    }
+    @media (max-width: 991px) {
+      .story-gallery-item { grid-column: span 6; }
+    }
+    @media (max-width: 767px) {
+      .story-shell { margin-top: -3rem; }
+      .story-card, .story-aside { padding: 1.5rem; }
+      .story-gallery-item { grid-column: span 12; min-height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top scrolled">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo">
+        <div class="brand-text" style="color:#1A1A2E;">Faith Sisters<span>Global Mission</span></div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggle-box" aria-hidden="true">
+          <span class="navbar-toggle-lines"><span></span><span></span><span></span></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header" style="min-height:50vh;">
+    <div class="page-header-bg">
+      <img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0045.jpg" alt="Mother Theresa Children's Home Visit">
+    </div>
+    <div class="page-header-overlay"></div>
+    <div class="container page-header-content">
+      <h1>Mother Theresa Children's Home Visit</h1>
+      <p>Gifts, prayers, and the love of Christ shared with children at St. Mother Theresa Children's Orphanage.</p>
+    </div>
+  </section>
+
+  <main class="story-page section-padding">
+    <div class="container story-shell">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+          <article class="story-card">
+            <a class="story-back" href="gallery.html"><i class="bi bi-arrow-left"></i>Back to Gallery</a>
+            <span class="story-kicker">Orphanage Outreach</span>
+            <h1>Mother Theresa Children's Home Visit</h1>
+            <div class="story-meta">Saturday October 7, 2024 | St. Mother Theresa Children's Orphanage, Gwarimpa, Abuja</div>
+            <p class="story-lead">The inaugural outreach of 2024 by Faith Sisters Global took place at St. Mother Theresa Children's Orphanage in Gwarimpa, Abuja on Saturday October 7, 2024.</p>
+            <p>It was an incredibly impactful time of ministering to these children with gifts ranging from provisions, medicines, foodstuffs, words, and prayers.</p>
+            <p>Faith Sisters Global is dedicated to ensuring that orphans experience the love of Christ, and fulfill his commandment to welcome the little ones This moment serves as a reminder that we are created for a purpose greater than ourselves, to embody the love of Christ and serve humanity through the gifts He has bestowed upon us.</p>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <aside class="story-gallery-card story-aside">
+            <h3>Story Highlights</h3>
+            <ul class="story-detail-list">
+              <li><i class="bi bi-check2-circle"></i><span>The inaugural outreach of 2024 centered on children at St. Mother Theresa Children's Orphanage.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Provisions, medicines, foodstuffs, words, and prayers were shared in a deeply impactful time of ministry.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>The outreach reflected the mission to embody Christ's love and welcome the little ones with compassion.</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <section class="story-gallery-card p-4 p-lg-5">
+        <div class="section-header mb-4">
+          <span class="section-eyebrow">Photo Gallery</span>
+          <h2 class="section-title">Images from the outreach</h2>
+          <p class="story-gallery-note">Click any image to open it in full size.</p>
+        </div>
+        <div class="story-gallery-grid">
+          <a class="story-gallery-item" href="images/gallery/Orphanage_Outreach/IMG-20240515-WA0045.jpg" target="_blank" rel="noopener"><img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0045.jpg" alt="Mother Theresa Children's Home outreach photo 1"></a>
+          <a class="story-gallery-item" href="images/gallery/Orphanage_Outreach/IMG-20240515-WA0049.jpg" target="_blank" rel="noopener"><img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0049.jpg" alt="Mother Theresa Children's Home outreach photo 2"></a>
+          <a class="story-gallery-item" href="images/gallery/Orphanage_Outreach/IMG-20240515-WA0050.jpg" target="_blank" rel="noopener"><img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0050.jpg" alt="Mother Theresa Children's Home outreach photo 3"></a>
+          <a class="story-gallery-item" href="images/gallery/Orphanage_Outreach/IMG-20240515-WA0051.jpg" target="_blank" rel="noopener"><img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0051.jpg" alt="Mother Theresa Children's Home outreach photo 4"></a>
+          <a class="story-gallery-item" href="images/gallery/Orphanage_Outreach/IMG-20240515-WA0052.jpg" target="_blank" rel="noopener"><img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0052.jpg" alt="Mother Theresa Children's Home outreach photo 5"></a>
+          <a class="story-gallery-item" href="images/gallery/Orphanage_Outreach/IMG-20240515-WA0054.jpg" target="_blank" rel="noopener"><img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0054.jpg" alt="Mother Theresa Children's Home outreach photo 6"></a>
+          <a class="story-gallery-item" href="images/gallery/Orphanage_Outreach/IMG-20240515-WA0055.jpg" target="_blank" rel="noopener"><img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0055.jpg" alt="Mother Theresa Children's Home outreach photo 7"></a>
+          <a class="story-gallery-item" href="images/gallery/Orphanage_Outreach/IMG-20240515-WA0056.jpg" target="_blank" rel="noopener"><img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0056.jpg" alt="Mother Theresa Children's Home outreach photo 8"></a>
+          <a class="story-gallery-item" href="images/gallery/Orphanage_Outreach/IMG-20240515-WA0057.jpg" target="_blank" rel="noopener"><img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0057.jpg" alt="Mother Theresa Children's Home outreach photo 9"></a>
+          <a class="story-gallery-item" href="images/gallery/Orphanage_Outreach/IMG-20240515-WA0058.jpg" target="_blank" rel="noopener"><img src="images/gallery/Orphanage_Outreach/IMG-20240515-WA0058.jpg" alt="Mother Theresa Children's Home outreach photo 10"></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="section-padding cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Continue Exploring Our Outreach Stories</h2>
+        <p>Return to the gallery to discover more moments of service, compassion, and community transformation.</p>
+        <a href="gallery.html" class="btn btn-cta"><i class="bi bi-images me-2"></i>Return to Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

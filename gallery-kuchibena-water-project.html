@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuchibena Project | Faith Sisters Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .story-page { background: linear-gradient(180deg, #f6f8fb 0%, #fff 100%); }
+    .story-shell { margin-top: -5rem; position: relative; z-index: 2; }
+    .story-card, .story-gallery-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(21, 34, 56, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(16, 31, 53, 0.08);
+    }
+    .story-card, .story-aside { padding: 2rem; }
+    .story-back {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      color: #f26522;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .story-kicker {
+      display: inline-flex;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(242, 101, 34, 0.1);
+      color: #f26522;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .story-card h1 {
+      color: #152238;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 0.5rem;
+    }
+    .story-meta {
+      color: #5f6d7a;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+    .story-lead, .story-card p, .story-detail-list li, .story-gallery-note {
+      color: #51606f;
+    }
+    .story-detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .story-detail-list i {
+      color: #00AEEF;
+      margin-top: 0.15rem;
+    }
+    .story-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    .story-gallery-item {
+      grid-column: span 4;
+      min-height: 250px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(16, 31, 53, 0.1);
+      display: block;
+    }
+    .story-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .story-gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    .story-gallery-note {
+      margin-top: 0.65rem;
+      margin-bottom: 0;
+    }
+    @media (max-width: 991px) {
+      .story-gallery-item { grid-column: span 6; }
+    }
+    @media (max-width: 767px) {
+      .story-shell { margin-top: -3rem; }
+      .story-card, .story-aside { padding: 1.5rem; }
+      .story-gallery-item { grid-column: span 12; min-height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top scrolled">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo">
+        <div class="brand-text" style="color:#1A1A2E;">Faith Sisters<span>Global Mission</span></div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggle-box" aria-hidden="true">
+          <span class="navbar-toggle-lines"><span></span><span></span><span></span></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header" style="min-height:50vh;">
+    <div class="page-header-bg">
+      <img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0025-1.jpg" alt="Kuchibena Project">
+    </div>
+    <div class="page-header-overlay"></div>
+    <div class="container page-header-content">
+      <h1>Kuchibena Project</h1>
+      <p>A borehole project bringing free, clean, and sustainable water to the Kuchibena community.</p>
+    </div>
+  </section>
+
+  <main class="story-page section-padding">
+    <div class="container story-shell">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+          <article class="story-card">
+            <a class="story-back" href="gallery.html"><i class="bi bi-arrow-left"></i>Back to Gallery</a>
+            <span class="story-kicker">Water Project</span>
+            <h1>Kuchibena Project</h1>
+            <div class="story-meta">November 30, 2024 | Kuchibena Community Water Project</div>
+            <p class="story-lead">On November 30th 2024, the Faith Sisters Global Mission brought hope to over 1,000 members of the Kuchibena community by addressing the challenge of water scarcity.</p>
+            <p>The initiative involved drilling a borehole to provide free, clean, and sustainable water. Engaging the community head and members ensured the program's success and long-term sustainability.</p>
+            <p>The project empowered the Kuchibena community, reaffirming Faith Sisters Global's commitment to improving health and wellbeing in underserved areas across Africa.</p>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <aside class="story-gallery-card story-aside">
+            <h3>Story Highlights</h3>
+            <ul class="story-detail-list">
+              <li><i class="bi bi-check2-circle"></i><span>Over 1,000 members of the Kuchibena community benefited from the water project.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>A borehole was drilled to provide free, clean, and sustainable water.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Community engagement supported the project's success, sustainability, and long-term health impact.</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <section class="story-gallery-card p-4 p-lg-5">
+        <div class="section-header mb-4">
+          <span class="section-eyebrow">Photo Gallery</span>
+          <h2 class="section-title">Images from the project</h2>
+          <p class="story-gallery-note">Click any image to open it in full size.</p>
+        </div>
+        <div class="story-gallery-grid">
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0025-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0025-1.jpg" alt="Kuchibena Project photo 1"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0026-2.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0026-2.jpg" alt="Kuchibena Project photo 2"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0027-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0027-1.jpg" alt="Kuchibena Project photo 3"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0028.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0028.jpg" alt="Kuchibena Project photo 4"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0029-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0029-1.jpg" alt="Kuchibena Project photo 5"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0029.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0029.jpg" alt="Kuchibena Project photo 6"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0030.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0030.jpg" alt="Kuchibena Project photo 7"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0031-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0031-1.jpg" alt="Kuchibena Project photo 8"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0031.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0031.jpg" alt="Kuchibena Project photo 9"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0032-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0032-1.jpg" alt="Kuchibena Project photo 10"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0033-1.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0033-1.jpg" alt="Kuchibena Project photo 11"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0033.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0033.jpg" alt="Kuchibena Project photo 12"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0034.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0034.jpg" alt="Kuchibena Project photo 13"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0035.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0035.jpg" alt="Kuchibena Project photo 14"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0036.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0036.jpg" alt="Kuchibena Project photo 15"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0037.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0037.jpg" alt="Kuchibena Project photo 16"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0043.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0043.jpg" alt="Kuchibena Project photo 17"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0048.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0048.jpg" alt="Kuchibena Project photo 18"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0049.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0049.jpg" alt="Kuchibena Project photo 19"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0050.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0050.jpg" alt="Kuchibena Project photo 20"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0051.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0051.jpg" alt="Kuchibena Project photo 21"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0052.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0052.jpg" alt="Kuchibena Project photo 22"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0053.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0053.jpg" alt="Kuchibena Project photo 23"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0054.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0054.jpg" alt="Kuchibena Project photo 24"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0055.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0055.jpg" alt="Kuchibena Project photo 25"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0056.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0056.jpg" alt="Kuchibena Project photo 26"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0057.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0057.jpg" alt="Kuchibena Project photo 27"></a>
+          <a class="story-gallery-item" href="images/gallery/Kuchibena_Project/IMG-20241201-WA0058.jpg" target="_blank" rel="noopener"><img src="images/gallery/Kuchibena_Project/IMG-20241201-WA0058.jpg" alt="Kuchibena Project photo 28"></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="section-padding cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Continue Exploring Our Outreach Stories</h2>
+        <p>Return to the gallery to discover more moments of service, compassion, and community transformation.</p>
+        <a href="gallery.html" class="btn btn-cta"><i class="bi bi-images me-2"></i>Return to Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

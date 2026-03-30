@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle of Prayer | Faith Sisters Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .story-page { background: linear-gradient(180deg, #f6f8fb 0%, #ffffff 100%); }
+        .story-shell { margin-top: -5rem; position: relative; z-index: 2; }
+        .story-card, .story-gallery-card { background: rgba(255,255,255,0.96); border: 1px solid rgba(21,34,56,0.08); border-radius: 28px; box-shadow: 0 20px 50px rgba(16,31,53,0.08); }
+        .story-card { padding: 2rem; }
+        .story-back { display: inline-flex; align-items: center; gap: 0.55rem; color: #f26522; font-weight: 700; margin-bottom: 1rem; }
+        .story-kicker { display: inline-flex; padding: 0.45rem 0.85rem; border-radius: 999px; background: rgba(242,101,34,0.1); color: #f26522; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+        .story-card h1 { color: #152238; font-size: clamp(2.2rem, 4vw, 3.6rem); margin-bottom: 1rem; }
+        .story-lead { color: #5f6d7a; font-size: 1.08rem; margin-bottom: 1.5rem; }
+        .story-card p { color: #51606f; }
+        .story-aside { padding: 2rem; height: 100%; }
+        .story-aside h3 { color: #152238; margin-bottom: 1rem; }
+        .story-detail-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+        .story-detail-list li { display: flex; gap: 0.85rem; align-items: flex-start; color: #51606f; }
+        .story-detail-list i { color: #00AEEF; font-size: 1rem; margin-top: 0.15rem; }
+        .story-gallery-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.25rem; }
+        .story-gallery-item { grid-column: span 4; border-radius: 24px; overflow: hidden; min-height: 260px; box-shadow: 0 16px 36px rgba(16,31,53,0.1); }
+        .story-gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .story-gallery-item:hover img { transform: scale(1.06); }
+        @media (max-width: 991px) { .story-gallery-item { grid-column: span 6; } }
+        @media (max-width: 767px) { .story-shell { margin-top: -3rem; } .story-card, .story-aside { padding: 1.5rem; } .story-gallery-item { grid-column: span 12; min-height: 220px; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top scrolled">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo">
+                <div class="brand-text" style="color: #1A1A2E;">Faith Sisters<span>Global Mission</span></div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggle-box" aria-hidden="true"><span class="navbar-toggle-lines"><span></span><span></span><span></span></span></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="page-header" style="min-height: 50vh;">
+        <div class="page-header-bg"><img src="images/gallery_worship.jpg" alt="Circle of Prayer"></div>
+        <div class="page-header-overlay"></div>
+        <div class="container page-header-content"><h1>Circle of Prayer</h1><p>An outreach story shaped by worship, reflection, and shared strength.</p></div>
+    </section>
+    <main class="story-page section-padding">
+        <div class="container story-shell">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-8">
+                    <article class="story-card">
+                        <a class="story-back" href="gallery.html"><i class="bi bi-arrow-left"></i>Back to Gallery</a>
+                        <span class="story-kicker">Worship Event</span>
+                        <h1>Circle of Prayer</h1>
+                        <p class="story-lead">This gathering created a calm and sacred space where women could pray together, share burdens, and leave refreshed in faith.</p>
+                        <p>Circle of Prayer was designed as an intimate outreach moment, bringing women together to worship, listen, and encourage one another. The atmosphere was gentle and purposeful, making room for honest conversations, testimonies, and quiet intercession.</p>
+                        <p>What made the event especially meaningful was the sense of closeness it created. Beyond the songs and spoken prayers, it reminded every participant that faith can be both deeply personal and beautifully communal. The outreach became a touchpoint for renewed hope, stronger relationships, and spiritual confidence.</p>
+                    </article>
+                </div>
+                <div class="col-lg-4">
+                    <aside class="story-gallery-card story-aside">
+                        <h3>Event Highlights</h3>
+                        <ul class="story-detail-list">
+                            <li><i class="bi bi-check2-circle"></i><span>Prayer circles focused on healing, direction, and encouragement.</span></li>
+                            <li><i class="bi bi-check2-circle"></i><span>Moments of worship and scripture reflection shared across generations.</span></li>
+                            <li><i class="bi bi-check2-circle"></i><span>A welcoming space that fostered trust, vulnerability, and community.</span></li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+            <section class="story-gallery-card p-4 p-lg-5">
+                <div class="section-header mb-4">
+                    <span class="section-eyebrow">Photo Gallery</span>
+                    <h2 class="section-title">Scenes from the gathering</h2>
+                </div>
+                <div class="story-gallery-grid">
+                    <div class="story-gallery-item"><img src="images/gallery_worship.jpg" alt="Prayer gathering"></div>
+                    <div class="story-gallery-item"><img src="images/gallery_bible.jpg" alt="Scripture moment"></div>
+                    <div class="story-gallery-item"><img src="images/others/about_worship.jpg" alt="Worship atmosphere"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <section class="section-padding cta-section"><div class="container"><div class="cta-content"><h2>Keep Exploring Our Story</h2><p>Discover more events, outreach moments, and stories of transformation from our gallery experience.</p><a href="gallery.html" class="btn btn-cta"><i class="bi bi-images me-2"></i>Return to Gallery</a></div></div></section>
+    <footer class="footer"><div class="container"><div class="row g-5"><div class="col-lg-4"><div class="footer-brand"><img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo"><div><h4>Faith Sisters</h4><span>Global Mission</span></div></div><div class="footer-about"><p>Living for Christ, taking the gospel to the nations.</p><div class="social-links"><a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a><a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a><a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a><a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a></div></div></div><div class="col-lg-2 col-md-4"><div class="footer-links"><h5>Quick Links</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="outreach.html">Outreach Programs</a></li><li><a href="gallery.html">Gallery</a></li></ul></div></div><div class="col-lg-2 col-md-4"><div class="footer-links"><h5>Get Involved</h5><ul><li><a href="partners.html">Partners & Sponsors</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">Join Us</a></li><li><a href="https://youtube.com/@FaithSistersGlobal" target="_blank">YouTube Channel</a></li></ul></div></div><div class="col-lg-4 col-md-4"><div class="footer-links"><h5>Contact Info</h5><div class="footer-contact"><p><i class="bi bi-geo-alt"></i> 9 Adamu Chiroma Crescent, Jabi, Abuja, Nigeria</p><p><i class="bi bi-telephone"></i> +234 815 944 8287</p><p><i class="bi bi-envelope"></i> wearefaithsisters@gmail.com</p></div></div></div></div><div class="footer-bottom"><p>&copy; 2024 Faith Sisters Global Mission. All rights reserved.</p></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

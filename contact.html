@@ -101,43 +101,125 @@
         }
         
         .social-connect {
-            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            text-align: center;
+            background: linear-gradient(155deg, #152238 0%, #1a4e68 55%, #00AEEF 120%);
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: left;
             color: white;
+            box-shadow: 0 18px 40px rgba(21, 34, 56, 0.18);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-connect::before {
+            content: '';
+            position: absolute;
+            inset: auto -40px -40px auto;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
         }
         
         .social-connect h4 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-connect p {
+            position: relative;
+            z-index: 1;
+            color: rgba(255, 255, 255, 0.84);
         }
         
         .social-connect .social-links {
-            justify-content: center;
+            justify-content: flex-start;
+            gap: 0.85rem;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
         }
         
         .social-connect .social-links a {
-            background: rgba(255, 255, 255, 0.2);
-            width: 50px;
-            height: 50px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 54px;
+            height: 54px;
             font-size: 1.25rem;
+            backdrop-filter: blur(8px);
         }
         
         .social-connect .social-links a:hover {
             background: white;
             color: #F26522;
         }
+
+        .social-connect-meta {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.85rem;
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-connect-stat {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 0.9rem 1rem;
+        }
+
+        .social-connect-stat strong {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .social-connect-stat span {
+            display: block;
+            font-size: 0.84rem;
+            color: rgba(255, 255, 255, 0.74);
+        }
         
         .map-container {
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            height: 100%;
         }
         
         .map-container iframe {
             width: 100%;
-            height: 400px;
+            min-height: 400px;
+            height: 100%;
             border: none;
+        }
+
+        @media (max-width: 991px) {
+            .social-connect {
+                min-height: auto;
+            }
+
+            .map-container iframe {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .social-connect {
+                padding: 1.5rem;
+            }
+
+            .social-connect-meta {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -234,18 +316,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Social Connect -->
-                    <div class="social-connect mt-4">
-                        <h4>Connect With Us</h4>
-                        <p class="mb-4">Follow us on social media for updates and inspiration.</p>
-                        <div class="social-links">
-                            <a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a>
-                            <a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a>
-                            <a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a>
-                            <a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                        </div>
-                    </div>
                 </div>
                 
                 <!-- Contact Form -->
@@ -301,12 +371,40 @@
     <!-- ===== MAP SECTION ===== -->
     <section class="section-padding pt-0">
         <div class="container">
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8765432109876!2d7.3989!3d9.0765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDQnMzUuNCJOIDfCsDIzJzU2LjAiRQ!5e0!3m2!1sen!2sng!4v1234567890" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-8">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8765432109876!2d7.3989!3d9.0765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDQnMzUuNCJOIDfCsDIzJzU2LjAiRQ!5e0!3m2!1sen!2sng!4v1234567890" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="social-connect">
+                        <div>
+                            <h4>Connect With Us</h4>
+                            <p class="mb-4">Follow Faith Sisters across our social channels for updates, stories, and community moments.</p>
+                            <div class="social-links">
+                                <a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a>
+                                <a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a>
+                                <a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a>
+                                <a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                            </div>
+                        </div>
+                        <div class="social-connect-meta">
+                            <div class="social-connect-stat">
+                                <strong>Daily</strong>
+                                <span>Fresh updates and encouragement</span>
+                            </div>
+                            <div class="social-connect-stat">
+                                <strong>Community</strong>
+                                <span>Stay close to events and outreach moments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

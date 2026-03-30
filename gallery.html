@@ -20,184 +20,633 @@
     <link rel="stylesheet" href="css/style.css">
     
     <style>
-        /* Gallery Page Styles */
         .gallery-page {
-            background: #1A1A2E;
+            background:
+                radial-gradient(circle at top left, rgba(242, 101, 34, 0.1), transparent 24%),
+                radial-gradient(circle at bottom right, rgba(0, 174, 239, 0.1), transparent 28%),
+                linear-gradient(180deg, #f6f8fb 0%, #ffffff 100%);
             min-height: 100vh;
             padding: 6rem 0;
-        }
-        
-        .gallery-page .section-title,
-        .gallery-page .section-subtitle {
-            color: white;
-        }
-        
-        .gallery-filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .gallery-filter-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .gallery-filter-btn:hover,
-        .gallery-filter-btn.active {
-            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
-            border-color: transparent;
-            color: white;
-        }
-        
-        .gallery-masonry {
-            column-count: 3;
-            column-gap: 1.5rem;
-        }
-        
-        @media (max-width: 991px) {
-            .gallery-masonry {
-                column-count: 2;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .gallery-masonry {
-                column-count: 1;
-            }
-        }
-        
-        .gallery-item {
-            break-inside: avoid;
-            margin-bottom: 1.5rem;
             position: relative;
-            border-radius: 16px;
             overflow: hidden;
-            cursor: pointer;
+            isolation: isolate;
         }
-        
-        .gallery-item img {
-            width: 100%;
-            height: auto;
+
+        .gallery-page::before,
+        .gallery-page::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(18px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .gallery-page::before {
+            width: 420px;
+            height: 420px;
+            top: -120px;
+            left: -120px;
+            background: radial-gradient(circle, rgba(242, 101, 34, 0.18) 0%, rgba(242, 101, 34, 0) 68%);
+            animation: galleryGlowDrift 18s ease-in-out infinite alternate;
+        }
+
+        .gallery-page::after {
+            width: 520px;
+            height: 520px;
+            right: -180px;
+            bottom: -180px;
+            background: radial-gradient(circle, rgba(0, 174, 239, 0.16) 0%, rgba(0, 174, 239, 0) 70%);
+            animation: galleryGlowDriftAlt 20s ease-in-out infinite alternate;
+        }
+
+        .gallery-page .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-motion-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .gallery-motion-bg span {
+            position: absolute;
             display: block;
-            transition: all 0.5s ease;
+            border-radius: 999px;
+        }
+
+        .gallery-motion-bg .orbit-one,
+        .gallery-motion-bg .orbit-two {
+            border: 1px solid rgba(21, 34, 56, 0.08);
+            opacity: 0.55;
+        }
+
+        .gallery-motion-bg .orbit-one {
+            width: 34rem;
+            height: 34rem;
+            top: -12rem;
+            right: 12%;
+            animation: galleryOrbit 24s linear infinite;
+        }
+
+        .gallery-motion-bg .orbit-two {
+            width: 24rem;
+            height: 24rem;
+            bottom: -8rem;
+            left: 6%;
+            animation: galleryOrbitReverse 20s linear infinite;
+        }
+
+        .gallery-motion-bg .beam-one,
+        .gallery-motion-bg .beam-two {
+            height: 220px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+            filter: blur(12px);
+            opacity: 0.38;
+            transform: rotate(-12deg);
+        }
+
+        .gallery-motion-bg .beam-one {
+            width: 40%;
+            top: 12%;
+            left: -8%;
+            animation: galleryBeamMove 16s ease-in-out infinite;
+        }
+
+        .gallery-motion-bg .beam-two {
+            width: 34%;
+            right: -6%;
+            bottom: 16%;
+            animation: galleryBeamMove 19s ease-in-out infinite reverse;
+        }
+
+        .gallery-shell {
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.78);
+            border-radius: 36px;
+            padding: 2.5rem;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 26px 60px rgba(16, 31, 53, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-shell::before,
+        .gallery-shell::after {
+            content: "";
+            position: absolute;
+            inset: auto;
+            border-radius: 999px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .gallery-shell::before {
+            width: 26rem;
+            height: 26rem;
+            top: -11rem;
+            right: -7rem;
+            background: radial-gradient(circle, rgba(242, 101, 34, 0.12) 0%, rgba(242, 101, 34, 0) 70%);
+            animation: galleryAuraFloat 14s ease-in-out infinite alternate;
+        }
+
+        .gallery-shell::after {
+            width: 22rem;
+            height: 22rem;
+            bottom: -9rem;
+            left: -7rem;
+            background: radial-gradient(circle, rgba(0, 174, 239, 0.12) 0%, rgba(0, 174, 239, 0) 72%);
+            animation: galleryAuraFloatAlt 16s ease-in-out infinite alternate;
+        }
+
+        .gallery-shell > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-page .section-header {
+            margin-bottom: 2.2rem;
         }
         
-        .gallery-item:hover img {
-            transform: scale(1.05);
+        .gallery-page .section-title {
+            color: #152238;
+        }
+
+        .gallery-page .section-subtitle {
+            color: #5f6d7a;
+            max-width: 46rem;
+            margin-inline: auto;
         }
         
-        .gallery-item-overlay {
+        .gallery-timeline {
+            position: relative;
+            display: grid;
+            gap: 1.6rem;
+        }
+
+        .gallery-timeline::before {
+            content: "";
+            position: absolute;
+            top: 0.35rem;
+            bottom: 0.35rem;
+            left: 8.25rem;
+            width: 1px;
+            background: linear-gradient(180deg, rgba(242, 101, 34, 0.18), rgba(21, 34, 56, 0.08), rgba(0, 174, 239, 0.18));
+        }
+
+        .gallery-timeline::after {
+            content: "";
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 1.5rem;
-            opacity: 0;
-            transition: all 0.3s ease;
+            left: calc(8.25rem - 1px);
+            width: 3px;
+            height: 7.5rem;
+            border-radius: 999px;
+            background: linear-gradient(180deg, rgba(242, 101, 34, 0), rgba(242, 101, 34, 0.65), rgba(0, 174, 239, 0));
+            filter: blur(0.2px);
+            animation: galleryLinePulse 7s ease-in-out infinite;
         }
-        
-        .gallery-item:hover .gallery-item-overlay {
-            opacity: 1;
-        }
-        
-        .gallery-item-category {
-            color: #F26522;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
-        .gallery-item-title {
-            color: white;
-            font-size: 1.125rem;
-            margin: 0.5rem 0 0;
-        }
-        
-        /* Lightbox */
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 9999;
-            display: none;
-            justify-content: center;
+
+        .gallery-entry {
+            position: relative;
+            display: grid;
+            grid-template-columns: 7rem minmax(0, 1fr);
+            gap: 1.8rem;
             align-items: center;
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
-        .lightbox.active {
-            display: flex;
+
+        .gallery-entry.is-visible {
             opacity: 1;
+            transform: translateY(0);
         }
-        
-        .lightbox-content {
+
+        .gallery-entry:nth-child(odd).is-visible .gallery-story {
+            animation: galleryStoryFloat 8s ease-in-out infinite;
+        }
+
+        .gallery-entry:nth-child(even).is-visible .gallery-story {
+            animation: galleryStoryFloatAlt 9s ease-in-out infinite;
+        }
+
+        .gallery-year {
             position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 100%;
+            padding-top: 1rem;
         }
-        
-        .lightbox img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 16px;
-        }
-        
-        .lightbox-close {
+
+        .gallery-year::after {
+            content: "";
             position: absolute;
-            top: -50px;
-            right: 0;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-        
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            width: 50px;
-            height: 50px;
+            top: 1.3rem;
+            right: -1.1rem;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
+            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
+            box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.98), 0 12px 24px rgba(0, 174, 239, 0.24);
+            animation: galleryMarkerPulse 4.8s ease-in-out infinite;
+        }
+
+        .gallery-year strong {
+            display: block;
             font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            color: #152238;
+            line-height: 1;
         }
-        
-        .lightbox-nav:hover {
-            background: #F26522;
+
+        .gallery-year span {
+            color: #7d8793;
+            font-size: 0.9rem;
+            margin-top: 0.45rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
-        
-        .lightbox-prev { left: -80px; }
-        .lightbox-next { right: -80px; }
+
+        .gallery-story {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(290px, 1.05fr) minmax(0, 0.95fr);
+            min-height: 340px;
+            border-radius: 34px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid rgba(21, 34, 56, 0.08);
+            box-shadow: 0 20px 50px rgba(16, 31, 53, 0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+            isolation: isolate;
+        }
+
+        .gallery-story::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0) 12%, rgba(255, 255, 255, 0.52) 44%, rgba(255, 255, 255, 0) 72%);
+            transform: translateX(-135%);
+            pointer-events: none;
+            z-index: 3;
+            animation: galleryShimmer 9.5s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .gallery-story:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 60px rgba(16, 31, 53, 0.14);
+            border-color: rgba(0, 174, 239, 0.16);
+        }
+
+        .gallery-entry:nth-child(even) .gallery-story {
+            direction: rtl;
+        }
+
+        .gallery-entry:nth-child(even) .gallery-story .gallery-story-copy,
+        .gallery-entry:nth-child(even) .gallery-story .gallery-story-media {
+            direction: ltr;
+        }
+
+        .gallery-story-media {
+            position: relative;
+            min-height: 100%;
+            overflow: hidden;
+        }
+
+        .gallery-story-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s ease, opacity 0.45s ease;
+        }
+
+        .gallery-story:hover .gallery-story-media img {
+            transform: scale(1.06);
+            opacity: 0.95;
+        }
+
+        .gallery-story-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15, 28, 48, 0.08) 0%, rgba(15, 28, 48, 0.3) 100%);
+        }
+
+        .gallery-story-badge {
+            position: absolute;
+            top: 1.25rem;
+            left: 1.25rem;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.48rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-story-copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 2rem 2rem 2.15rem;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 251, 255, 0.98));
+            position: relative;
+        }
+
+        .gallery-story-copy::before {
+            content: "";
+            position: absolute;
+            top: 1.45rem;
+            left: 2rem;
+            width: 3.6rem;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #F26522 0%, #00AEEF 100%);
+            opacity: 0.88;
+        }
+
+        .gallery-story-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: #7d8793;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.9rem;
+        }
+
+        .gallery-story-title {
+            font-size: 1.7rem;
+            line-height: 1.18;
+            color: #152238;
+            margin-bottom: 0.85rem;
+        }
+
+        .gallery-story-text {
+            color: #5f6d7a;
+            margin: 0 0 1.25rem;
+            font-size: 1rem;
+        }
+
+        .gallery-story-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: #F26522;
+            font-weight: 700;
+        }
+
+        .gallery-story-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-story:hover .gallery-story-link i {
+            transform: translateX(4px);
+        }
+
+        @keyframes galleryGlowDrift {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(70px, 50px, 0) scale(1.08); }
+        }
+
+        @keyframes galleryGlowDriftAlt {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(-80px, -55px, 0) scale(1.08); }
+        }
+
+        @keyframes galleryOrbit {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes galleryOrbitReverse {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        @keyframes galleryBeamMove {
+            0%, 100% {
+                transform: translateX(0) rotate(-12deg);
+                opacity: 0.22;
+            }
+            50% {
+                transform: translateX(12%) rotate(-12deg);
+                opacity: 0.55;
+            }
+        }
+
+        @keyframes galleryShimmer {
+            0%, 82%, 100% {
+                transform: translateX(-135%);
+                opacity: 0;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            96% {
+                transform: translateX(135%);
+                opacity: 0.18;
+            }
+        }
+
+        @keyframes galleryCardRise {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes galleryAuraFloat {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(-36px, 24px, 0) scale(1.08); }
+        }
+
+        @keyframes galleryAuraFloatAlt {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(30px, -24px, 0) scale(1.06); }
+        }
+
+        @keyframes galleryLinePulse {
+            0% {
+                transform: translateY(0);
+                opacity: 0.2;
+            }
+            50% {
+                transform: translateY(26rem);
+                opacity: 0.85;
+            }
+            100% {
+                transform: translateY(52rem);
+                opacity: 0.18;
+            }
+        }
+
+        @keyframes galleryMarkerPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.98), 0 12px 24px rgba(0, 174, 239, 0.24);
+            }
+            50% {
+                transform: scale(1.14);
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.95), 0 18px 32px rgba(0, 174, 239, 0.28);
+            }
+        }
+
+        @keyframes galleryStoryFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @keyframes galleryStoryFloatAlt {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
+        }
+
+        @media (max-width: 991px) {
+            .gallery-shell {
+                padding: 1.5rem;
+                border-radius: 28px;
+            }
+
+            .gallery-timeline::before {
+                left: 2.35rem;
+            }
+
+            .gallery-entry {
+                grid-template-columns: 1fr;
+                gap: 0.85rem;
+            }
+
+            .gallery-year {
+                padding-left: 3rem;
+                padding-top: 0;
+                min-height: auto;
+            }
+
+            .gallery-year::after {
+                left: 1.9rem;
+                right: auto;
+                top: 0.45rem;
+            }
+
+            .gallery-story {
+                grid-template-columns: minmax(0, 1fr);
+                min-height: auto;
+            }
+
+            .gallery-entry:nth-child(even) .gallery-story {
+                direction: ltr;
+            }
+        }
         
         @media (max-width: 767px) {
-            .lightbox-prev { left: 10px; }
-            .lightbox-next { right: 10px; }
+            .gallery-page {
+                padding: 4.5rem 0;
+            }
+
+            .gallery-shell {
+                padding: 1.2rem;
+                border-radius: 24px;
+            }
+
+            .gallery-timeline::before {
+                display: none;
+            }
+
+            .gallery-timeline::after {
+                display: none;
+            }
+
+            .gallery-year {
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.65rem;
+                padding: 0;
+                margin-left: 0;
+            }
+
+            .gallery-year strong {
+                font-size: 0.95rem;
+                line-height: 1;
+                padding: 0.55rem 0.75rem;
+                border-radius: 999px;
+                background: rgba(21, 34, 56, 0.06);
+            }
+
+            .gallery-year span {
+                font-size: 0.72rem;
+                margin-top: 0;
+                padding: 0.5rem 0.7rem;
+                border-radius: 999px;
+                background: rgba(242, 101, 34, 0.09);
+                color: #5f6d7a;
+                letter-spacing: 0.06em;
+            }
+
+            .gallery-year::after {
+                display: none;
+            }
+
+            .gallery-entry {
+                gap: 0.7rem;
+            }
+
+            .gallery-story {
+                border-radius: 24px;
+            }
+
+            .gallery-story-copy {
+                padding: 1.35rem 1.2rem 1.45rem;
+            }
+
+            .gallery-story-copy::before {
+                left: 1.2rem;
+                top: 1rem;
+                width: 3rem;
+            }
+
+            .gallery-story-title {
+                font-size: 1.35rem;
+            }
+
+            .gallery-story-text {
+                font-size: 0.95rem;
+            }
+
+            .gallery-story-date {
+                font-size: 0.76rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .gallery-story-media {
+                min-height: 240px;
+            }
         }
     </style>
 </head>
@@ -255,142 +704,198 @@
 
     <!-- ===== GALLERY SECTION ===== -->
     <section class="gallery-page">
+        <div class="gallery-motion-bg" aria-hidden="true">
+            <span class="orbit-one"></span>
+            <span class="orbit-two"></span>
+            <span class="beam-one"></span>
+            <span class="beam-two"></span>
+        </div>
         <div class="container">
+            <div class="gallery-shell">
             <div class="section-header">
                 <span class="section-eyebrow" style="color: #F26522;">Explore</span>
                 <h2 class="section-title">Moments of Impact</h2>
                 <p class="section-subtitle">
-                    Browse through our collection of photos showcasing our outreach programs, 
-                    community events, and the lives we've touched.
+                    A refined archive of outreach moments, stories of service, and the communities
+                    we have walked with in faith.
                 </p>
             </div>
             
-            <!-- Filters -->
-            <div class="gallery-filters">
-                <button class="gallery-filter-btn active" data-filter="all">All</button>
-                <button class="gallery-filter-btn" data-filter="worship">Worship</button>
-                <button class="gallery-filter-btn" data-filter="education">Education</button>
-                <button class="gallery-filter-btn" data-filter="healthcare">Healthcare</button>
-                <button class="gallery-filter-btn" data-filter="outreach">Outreach</button>
-                <button class="gallery-filter-btn" data-filter="community">Community</button>
+            <div class="gallery-timeline">
+                <div class="gallery-entry">
+                    <div class="gallery-year">
+                        <strong>2025</strong>
+                        <span>Worship</span>
+                    </div>
+                    <a class="gallery-story" href="gallery-circle-of-prayer.html">
+                        <div class="gallery-story-media">
+                            <img src="images/gallery_worship.jpg" alt="Circle of Prayer gathering">
+                            <span class="gallery-story-badge">Circle of Prayer</span>
+                        </div>
+                        <div class="gallery-story-copy">
+                            <span class="gallery-story-date"><i class="bi bi-calendar3"></i> Sacred Gathering</span>
+                            <h3 class="gallery-story-title">Circle of Prayer</h3>
+                            <p class="gallery-story-text">An atmosphere of worship, reflection, and shared intercession captured as a quiet but powerful moment in the mission's journey.</p>
+                            <span class="gallery-story-link">View story <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-entry">
+                    <div class="gallery-year">
+                        <strong>2025</strong>
+                        <span>November</span>
+                    </div>
+                    <a class="gallery-story" href="gallery-jks-orphanage-home-outreach.html">
+                        <div class="gallery-story-media">
+                            <img src="images/outreach_orphanage.jpg" alt="JKS Orphanage Home Outreach">
+                            <span class="gallery-story-badge">Outreach</span>
+                        </div>
+                        <div class="gallery-story-copy">
+                            <span class="gallery-story-date"><i class="bi bi-calendar3"></i> November 22, 2025</span>
+                            <h3 class="gallery-story-title">JKS Orphanage Home Outreach</h3>
+                            <p class="gallery-story-text">The Love in Action Program brought care, presence, and heartfelt generosity to JKS Special Needs Orphanage in Kubwa, Abuja.</p>
+                            <span class="gallery-story-link">View story <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-entry">
+                    <div class="gallery-year">
+                        <strong>2025</strong>
+                        <span>September</span>
+                    </div>
+                    <a class="gallery-story" href="gallery-lea-mpape-learn-and-thrive.html">
+                        <div class="gallery-story-media">
+                            <img src="images/educational_outreach3.jpg" alt="LEA Primary School Mpape Learn and Thrive outreach">
+                            <span class="gallery-story-badge">Education</span>
+                        </div>
+                        <div class="gallery-story-copy">
+                            <span class="gallery-story-date"><i class="bi bi-calendar3"></i> September 2025</span>
+                            <h3 class="gallery-story-title">Learn &amp; Thrive Empowerment Outreach</h3>
+                            <p class="gallery-story-text">A skills acquisition and empowerment outreach at LEA Primary School, Mpape Community, designed to inspire practical growth and confidence.</p>
+                            <span class="gallery-story-link">View story <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-entry">
+                    <div class="gallery-year">
+                        <strong>2025</strong>
+                        <span>May</span>
+                    </div>
+                    <a class="gallery-story" href="gallery-government-girls-college-dukpa.html">
+                        <div class="gallery-story-media">
+                            <img src="images/gallery_education.jpg" alt="Government Girls College Dukpa outreach">
+                            <span class="gallery-story-badge">Education</span>
+                        </div>
+                        <div class="gallery-story-copy">
+                            <span class="gallery-story-date"><i class="bi bi-calendar3"></i> May 2025</span>
+                            <h3 class="gallery-story-title">Knowledge &amp; Grace Program</h3>
+                            <p class="gallery-story-text">An education outreach at Government Girls College, Dukpa, Gwagwalada, centered on growth, dignity, and meaningful encouragement.</p>
+                            <span class="gallery-story-link">View story <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-entry">
+                    <div class="gallery-year">
+                        <strong>2024</strong>
+                        <span>November</span>
+                    </div>
+                    <a class="gallery-story" href="gallery-kuchibena-water-project.html">
+                        <div class="gallery-story-media">
+                            <img src="images/gallery_outreach.jpg" alt="Kuchibena Project water project">
+                            <span class="gallery-story-badge">Water Project</span>
+                        </div>
+                        <div class="gallery-story-copy">
+                            <span class="gallery-story-date"><i class="bi bi-calendar3"></i> November 2024</span>
+                            <h3 class="gallery-story-title">Kuchibena Project</h3>
+                            <p class="gallery-story-text">A practical expression of service through improved access to clean water for the Kuchibena community and the daily lives shaped by it.</p>
+                            <span class="gallery-story-link">View story <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-entry">
+                    <div class="gallery-year">
+                        <strong>2024</strong>
+                        <span>June</span>
+                    </div>
+                    <a class="gallery-story" href="gallery-karonmajigi-community-outreach.html">
+                        <div class="gallery-story-media">
+                            <img src="images/gallery_celebration.jpg" alt="Karonmajigi Community Outreach">
+                            <span class="gallery-story-badge">Community</span>
+                        </div>
+                        <div class="gallery-story-copy">
+                            <span class="gallery-story-date"><i class="bi bi-calendar3"></i> June 2024</span>
+                            <h3 class="gallery-story-title">Karonmajigi Community Outreach</h3>
+                            <p class="gallery-story-text">A community-centered outreach marked by care, connection, and a visible expression of faith among families in Karonmajigi.</p>
+                            <span class="gallery-story-link">View story <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-entry">
+                    <div class="gallery-year">
+                        <strong>2024</strong>
+                        <span>March</span>
+                    </div>
+                    <a class="gallery-story" href="gallery-girl-child-initiative-apo.html">
+                        <div class="gallery-story-media">
+                            <img src="images/outreach_education.jpg" alt="Girl Child Initiative outreach at St Anglican Girl's school">
+                            <span class="gallery-story-badge">Education</span>
+                        </div>
+                        <div class="gallery-story-copy">
+                            <span class="gallery-story-date"><i class="bi bi-calendar3"></i> March 2024</span>
+                            <h3 class="gallery-story-title">Girl Child Initiative</h3>
+                            <p class="gallery-story-text">A focused education outreach at St Anglican Girl's School in Apo, affirming confidence, possibility, and purpose for young girls.</p>
+                            <span class="gallery-story-link">View story <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-entry">
+                    <div class="gallery-year">
+                        <strong>2023</strong>
+                        <span>December</span>
+                    </div>
+                    <a class="gallery-story" href="gallery-kuchibena-joint-evangelism.html">
+                        <div class="gallery-story-media">
+                            <img src="images/gallery_worship.jpg" alt="Kuchibena Joint Evangelism Outreach">
+                            <span class="gallery-story-badge">Evangelism</span>
+                        </div>
+                        <div class="gallery-story-copy">
+                            <span class="gallery-story-date"><i class="bi bi-calendar3"></i> December 3, 2023</span>
+                            <h3 class="gallery-story-title">Kuchibena Joint Evangelism Outreach</h3>
+                            <p class="gallery-story-text">A collaborative outreach with COZA CPC Gwarimpa, bringing worship, witness, and spiritual encouragement into the Kuchibena community.</p>
+                            <span class="gallery-story-link">View story <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-entry">
+                    <div class="gallery-year">
+                        <strong>2023</strong>
+                        <span>October</span>
+                    </div>
+                    <a class="gallery-story" href="gallery-mother-theresa-orphanage-outreach.html">
+                        <div class="gallery-story-media">
+                            <img src="images/outreach_orphanage.jpg" alt="Mother Theresa Children's Home orphanage outreach">
+                            <span class="gallery-story-badge">Outreach</span>
+                        </div>
+                        <div class="gallery-story-copy">
+                            <span class="gallery-story-date"><i class="bi bi-calendar3"></i> October 2023</span>
+                            <h3 class="gallery-story-title">Mother Theresa Children's Home Visit</h3>
+                            <p class="gallery-story-text">A compassionate orphanage visit rooted in presence, support, and practical love shared with children at Mother Theresa Children's Home.</p>
+                            <span class="gallery-story-link">View story <i class="bi bi-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
             </div>
-            
-            <!-- Gallery Grid -->
-            <div class="gallery-masonry" id="galleryGrid">
-                <div class="gallery-item" data-category="worship">
-                    <img src="images/gallery_worship.jpg" alt="Worship">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Worship</span>
-                        <h5 class="gallery-item-title">Circle of Prayer</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="education">
-                    <img src="images/gallery_education.jpg" alt="Education">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Education</span>
-                        <h5 class="gallery-item-title">Knowledge & Grace</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="healthcare">
-                    <img src="images/gallery_healthcare.jpg" alt="Healthcare">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Healthcare</span>
-                        <h5 class="gallery-item-title">Healing Hands</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="community">
-                    <img src="images/gallery_celebration.jpg" alt="Celebration">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Community</span>
-                        <h5 class="gallery-item-title">Celebration of Unity</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="outreach">
-                    <img src="images/gallery_outreach.jpg" alt="Outreach">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Outreach</span>
-                        <h5 class="gallery-item-title">Love in Action</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="education">
-                    <img src="images/gallery_youth.jpg" alt="Youth">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Education</span>
-                        <h5 class="gallery-item-title">Future Leaders</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="healthcare">
-                    <img src="images/outreach_health.jpg" alt="Health Camp">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Healthcare</span>
-                        <h5 class="gallery-item-title">Community Health Fair</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="worship">
-                    <img src="images/gallery_bible.jpg" alt="Bible Study">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Worship</span>
-                        <h5 class="gallery-item-title">Word & Fellowship</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="community">
-                    <img src="images/gallery_leadership.jpg" alt="Leadership">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Community</span>
-                        <h5 class="gallery-item-title">Rising Leaders</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="outreach">
-                    <img src="images/outreach_orphanage.jpg" alt="Orphanage">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Outreach</span>
-                        <h5 class="gallery-item-title">Orphanage Visit</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="education">
-                    <img src="images/outreach_education.jpg" alt="School Support">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Education</span>
-                        <h5 class="gallery-item-title">School Supplies Distribution</h5>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="worship">
-                    <img src="images/about_worship.jpg" alt="Prayer">
-                    <div class="gallery-item-overlay">
-                        <span class="gallery-item-category">Worship</span>
-                        <h5 class="gallery-item-title">Sunset Prayer</h5>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="lightboxClose">
-                <i class="bi bi-x-lg"></i>
-            </button>
-            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
-                <i class="bi bi-chevron-left"></i>
-            </button>
-            <button class="lightbox-nav lightbox-next" id="lightboxNext">
-                <i class="bi bi-chevron-right"></i>
-            </button>
-            <img src="" alt="Lightbox Image" id="lightboxImage">
-        </div>
-    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
@@ -454,88 +959,27 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script>
-        // Gallery Filter
-        const filterBtns = document.querySelectorAll('.gallery-filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                galleryItems.forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    
-                    if (filter === 'all' || category === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
+        const galleryEntries = document.querySelectorAll('.gallery-entry');
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (prefersReducedMotion) {
+            galleryEntries.forEach((entry) => entry.classList.add('is-visible'));
+        } else {
+            const galleryObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        galleryObserver.unobserve(entry.target);
                     }
                 });
+            }, {
+                threshold: 0.18,
+                rootMargin: '0px 0px -8% 0px'
             });
-        });
-        
-        // Lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightboxImage');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxPrev = document.getElementById('lightboxPrev');
-        const lightboxNext = document.getElementById('lightboxNext');
-        let currentImageIndex = 0;
-        const visibleItems = () => Array.from(galleryItems).filter(item => item.style.display !== 'none');
-        
-        galleryItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                const img = item.querySelector('img');
-                lightboxImage.src = img.src;
-                currentImageIndex = index;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
-        
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
+
+            galleryEntries.forEach((entry) => galleryObserver.observe(entry));
         }
-        
-        lightboxPrev.addEventListener('click', () => {
-            const items = visibleItems();
-            const currentItem = galleryItems[currentImageIndex];
-            let currentVisibleIndex = items.indexOf(currentItem);
-            currentVisibleIndex = (currentVisibleIndex - 1 + items.length) % items.length;
-            const newItem = items[currentVisibleIndex];
-            lightboxImage.src = newItem.querySelector('img').src;
-            currentImageIndex = Array.from(galleryItems).indexOf(newItem);
-        });
-        
-        lightboxNext.addEventListener('click', () => {
-            const items = visibleItems();
-            const currentItem = galleryItems[currentImageIndex];
-            let currentVisibleIndex = items.indexOf(currentItem);
-            currentVisibleIndex = (currentVisibleIndex + 1) % items.length;
-            const newItem = items[currentVisibleIndex];
-            lightboxImage.src = newItem.querySelector('img').src;
-            currentImageIndex = Array.from(galleryItems).indexOf(newItem);
-        });
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') lightboxPrev.click();
-            if (e.key === 'ArrowRight') lightboxNext.click();
-        });
     </script>
 </body>
 </html>
