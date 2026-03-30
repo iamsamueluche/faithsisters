@@ -11,21 +11,220 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .story-page{background:linear-gradient(180deg,#f6f8fb 0%,#fff 100%)} .story-shell{margin-top:-5rem;position:relative;z-index:2}
-    .story-card,.story-gallery-card{background:rgba(255,255,255,.97);border:1px solid rgba(21,34,56,.08);border-radius:28px;box-shadow:0 20px 50px rgba(16,31,53,.08)}
-    .story-card,.story-aside{padding:2rem}.story-back{display:inline-flex;gap:.55rem;align-items:center;color:#f26522;font-weight:700;margin-bottom:1rem}
-    .story-kicker{display:inline-flex;padding:.45rem .85rem;border-radius:999px;background:rgba(242,101,34,.1);color:#f26522;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
-    .story-card h1{color:#152238;font-size:clamp(2.2rem,4vw,3.5rem);margin-bottom:.5rem}.story-meta{color:#5f6d7a;font-weight:600;margin-bottom:1.1rem}.story-lead,.story-card p,.story-detail-list li{color:#51606f}
-    .story-detail-list{list-style:none;padding:0;margin:0;display:grid;gap:1rem}.story-detail-list i{color:#00AEEF;margin-top:.15rem}
-    .story-gallery-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.25rem}.story-gallery-item{grid-column:span 4;min-height:250px;border-radius:24px;overflow:hidden;box-shadow:0 16px 36px rgba(16,31,53,.1)}
-    .story-gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}.story-gallery-item:hover img{transform:scale(1.06)} @media(max-width:991px){.story-gallery-item{grid-column:span 6}} @media(max-width:767px){.story-shell{margin-top:-3rem}.story-card,.story-aside{padding:1.5rem}.story-gallery-item{grid-column:span 12;min-height:220px}}
+    .story-page { background: linear-gradient(180deg, #f6f8fb 0%, #fff 100%); }
+    .story-shell { margin-top: -5rem; position: relative; z-index: 2; }
+    .story-card, .story-gallery-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(21, 34, 56, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(16, 31, 53, 0.08);
+    }
+    .story-card, .story-aside { padding: 2rem; }
+    .story-back {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      color: #f26522;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .story-kicker {
+      display: inline-flex;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(242, 101, 34, 0.1);
+      color: #f26522;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .story-card h1 {
+      color: #152238;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 0.5rem;
+    }
+    .story-meta {
+      color: #5f6d7a;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+    .story-lead, .story-card p, .story-detail-list li, .story-gallery-note {
+      color: #51606f;
+    }
+    .story-detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .story-detail-list i {
+      color: #00AEEF;
+      margin-top: 0.15rem;
+    }
+    .story-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    .story-gallery-item {
+      grid-column: span 4;
+      min-height: 250px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(16, 31, 53, 0.1);
+      display: block;
+    }
+    .story-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .story-gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    .story-gallery-note {
+      margin-top: 0.65rem;
+      margin-bottom: 0;
+    }
+    @media (max-width: 991px) {
+      .story-gallery-item { grid-column: span 6; }
+    }
+    @media (max-width: 767px) {
+      .story-shell { margin-top: -3rem; }
+      .story-card, .story-aside { padding: 1.5rem; }
+      .story-gallery-item { grid-column: span 12; min-height: 220px; }
+    }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top scrolled"><div class="container"><a class="navbar-brand" href="index.html"><img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo"><div class="brand-text" style="color:#1A1A2E;">Faith Sisters<span>Global Mission</span></div></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggle-box" aria-hidden="true"><span class="navbar-toggle-lines"><span></span><span></span><span></span></span></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto align-items-center"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li><li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li><li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul></div></div></nav>
-  <section class="page-header" style="min-height:50vh;"><div class="page-header-bg"><img src="images/educational_outreach3.jpg" alt="Learn and Thrive Empowerment Outreach"></div><div class="page-header-overlay"></div><div class="container page-header-content"><h1>Learn & Thrive Empowerment Outreach</h1><p>Skills Acquisition outreach at LEA Primary School, Mpape Community, Abuja.</p></div></section>
-  <main class="story-page section-padding"><div class="container story-shell"><div class="row g-4 mb-4"><div class="col-lg-8"><article class="story-card"><a class="story-back" href="gallery.html"><i class="bi bi-arrow-left"></i>Back to Gallery</a><span class="story-kicker">Skills Acquisition Outreach</span><h1>Learn & Thrive Empowerment Outreach</h1><div class="story-meta">September 2025 | LEA Primary School, Mpape Community, Abuja</div><p class="story-lead">A practical empowerment outreach designed to connect learning with real-life confidence and growth.</p><p>This event centered on skills acquisition as a tool for transformation. By creating a space where participants could engage, learn, and imagine new possibilities, the outreach moved beyond motivation into practical empowerment.</p><p>The day reflected Faith Sisters Global Mission’s commitment to helping communities thrive through support that is thoughtful, relevant, and future-facing. It was an outreach that joined encouragement with action.</p></article></div><div class="col-lg-4"><aside class="story-gallery-card story-aside"><h3>Story Highlights</h3><ul class="story-detail-list"><li><i class="bi bi-check2-circle"></i><span>Skills-focused outreach with clear empowerment goals.</span></li><li><i class="bi bi-check2-circle"></i><span>Strong engagement at LEA Primary School in Mpape Community.</span></li><li><i class="bi bi-check2-circle"></i><span>An atmosphere that encouraged growth, confidence, and possibility.</span></li></ul></aside></div></div><section class="story-gallery-card p-4 p-lg-5"><div class="section-header mb-4"><span class="section-eyebrow">Photo Gallery</span><h2 class="section-title">Images from the outreach</h2></div><div class="story-gallery-grid"><div class="story-gallery-item"><img src="images/educational_outreach3.jpg" alt="Skills outreach scene"></div><div class="story-gallery-item"><img src="images/gallery_youth.jpg" alt="Youth empowerment moment"></div><div class="story-gallery-item"><img src="images/gallery_education.jpg" alt="Education outreach"></div></div></section></div></main>
-  <section class="section-padding cta-section"><div class="container"><div class="cta-content"><h2>Continue Exploring Our Outreach Stories</h2><p>Return to the gallery to discover more moments of service, compassion, and community transformation.</p><a href="gallery.html" class="btn btn-cta"><i class="bi bi-images me-2"></i>Return to Gallery</a></div></div></section>
+  <nav class="navbar navbar-expand-lg fixed-top scrolled">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo">
+        <div class="brand-text" style="color:#1A1A2E;">Faith Sisters<span>Global Mission</span></div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggle-box" aria-hidden="true">
+          <span class="navbar-toggle-lines"><span></span><span></span><span></span></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header" style="min-height:50vh;">
+    <div class="page-header-bg">
+      <img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0006.jpg" alt="Learn and Thrive Empowerment Outreach">
+    </div>
+    <div class="page-header-overlay"></div>
+    <div class="container page-header-content">
+      <h1>Learn &amp; Thrive Empowerment Outreach</h1>
+      <p>A skills acquisition outreach in Mpape Community empowering women and youths with practical training, startup support, and faith.</p>
+    </div>
+  </section>
+
+  <main class="story-page section-padding">
+    <div class="container story-shell">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+          <article class="story-card">
+            <a class="story-back" href="gallery.html"><i class="bi bi-arrow-left"></i>Back to Gallery</a>
+            <span class="story-kicker">Skills Acquisition Outreach</span>
+            <h1>Learn &amp; Thrive Empowerment Outreach</h1>
+            <div class="story-meta">20th September, 2025 | LEA Primary School, Mpape Community, Abuja</div>
+            <p class="story-lead">Faith Sisters Global Mission hosted the Skills Acquisition &ndash; Learn &amp; Thrive Empowerment Outreach on the 20th of September, 2025, at LEA Primary School in Mpape Community, Abuja. This life-changing initiative was designed to equip individuals, especially women and youths, with practical skills that open doors to self-reliance, creativity, and financial independence.</p>
+            <p>The outreach was a resounding success, with over 150 community members empowered through hands-on training sessions. Participants eagerly learned valuable crafts and trades, including:</p>
+            <p>&bull; Soap making &bull; Bonnet and scrunchies making &bull; Bead earrings design &bull; Ankara bangles and earrings &bull; Ankara bags and clutches</p>
+            <p>In addition to the training, 39 members were blessed with startup kits to help them launch their businesses immediately and put their newly acquired skills into practice. This tangible support ensures that the knowledge gained translates into real economic opportunities.</p>
+            <p>Beyond skills acquisition, the outreach included preaching the Word of Jesus Christ, emphasizing transformation, hope, and purpose. Participants were encouraged to embrace faith as the foundation for personal growth, financial independence, and community impact. Many testified to renewed confidence, hope, and spiritual empowerment alongside the practical skills they acquired.</p>
+            <p>The atmosphere was filled with joy, hope, and determination as participants embraced the opportunity to &ldquo;learn and thrive.&rdquo; For many, it was not just a skills class but a life-transforming encounter sparking new dreams and igniting confidence to build a sustainable future.</p>
+            <p>At Faith Sisters, we believe that true empowerment comes from equipping people with tools, knowledge, and faith to create lasting impact in their families and communities. The Mpape outreach is a testament to this mission, and we remain committed to raising, training, and empowering more lives through our initiatives.</p>
+            <p>Together, we are building a community of faith, purpose, and empowerment one skill and one soul at a time.</p>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <aside class="story-gallery-card story-aside">
+            <h3>Story Highlights</h3>
+            <ul class="story-detail-list">
+              <li><i class="bi bi-check2-circle"></i><span>Over 150 community members learned practical skills such as soap making, bonnet and scrunchies making, bead earrings design, Ankara bangles and earrings, and Ankara bags and clutches.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Thirty-nine participants received startup kits to launch businesses immediately and turn their training into real opportunities.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>The outreach combined empowerment with the preaching of Jesus Christ, renewing hope, confidence, and purpose in the community.</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <section class="story-gallery-card p-4 p-lg-5">
+        <div class="section-header mb-4">
+          <span class="section-eyebrow">Photo Gallery</span>
+          <h2 class="section-title">Images from the outreach</h2>
+          <p class="story-gallery-note">Click any image to open it in full size.</p>
+        </div>
+        <div class="story-gallery-grid">
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0006.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0006.jpg" alt="Learn and Thrive Outreach photo 1"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0007.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0007.jpg" alt="Learn and Thrive Outreach photo 2"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0008.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0008.jpg" alt="Learn and Thrive Outreach photo 3"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0009.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0009.jpg" alt="Learn and Thrive Outreach photo 4"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0010.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0010.jpg" alt="Learn and Thrive Outreach photo 5"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0011.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0011.jpg" alt="Learn and Thrive Outreach photo 6"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0012.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0012.jpg" alt="Learn and Thrive Outreach photo 7"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0013.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0013.jpg" alt="Learn and Thrive Outreach photo 8"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0014.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0014.jpg" alt="Learn and Thrive Outreach photo 9"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0015.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0015.jpg" alt="Learn and Thrive Outreach photo 10"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0016.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0016.jpg" alt="Learn and Thrive Outreach photo 11"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0017.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0017.jpg" alt="Learn and Thrive Outreach photo 12"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0018.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0018.jpg" alt="Learn and Thrive Outreach photo 13"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0019.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0019.jpg" alt="Learn and Thrive Outreach photo 14"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0020.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0020.jpg" alt="Learn and Thrive Outreach photo 15"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0021.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0021.jpg" alt="Learn and Thrive Outreach photo 16"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0022.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0022.jpg" alt="Learn and Thrive Outreach photo 17"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0023.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0023.jpg" alt="Learn and Thrive Outreach photo 18"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0024.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0024.jpg" alt="Learn and Thrive Outreach photo 19"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0025.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0025.jpg" alt="Learn and Thrive Outreach photo 20"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0026.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0026.jpg" alt="Learn and Thrive Outreach photo 21"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0027.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0027.jpg" alt="Learn and Thrive Outreach photo 22"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0028.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0028.jpg" alt="Learn and Thrive Outreach photo 23"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0029.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0029.jpg" alt="Learn and Thrive Outreach photo 24"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0030.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0030.jpg" alt="Learn and Thrive Outreach photo 25"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0031.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0031.jpg" alt="Learn and Thrive Outreach photo 26"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0032.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0032.jpg" alt="Learn and Thrive Outreach photo 27"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0033.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0033.jpg" alt="Learn and Thrive Outreach photo 28"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0034.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0034.jpg" alt="Learn and Thrive Outreach photo 29"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0035.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0035.jpg" alt="Learn and Thrive Outreach photo 30"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0036.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0036.jpg" alt="Learn and Thrive Outreach photo 31"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0037.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0037.jpg" alt="Learn and Thrive Outreach photo 32"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0038.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0038.jpg" alt="Learn and Thrive Outreach photo 33"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0039.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0039.jpg" alt="Learn and Thrive Outreach photo 34"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0055.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0055.jpg" alt="Learn and Thrive Outreach photo 35"></a>
+          <a class="story-gallery-item" href="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0088.jpg" target="_blank" rel="noopener"><img src="images/gallery/Learn_N_Thrive_Empowerment_Outreach/IMG-20250922-WA0088.jpg" alt="Learn and Thrive Outreach photo 36"></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="section-padding cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Continue Exploring Our Outreach Stories</h2>
+        <p>Return to the gallery to discover more moments of service, compassion, and community transformation.</p>
+        <a href="gallery.html" class="btn btn-cta"><i class="bi bi-images me-2"></i>Return to Gallery</a>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

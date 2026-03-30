@@ -11,21 +11,196 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .story-page{background:linear-gradient(180deg,#f6f8fb 0%,#fff 100%)} .story-shell{margin-top:-5rem;position:relative;z-index:2}
-    .story-card,.story-gallery-card{background:rgba(255,255,255,.97);border:1px solid rgba(21,34,56,.08);border-radius:28px;box-shadow:0 20px 50px rgba(16,31,53,.08)}
-    .story-card,.story-aside{padding:2rem}.story-back{display:inline-flex;gap:.55rem;align-items:center;color:#f26522;font-weight:700;margin-bottom:1rem}
-    .story-kicker{display:inline-flex;padding:.45rem .85rem;border-radius:999px;background:rgba(242,101,34,.1);color:#f26522;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
-    .story-card h1{color:#152238;font-size:clamp(2.2rem,4vw,3.5rem);margin-bottom:.5rem}.story-meta{color:#5f6d7a;font-weight:600;margin-bottom:1.1rem}.story-lead,.story-card p,.story-detail-list li{color:#51606f}
-    .story-detail-list{list-style:none;padding:0;margin:0;display:grid;gap:1rem}.story-detail-list i{color:#00AEEF;margin-top:.15rem}
-    .story-gallery-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.25rem}.story-gallery-item{grid-column:span 4;min-height:250px;border-radius:24px;overflow:hidden;box-shadow:0 16px 36px rgba(16,31,53,.1)}
-    .story-gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}.story-gallery-item:hover img{transform:scale(1.06)} @media(max-width:991px){.story-gallery-item{grid-column:span 6}} @media(max-width:767px){.story-shell{margin-top:-3rem}.story-card,.story-aside{padding:1.5rem}.story-gallery-item{grid-column:span 12;min-height:220px}}
+    .story-page { background: linear-gradient(180deg, #f6f8fb 0%, #fff 100%); }
+    .story-shell { margin-top: -5rem; position: relative; z-index: 2; }
+    .story-card, .story-gallery-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(21, 34, 56, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(16, 31, 53, 0.08);
+    }
+    .story-card, .story-aside { padding: 2rem; }
+    .story-back {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      color: #f26522;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .story-kicker {
+      display: inline-flex;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(242, 101, 34, 0.1);
+      color: #f26522;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .story-card h1 {
+      color: #152238;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 0.5rem;
+    }
+    .story-meta {
+      color: #5f6d7a;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+    .story-lead, .story-card p, .story-detail-list li, .story-gallery-note {
+      color: #51606f;
+    }
+    .story-detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .story-detail-list i {
+      color: #00AEEF;
+      margin-top: 0.15rem;
+    }
+    .story-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    .story-gallery-item {
+      grid-column: span 4;
+      min-height: 250px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(16, 31, 53, 0.1);
+      display: block;
+    }
+    .story-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .story-gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    .story-gallery-note {
+      margin-top: 0.65rem;
+      margin-bottom: 0;
+    }
+    @media (max-width: 991px) {
+      .story-gallery-item { grid-column: span 6; }
+    }
+    @media (max-width: 767px) {
+      .story-shell { margin-top: -3rem; }
+      .story-card, .story-aside { padding: 1.5rem; }
+      .story-gallery-item { grid-column: span 12; min-height: 220px; }
+    }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top scrolled"><div class="container"><a class="navbar-brand" href="index.html"><img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo"><div class="brand-text" style="color:#1A1A2E;">Faith Sisters<span>Global Mission</span></div></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggle-box" aria-hidden="true"><span class="navbar-toggle-lines"><span></span><span></span><span></span></span></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto align-items-center"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li><li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li><li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul></div></div></nav>
-  <section class="page-header" style="min-height:50vh;"><div class="page-header-bg"><img src="images/outreach_orphanage.jpg" alt="JKS Orphanage Home Outreach"></div><div class="page-header-overlay"></div><div class="container page-header-content"><h1>JKS Orphanage Home Outreach</h1><p>Love in Action Program at JKS Special Needs Orphanage, Kubwa, Abuja.</p></div></section>
-  <main class="story-page section-padding"><div class="container story-shell"><div class="row g-4 mb-4"><div class="col-lg-8"><article class="story-card"><a class="story-back" href="gallery.html"><i class="bi bi-arrow-left"></i>Back to Gallery</a><span class="story-kicker">Love in Action Program</span><h1>JKS Orphanage Home Outreach</h1><div class="story-meta">22nd November 2025 | JKS Special Needs Orphanage, Kubwa – Abuja</div><p class="story-lead">A compassion-led visit where service, presence, and encouragement were shared with children living in a special needs home.</p><p>This outreach reflected the heart of Love in Action: showing up in ways that make care visible. Through warm interaction, practical support, and intentional time spent with the children, the event created a day marked by dignity and belonging.</p><p>More than a visit, it became a reminder that meaningful outreach often begins with simple acts of presence. The atmosphere carried kindness, faith, and the reassurance that every child deserves to feel seen and valued.</p></article></div><div class="col-lg-4"><aside class="story-gallery-card story-aside"><h3>Story Highlights</h3><ul class="story-detail-list"><li><i class="bi bi-check2-circle"></i><span>Compassion-centered orphanage outreach with direct community care.</span></li><li><i class="bi bi-check2-circle"></i><span>Warm engagement, encouragement, and support shared with the children.</span></li><li><i class="bi bi-check2-circle"></i><span>A day that expressed dignity, joy, and visible faith in action.</span></li></ul></aside></div></div><section class="story-gallery-card p-4 p-lg-5"><div class="section-header mb-4"><span class="section-eyebrow">Photo Gallery</span><h2 class="section-title">Images from the outreach</h2></div><div class="story-gallery-grid"><div class="story-gallery-item"><img src="images/outreach_orphanage.jpg" alt="Orphanage outreach moment"></div><div class="story-gallery-item"><img src="images/gallery_outreach.jpg" alt="Outreach support scene"></div><div class="story-gallery-item"><img src="images/hero_group.jpg" alt="Volunteer group moment"></div></div></section></div></main>
-  <section class="section-padding cta-section"><div class="container"><div class="cta-content"><h2>Continue Exploring Our Outreach Stories</h2><p>Return to the gallery to discover more moments of service, compassion, and community transformation.</p><a href="gallery.html" class="btn btn-cta"><i class="bi bi-images me-2"></i>Return to Gallery</a></div></div></section>
+  <nav class="navbar navbar-expand-lg fixed-top scrolled">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/logo.png" alt="Faith Sisters Global Mission logo">
+        <div class="brand-text" style="color:#1A1A2E;">Faith Sisters<span>Global Mission</span></div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggle-box" aria-hidden="true">
+          <span class="navbar-toggle-lines"><span></span><span></span><span></span></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header" style="min-height:50vh;">
+    <div class="page-header-bg">
+      <img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.52.jpeg" alt="JKS Orphanage Home Outreach">
+    </div>
+    <div class="page-header-overlay"></div>
+    <div class="container page-header-content">
+      <h1>JKS Orphanage Home Outreach</h1>
+      <p>A Love in Action outreach at JKS Special Needs Orphanage focused on compassion, prayer, and support for children with special needs.</p>
+    </div>
+  </section>
+
+  <main class="story-page section-padding">
+    <div class="container story-shell">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+          <article class="story-card">
+            <a class="story-back" href="gallery.html"><i class="bi bi-arrow-left"></i>Back to Gallery</a>
+            <span class="story-kicker">Love in Action Program</span>
+            <h1>JKS Orphanage Home Outreach</h1>
+            <div class="story-meta">22nd November 2025 | JKS Special Needs Orphanage, Kubwa, Abuja</div>
+            <p class="story-lead">The Faith Sisters Global Mission visited the JKS Special Needs Orphanage in Kubwa, Abuja, for the Love in Action Outreach on 22nd November 2025.</p>
+            <p>It was a heartfelt time of sharing God's love with children with special needs through prayers, songs, warm interactions, and the donation of essential supplies.</p>
+            <p>The outreach strengthened our commitment to caring for special needs children and supporting the caregivers who serve them daily. We appreciate all Faith Sisters members, sponsors and partners whose contributions made the outreach impactful. Through Love in Action, we continue to demonstrate that true faith is expressed through compassion, service, and genuine community support.</p>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <aside class="story-gallery-card story-aside">
+            <h3>Story Highlights</h3>
+            <ul class="story-detail-list">
+              <li><i class="bi bi-check2-circle"></i><span>The outreach shared God's love with children with special needs through prayers, songs, and warm interactions.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Essential supplies were donated to support the children and the caregivers who serve them daily.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Love in Action reaffirmed the mission's commitment to compassion, service, and genuine community support.</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <section class="story-gallery-card p-4 p-lg-5">
+        <div class="section-header mb-4">
+          <span class="section-eyebrow">Photo Gallery</span>
+          <h2 class="section-title">Images from the outreach</h2>
+          <p class="story-gallery-note">Click any image to open it in full size.</p>
+        </div>
+        <div class="story-gallery-grid">
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.52.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.52.jpeg" alt="JKS Orphanage Home Outreach photo 1"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.53.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.53.jpeg" alt="JKS Orphanage Home Outreach photo 2"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.57.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.57.jpeg" alt="JKS Orphanage Home Outreach photo 3"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.58.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.58.jpeg" alt="JKS Orphanage Home Outreach photo 4"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.59.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.12.59.jpeg" alt="JKS Orphanage Home Outreach photo 5"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.10.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.10.jpeg" alt="JKS Orphanage Home Outreach photo 6"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.11-1.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.11-1.jpeg" alt="JKS Orphanage Home Outreach photo 7"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.11.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.11.jpeg" alt="JKS Orphanage Home Outreach photo 8"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.12-1.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.12-1.jpeg" alt="JKS Orphanage Home Outreach photo 9"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.12-2.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.12-2.jpeg" alt="JKS Orphanage Home Outreach photo 10"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.12.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.12.jpeg" alt="JKS Orphanage Home Outreach photo 11"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.13.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.13.jpeg" alt="JKS Orphanage Home Outreach photo 12"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.17.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.17.jpeg" alt="JKS Orphanage Home Outreach photo 13"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.19-2.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.19-2.jpeg" alt="JKS Orphanage Home Outreach photo 14"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.19-3.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.19-3.jpeg" alt="JKS Orphanage Home Outreach photo 15"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.20-3.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.20-3.jpeg" alt="JKS Orphanage Home Outreach photo 16"></a>
+          <a class="story-gallery-item" href="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.23-2.jpeg" target="_blank" rel="noopener"><img src="images/gallery/JKS_Orphanage_Home_Outreach/WhatsApp-Image-2026-02-08-at-22.14.23-2.jpeg" alt="JKS Orphanage Home Outreach photo 17"></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="section-padding cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Continue Exploring Our Outreach Stories</h2>
+        <p>Return to the gallery to discover more moments of service, compassion, and community transformation.</p>
+        <a href="gallery.html" class="btn btn-cta"><i class="bi bi-images me-2"></i>Return to Gallery</a>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
