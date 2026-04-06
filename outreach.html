@@ -109,8 +109,16 @@
         position: relative;
         overflow: hidden;
         background:
-          radial-gradient(circle at top left, rgba(242, 101, 34, 0.08), transparent 24%),
-          radial-gradient(circle at bottom right, rgba(0, 174, 239, 0.1), transparent 28%),
+          radial-gradient(
+            circle at top left,
+            rgba(242, 101, 34, 0.08),
+            transparent 24%
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(0, 174, 239, 0.1),
+            transparent 28%
+          ),
           linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
         isolation: isolate;
       }
@@ -129,7 +137,11 @@
         height: 420px;
         top: -150px;
         left: -120px;
-        background: radial-gradient(circle, rgba(242, 101, 34, 0.14) 0%, rgba(242, 101, 34, 0) 66%);
+        background: radial-gradient(
+          circle,
+          rgba(242, 101, 34, 0.14) 0%,
+          rgba(242, 101, 34, 0) 66%
+        );
         animation: outreachGlowFloat 16s ease-in-out infinite alternate;
       }
 
@@ -138,7 +150,11 @@
         height: 520px;
         right: -180px;
         bottom: -220px;
-        background: radial-gradient(circle, rgba(0, 174, 239, 0.14) 0%, rgba(0, 174, 239, 0) 68%);
+        background: radial-gradient(
+          circle,
+          rgba(0, 174, 239, 0.14) 0%,
+          rgba(0, 174, 239, 0) 68%
+        );
         animation: outreachGlowFloatAlt 18s ease-in-out infinite alternate;
       }
 
@@ -159,7 +175,12 @@
       .outreach-impact-bg .mesh-line-one,
       .outreach-impact-bg .mesh-line-two {
         height: 220px;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0));
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0.65),
+          rgba(255, 255, 255, 0)
+        );
         opacity: 0.45;
         filter: blur(10px);
         transform: rotate(-12deg);
@@ -219,7 +240,10 @@
         min-height: 100%;
         overflow: hidden;
         box-shadow: 0 18px 40px rgba(16, 31, 53, 0.08);
-        transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
         animation: outreachCardFloat 7s ease-in-out infinite;
       }
 
@@ -233,7 +257,12 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(150deg, rgba(242, 101, 34, 0.06) 0%, rgba(255, 255, 255, 0) 38%, rgba(0, 174, 239, 0.07) 100%);
+        background: linear-gradient(
+          150deg,
+          rgba(242, 101, 34, 0.06) 0%,
+          rgba(255, 255, 255, 0) 38%,
+          rgba(0, 174, 239, 0.07) 100%
+        );
         opacity: 1;
         z-index: 0;
       }
@@ -245,7 +274,11 @@
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 72%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.75) 0%,
+          rgba(255, 255, 255, 0) 72%
+        );
         opacity: 0.7;
         animation: outreachPulse 7s ease-in-out infinite;
       }
@@ -273,7 +306,11 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, rgba(242, 101, 34, 0.14), rgba(0, 174, 239, 0.14));
+        background: linear-gradient(
+          135deg,
+          rgba(242, 101, 34, 0.14),
+          rgba(0, 174, 239, 0.14)
+        );
         color: #152238;
         font-size: 1.3rem;
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -633,11 +670,15 @@
               <article class="impact-metric-card">
                 <div class="impact-metric-card-inner">
                   <div class="impact-metric-top">
-                    <div class="impact-metric-icon"><i class="bi bi-heart-fill"></i></div>
+                    <div class="impact-metric-icon">
+                      <i class="bi bi-heart-fill"></i>
+                    </div>
                   </div>
                   <h3 class="impact-metric-value">2,500+</h3>
                   <p class="impact-metric-label">Lives Impacted</p>
-                  <div class="impact-metric-bar"><span style="width: 94%"></span></div>
+                  <div class="impact-metric-bar">
+                    <span style="width: 94%"></span>
+                  </div>
                 </div>
               </article>
             </div>
@@ -645,11 +686,15 @@
               <article class="impact-metric-card">
                 <div class="impact-metric-card-inner">
                   <div class="impact-metric-top">
-                    <div class="impact-metric-icon"><i class="bi bi-people-fill"></i></div>
+                    <div class="impact-metric-icon">
+                      <i class="bi bi-people-fill"></i>
+                    </div>
                   </div>
                   <h3 class="impact-metric-value">50+</h3>
                   <p class="impact-metric-label">Communities Reached</p>
-                  <div class="impact-metric-bar"><span style="width: 78%"></span></div>
+                  <div class="impact-metric-bar">
+                    <span style="width: 78%"></span>
+                  </div>
                 </div>
               </article>
             </div>
@@ -657,11 +702,15 @@
               <article class="impact-metric-card">
                 <div class="impact-metric-card-inner">
                   <div class="impact-metric-top">
-                    <div class="impact-metric-icon"><i class="bi bi-calendar-check-fill"></i></div>
+                    <div class="impact-metric-icon">
+                      <i class="bi bi-calendar-check-fill"></i>
+                    </div>
                   </div>
                   <h3 class="impact-metric-value">100+</h3>
                   <p class="impact-metric-label">Outreach Events</p>
-                  <div class="impact-metric-bar"><span style="width: 88%"></span></div>
+                  <div class="impact-metric-bar">
+                    <span style="width: 88%"></span>
+                  </div>
                 </div>
               </article>
             </div>
@@ -669,11 +718,15 @@
               <article class="impact-metric-card">
                 <div class="impact-metric-card-inner">
                   <div class="impact-metric-top">
-                    <div class="impact-metric-icon"><i class="bi bi-globe2"></i></div>
+                    <div class="impact-metric-icon">
+                      <i class="bi bi-globe2"></i>
+                    </div>
                   </div>
                   <h3 class="impact-metric-value">6</h3>
                   <p class="impact-metric-label">States Covered</p>
-                  <div class="impact-metric-bar"><span style="width: 66%"></span></div>
+                  <div class="impact-metric-bar">
+                    <span style="width: 66%"></span>
+                  </div>
                 </div>
               </article>
             </div>
@@ -725,19 +778,21 @@
                 </p>
                 <div class="program-stats">
                   <div class="program-stat">
-                    <div class="number">500+</div>
+                    <div class="number">1000+</div>
                     <div class="label">Children Supported</div>
                   </div>
                   <div class="program-stat">
-                    <div class="number">20</div>
+                    <div class="number">3+</div>
                     <div class="label">Schools Partnered</div>
                   </div>
                   <div class="program-stat">
-                    <div class="number">100+</div>
+                    <div class="number">39+</div>
                     <div class="label">Scholarships</div>
                   </div>
                 </div>
-                <a href="#" class="btn btn-hero-primary">Support Education</a>
+                <a href="contact.html" class="btn btn-hero-primary"
+                  >Support Education</a
+                >
               </div>
             </div>
           </div>
@@ -773,19 +828,21 @@
                 </p>
                 <div class="program-stats">
                   <div class="program-stat">
-                    <div class="number">2,000+</div>
+                    <div class="number">0</div>
                     <div class="label">Patients Treated</div>
                   </div>
                   <div class="program-stat">
-                    <div class="number">30</div>
+                    <div class="number">1</div>
                     <div class="label">Medical Camps</div>
                   </div>
                   <div class="program-stat">
-                    <div class="number">15</div>
+                    <div class="number">3</div>
                     <div class="label">Communities</div>
                   </div>
                 </div>
-                <a href="#" class="btn btn-hero-primary">Support Healthcare</a>
+                <a href="contact.html" class="btn btn-hero-primary"
+                  >Support Healthcare</a
+                >
               </div>
             </div>
           </div>
@@ -821,19 +878,21 @@
                 </p>
                 <div class="program-stats">
                   <div class="program-stat">
-                    <div class="number">10</div>
+                    <div class="number">2</div>
                     <div class="label">Orphanages</div>
                   </div>
                   <div class="program-stat">
-                    <div class="number">300+</div>
+                    <div class="number">100+</div>
                     <div class="label">Children Supported</div>
                   </div>
                   <div class="program-stat">
-                    <div class="number">50+</div>
+                    <div class="number">2</div>
                     <div class="label">Monthly Visits</div>
                   </div>
                 </div>
-                <a href="#" class="btn btn-hero-primary">Support Orphanages</a>
+                <a href="contact.html" class="btn btn-hero-primary"
+                  >Support Orphanages</a
+                >
               </div>
             </div>
           </div>
@@ -872,11 +931,11 @@
                 </p>
                 <div class="program-stats">
                   <div class="program-stat">
-                    <div class="number">1+</div>
+                    <div class="number">1</div>
                     <div class="label">Boreholes Drilled</div>
                   </div>
                   <div class="program-stat">
-                    <div class="number">25+</div>
+                    <div class="number">1</div>
                     <div class="label">Communities Served</div>
                   </div>
                   <div class="program-stat">
@@ -884,7 +943,7 @@
                     <div class="label">Areas of Support</div>
                   </div>
                 </div>
-                <a href="#" class="btn btn-hero-primary"
+                <a href="contact.html" class="btn btn-hero-primary"
                   >Support Community Outreach</a
                 >
               </div>

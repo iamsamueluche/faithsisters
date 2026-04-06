@@ -989,37 +989,361 @@
         }
       }
 
-      .team-card {
-        background: white;
-        border-radius: 20px;
+      .team-leads-section {
+        position: relative;
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(242, 101, 34, 0.12), transparent 22%),
+          radial-gradient(circle at 84% 16%, rgba(0, 174, 239, 0.13), transparent 24%),
+          linear-gradient(180deg, #f6fbff 0%, #ffffff 100%);
       }
 
-      .team-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+      .team-leads-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(rgba(26, 26, 46, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(26, 26, 46, 0.025) 1px, transparent 1px);
+        background-size: 34px 34px;
+        opacity: 0.35;
+        pointer-events: none;
       }
 
-      .team-card img {
-        width: 100%;
-        height: 280px;
-        object-fit: cover;
+      .team-leads-section .container {
+        position: relative;
+        z-index: 1;
       }
 
-      .team-info {
-        padding: 1.5rem;
+      .team-leads-motion {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .team-leads-orb,
+      .team-leads-ring,
+      .team-leads-wave {
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .team-leads-orb {
+        border-radius: 50%;
+        filter: blur(10px);
+        opacity: 0.78;
+        animation: teamLeadOrbDrift 14s ease-in-out infinite;
+      }
+
+      .team-leads-orb.orb-one {
+        width: 190px;
+        height: 190px;
+        left: -48px;
+        top: 10%;
+        background: radial-gradient(circle, rgba(242, 101, 34, 0.18), transparent 72%);
+      }
+
+      .team-leads-orb.orb-two {
+        width: 220px;
+        height: 220px;
+        right: -72px;
+        top: 12%;
+        background: radial-gradient(circle, rgba(0, 174, 239, 0.18), transparent 72%);
+        animation-delay: -4s;
+      }
+
+      .team-leads-orb.orb-three {
+        width: 170px;
+        height: 170px;
+        left: 44%;
+        bottom: -44px;
+        background: radial-gradient(circle, rgba(255, 179, 71, 0.14), transparent 72%);
+        animation-delay: -8s;
+      }
+
+      .team-leads-ring {
+        border-radius: 50%;
+        border: 1px solid rgba(0, 174, 239, 0.12);
+        box-shadow:
+          0 0 0 16px rgba(0, 174, 239, 0.04),
+          0 0 0 32px rgba(242, 101, 34, 0.03);
+        animation: teamLeadRingSpin 18s linear infinite;
+      }
+
+      .team-leads-ring.ring-one {
+        width: 128px;
+        height: 128px;
+        right: 12%;
+        bottom: 12%;
+      }
+
+      .team-leads-ring.ring-two {
+        width: 96px;
+        height: 96px;
+        left: 10%;
+        top: 18%;
+        animation-direction: reverse;
+        animation-duration: 14s;
+      }
+
+      .team-leads-wave {
+        left: -8%;
+        right: -8%;
+        height: 124px;
+        border-radius: 50%;
+        opacity: 0.22;
+        animation: teamLeadWaveFloat 11s ease-in-out infinite;
+      }
+
+      .team-leads-wave.wave-one {
+        top: 20%;
+        background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.18), transparent 72%);
+        border: 1px solid rgba(255, 255, 255, 0.24);
+      }
+
+      .team-leads-wave.wave-two {
+        bottom: 8%;
+        background: radial-gradient(ellipse at center, rgba(0, 174, 239, 0.08), transparent 72%);
+        border: 1px solid rgba(0, 174, 239, 0.1);
+        animation-delay: -5s;
+      }
+
+      .team-leads-header {
+        max-width: 760px;
+        margin: 0 auto 3rem;
         text-align: center;
       }
 
-      .team-info h5 {
-        margin-bottom: 0.25rem;
+      .team-leads-header .section-title::after {
+        content: "";
+        display: block;
+        width: 92px;
+        height: 4px;
+        margin: 1rem auto 0;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #f26522, #00aeef);
+        animation: teamLeadLineGlow 5s ease-in-out infinite;
       }
 
-      .team-info span {
-        color: #6c757d;
-        font-size: 0.9rem;
+      .team-leads-intro {
+        color: #667085;
+        font-size: 1.02rem;
+        line-height: 1.8;
+        margin: 1rem auto 0;
+      }
+
+      .team-leads-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.15rem;
+      }
+
+      .team-lead-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        border-radius: 24px;
+        padding: 0.8rem;
+        box-shadow:
+          0 20px 42px rgba(15, 23, 38, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(12px);
+        overflow: hidden;
+        transition:
+          transform 0.38s ease,
+          box-shadow 0.38s ease,
+          border-color 0.38s ease;
+        animation: teamLeadCardFloat 7s ease-in-out infinite;
+      }
+
+      .team-lead-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at top right, rgba(0, 174, 239, 0.12), transparent 28%),
+          radial-gradient(circle at bottom left, rgba(242, 101, 34, 0.1), transparent 30%);
+        pointer-events: none;
+      }
+
+      .team-lead-card::after {
+        content: "";
+        position: absolute;
+        inset: auto 1.1rem 1rem 1.1rem;
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(242, 101, 34, 0.9), rgba(0, 174, 239, 0.9));
+        transform-origin: left center;
+        transform: scaleX(0.7);
+        transition: transform 0.38s ease;
+      }
+
+      .team-lead-card:hover {
+        transform: translateY(-12px);
+        border-color: rgba(0, 174, 239, 0.22);
+        box-shadow:
+          0 30px 56px rgba(15, 23, 38, 0.14),
+          0 12px 26px rgba(0, 174, 239, 0.1);
+      }
+
+      .team-lead-card:hover::after {
+        transform: scaleX(1);
+      }
+
+      .team-lead-card.featured {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 251, 255, 0.98) 100%);
+      }
+
+      .team-lead-card:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+
+      .team-lead-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      .team-lead-card:nth-child(4) {
+        animation-delay: 0.45s;
+      }
+
+      .team-lead-card:nth-child(5) {
+        animation-delay: 0.6s;
+      }
+
+      .team-lead-card:nth-child(6) {
+        animation-delay: 0.75s;
+      }
+
+      .team-lead-photo {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        min-height: 320px;
+        background:
+          linear-gradient(160deg, rgba(26, 36, 62, 0.08), rgba(0, 174, 239, 0.06)),
+          linear-gradient(180deg, #f6f8fc 0%, #eef5fb 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem;
+      }
+
+      .team-lead-card.featured .team-lead-photo {
+        min-height: 380px;
+      }
+
+      .team-lead-photo::before {
+        content: "";
+        position: absolute;
+        inset: 0.8rem;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        pointer-events: none;
+      }
+
+      .team-lead-photo img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        object-position: center top;
+        filter: drop-shadow(0 18px 24px rgba(15, 23, 38, 0.14));
+        animation: teamLeadPortraitFloat 6.5s ease-in-out infinite;
+      }
+
+      .team-lead-copy {
+        position: relative;
+        z-index: 1;
+        padding: 1rem 0.35rem 0.35rem;
+      }
+
+      .team-lead-role {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #00aeef;
+        margin-bottom: 0.65rem;
+      }
+
+      .team-lead-role::before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #f26522, #00aeef);
+      }
+
+      .team-lead-copy h3 {
+        color: #152238;
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+
+      @keyframes teamLeadCardFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+
+      @keyframes teamLeadPortraitFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      @keyframes teamLeadOrbDrift {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: translate3d(18px, -14px, 0) scale(1.08);
+        }
+      }
+
+      @keyframes teamLeadRingSpin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes teamLeadWaveFloat {
+        0%,
+        100% {
+          transform: translateY(0) scaleX(1);
+        }
+        50% {
+          transform: translateY(14px) scaleX(1.04);
+        }
+      }
+
+      @keyframes teamLeadLineGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 0 rgba(0, 174, 239, 0);
+        }
+        50% {
+          box-shadow: 0 10px 22px rgba(0, 174, 239, 0.16);
+        }
       }
 
       .about-who-title {
@@ -1027,6 +1351,24 @@
       }
 
       @media (max-width: 767px) {
+        .team-leads-grid {
+          grid-template-columns: 1fr;
+          gap: 1.2rem;
+        }
+
+        .team-leads-header {
+          margin-bottom: 2.2rem;
+        }
+
+        .team-lead-photo,
+        .team-lead-card.featured .team-lead-photo {
+          min-height: 300px;
+        }
+
+        .team-lead-copy {
+          padding: 0.9rem 0.15rem 0.25rem;
+        }
+
         .timeline {
           grid-template-columns: minmax(220px, 1fr);
           gap: 1.15rem;
@@ -1251,6 +1593,110 @@
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEAM LEADS ===== -->
+    <section class="section-padding team-leads-section">
+      <div class="team-leads-motion" aria-hidden="true">
+        <span class="team-leads-orb orb-one"></span>
+        <span class="team-leads-orb orb-two"></span>
+        <span class="team-leads-orb orb-three"></span>
+        <span class="team-leads-ring ring-one"></span>
+        <span class="team-leads-ring ring-two"></span>
+        <span class="team-leads-wave wave-one"></span>
+        <span class="team-leads-wave wave-two"></span>
+      </div>
+      <div class="container">
+        <div class="team-leads-header">
+          <span class="section-eyebrow">Team Leads</span>
+          <h2 class="section-title">The Women Steering The Vision</h2>
+          <p class="team-leads-intro">
+            Meet the dedicated leaders serving behind the mission with prayer,
+            wisdom, strategy, and a deep commitment to building a Christ-centered
+            sisterhood that transforms lives.
+          </p>
+        </div>
+
+        <div class="team-leads-grid">
+          <article class="team-lead-card featured">
+            <div class="team-lead-photo">
+              <img
+                src="images/Team/Inimfon Charles Joseph_President.jpg"
+                alt="Inimfon Charles Joseph, President"
+              />
+            </div>
+            <div class="team-lead-copy">
+              <span class="team-lead-role">President</span>
+              <h3>Inimfon Charles Joseph</h3>
+            </div>
+          </article>
+
+          <article class="team-lead-card">
+            <div class="team-lead-photo">
+              <img
+                src="images/Team/Vanessa Oga-Uhia_Head of Admin.jpg"
+                alt="Vanessa Oga-Uhia, Head of Admin"
+              />
+            </div>
+            <div class="team-lead-copy">
+              <span class="team-lead-role">Head of Admin</span>
+              <h3>Vanessa Oga-Uhia</h3>
+            </div>
+          </article>
+
+          <article class="team-lead-card">
+            <div class="team-lead-photo">
+              <img
+                src="images/Team/Jennifer Urisomilo Obarewo_Head of Programs and Outreach.png"
+                alt="Jennifer Urisomilo Obarewo, Head of Programs and Outreach"
+              />
+            </div>
+            <div class="team-lead-copy">
+              <span class="team-lead-role">Head of Programs and Outreach</span>
+              <h3>Jennifer Urisomilo Obarewo</h3>
+            </div>
+          </article>
+
+          <article class="team-lead-card">
+            <div class="team-lead-photo">
+              <img
+                src="images/Team/Esther Aririsukwu_Head of Prayer Unit.jpg"
+                alt="Esther Aririsukwu, Head of Prayer Unit"
+              />
+            </div>
+            <div class="team-lead-copy">
+              <span class="team-lead-role">Head of Prayer Unit</span>
+              <h3>Esther Aririsukwu</h3>
+            </div>
+          </article>
+
+          <article class="team-lead-card">
+            <div class="team-lead-photo">
+              <img
+                src="images/Team/Helen Isaiah Inwang_Head of Finance.jpg"
+                alt="Helen Isaiah Inwang, Head of Finance"
+              />
+            </div>
+            <div class="team-lead-copy">
+              <span class="team-lead-role">Head of Finance</span>
+              <h3>Helen Isaiah Inwang</h3>
+            </div>
+          </article>
+
+          <article class="team-lead-card">
+            <div class="team-lead-photo">
+              <img
+                src="images/Team/Tina Williams_Head of social media.jpg"
+                alt="Tina Williams, Head of Social Media"
+              />
+            </div>
+            <div class="team-lead-copy">
+              <span class="team-lead-role">Head of Social Media</span>
+              <h3>Tina Williams</h3>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1522,3 +1968,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+
