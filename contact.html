@@ -1,538 +1,689 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | Faith Sisters Global Mission</title>
 
     <link rel="icon" type="image/png" href="images/favicon/favicon.png" />
-    
+
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/style.css" />
+
     <style>
-        .contact-info-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            height: 100%;
-        }
-        
-        .contact-info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .contact-info-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .contact-info-item i {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #F26522 0%, #00AEEF 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-        
-        .contact-info-item h5 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-        
-        .contact-info-item p {
-            color: #6C757D;
-            margin: 0;
-        }
-        
-        .contact-form-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
+      .contact-info-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
 
-        .form-alert {
-            border: none;
-            border-radius: 14px;
-            padding: 1rem 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-control {
-            padding: 1rem 1.25rem;
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            border-color: #F26522;
-            box-shadow: 0 0 0 0.2rem rgba(242, 101, 34, 0.25);
-        }
-        
-        .btn-submit {
-            background: linear-gradient(135deg, #F26522 0%, #D35400 100%);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border: none;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-        
-        .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(242, 101, 34, 0.4);
-            color: white;
-        }
-        
+      .contact-info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .contact-info-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-info-item i {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #f26522 0%, #00aeef 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+
+      .contact-info-item h5 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .contact-info-item p {
+        color: #6c757d;
+        margin: 0;
+      }
+
+      .contact-form-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .form-alert {
+        border: none;
+        border-radius: 14px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-control {
+        padding: 1rem 1.25rem;
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus {
+        border-color: #f26522;
+        box-shadow: 0 0 0 0.2rem rgba(242, 101, 34, 0.25);
+      }
+
+      .btn-submit {
+        background: linear-gradient(135deg, #f26522 0%, #d35400 100%);
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        border: none;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .btn-submit:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(242, 101, 34, 0.4);
+        color: white;
+      }
+
+      .social-connect {
+        background: linear-gradient(
+          155deg,
+          #152238 0%,
+          #1a4e68 55%,
+          #00aeef 120%
+        );
+        border-radius: 24px;
+        padding: 2rem;
+        text-align: left;
+        color: white;
+        box-shadow: 0 18px 40px rgba(21, 34, 56, 0.18);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .social-connect::before {
+        content: "";
+        position: absolute;
+        inset: auto -40px -40px auto;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.22) 0%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        pointer-events: none;
+      }
+
+      .social-connect h4 {
+        margin-bottom: 0.75rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .social-connect p {
+        position: relative;
+        z-index: 1;
+        color: rgba(255, 255, 255, 0.84);
+      }
+
+      .social-connect .social-links {
+        justify-content: flex-start;
+        gap: 0.85rem;
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
+      }
+
+      .social-connect .social-links a {
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 54px;
+        height: 54px;
+        font-size: 1.25rem;
+        backdrop-filter: blur(8px);
+      }
+
+      .social-connect .social-links a:hover {
+        background: white;
+        color: #f26522;
+      }
+
+      .social-connect-meta {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+        margin-top: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .social-connect-stat {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        padding: 0.9rem 1rem;
+      }
+
+      .social-connect-stat strong {
+        display: block;
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .social-connect-stat span {
+        display: block;
+        font-size: 0.84rem;
+        color: rgba(255, 255, 255, 0.74);
+      }
+
+      .map-container {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        min-height: 400px;
+        height: 100%;
+        border: none;
+      }
+
+      @media (max-width: 991px) {
         .social-connect {
-            background: linear-gradient(155deg, #152238 0%, #1a4e68 55%, #00AEEF 120%);
-            border-radius: 24px;
-            padding: 2rem;
-            text-align: left;
-            color: white;
-            box-shadow: 0 18px 40px rgba(21, 34, 56, 0.18);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
+          min-height: auto;
         }
 
-        .social-connect::before {
-            content: '';
-            position: absolute;
-            inset: auto -40px -40px auto;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 70%);
-            pointer-events: none;
+        .map-container iframe {
+          height: 400px;
         }
-        
-        .social-connect h4 {
-            margin-bottom: 0.75rem;
-            position: relative;
-            z-index: 1;
-        }
+      }
 
-        .social-connect p {
-            position: relative;
-            z-index: 1;
-            color: rgba(255, 255, 255, 0.84);
-        }
-        
-        .social-connect .social-links {
-            justify-content: flex-start;
-            gap: 0.85rem;
-            position: relative;
-            z-index: 1;
-            flex-wrap: wrap;
-        }
-        
-        .social-connect .social-links a {
-            background: rgba(255, 255, 255, 0.14);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            width: 54px;
-            height: 54px;
-            font-size: 1.25rem;
-            backdrop-filter: blur(8px);
-        }
-        
-        .social-connect .social-links a:hover {
-            background: white;
-            color: #F26522;
+      @media (max-width: 575px) {
+        .social-connect {
+          padding: 1.5rem;
         }
 
         .social-connect-meta {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.85rem;
-            margin-top: 1.5rem;
-            position: relative;
-            z-index: 1;
+          grid-template-columns: 1fr;
         }
-
-        .social-connect-stat {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 18px;
-            padding: 0.9rem 1rem;
-        }
-
-        .social-connect-stat strong {
-            display: block;
-            font-size: 1rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .social-connect-stat span {
-            display: block;
-            font-size: 0.84rem;
-            color: rgba(255, 255, 255, 0.74);
-        }
-        
-        .map-container {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            height: 100%;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            min-height: 400px;
-            height: 100%;
-            border: none;
-        }
-
-        @media (max-width: 991px) {
-            .social-connect {
-                min-height: auto;
-            }
-
-            .map-container iframe {
-                height: 400px;
-            }
-        }
-
-        @media (max-width: 575px) {
-            .social-connect {
-                padding: 1.5rem;
-            }
-
-            .social-connect-meta {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- ===== NAVIGATION ===== -->
     <nav class="navbar navbar-expand-lg fixed-top scrolled">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img class="brand-logo" src="images/logo.webp" alt="Faith Sisters Global Mission logo">
-                <div class="brand-text" style="color: #1A1A2E;">
-                    Faith Sisters
-                    <span>Global Mission</span>
-                </div>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggle-box" aria-hidden="true">
-                    <span class="navbar-toggle-lines">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="nav-link btn-join" href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">
-                            <i class="bi bi-heart-fill me-1"></i>Join Us
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            class="brand-logo"
+            src="images/logo.webp"
+            alt="Faith Sisters Global Mission logo"
+          />
+          <div class="brand-text" style="color: #1a1a2e">
+            Faith Sisters
+            <span>Global Mission</span>
+          </div>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggle-box" aria-hidden="true">
+            <span class="navbar-toggle-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="outreach.html">Outreach Programs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="partners.html">Partners & Sponsors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a
+                class="nav-link btn-join"
+                href="https://forms.gle/Xf2UDiuCFTPhiDVq7"
+                target="_blank"
+              >
+                <i class="bi bi-heart-fill me-1"></i>Join Us
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- ===== PAGE HEADER ===== -->
-    <section class="page-header" style="min-height: 40vh;">
-        <div class="page-header-bg">
-            <img src="images/hero_group.webp" alt="Contact Us">
-        </div>
-        <div class="page-header-overlay"></div>
-        <div class="container page-header-content">
-            <h1>Contact Us</h1>
-            <p>We'd love to hear from you. Get in touch with us today.</p>
-        </div>
+    <section class="page-header" style="min-height: 40vh">
+      <div class="page-header-bg">
+        <img src="images/hero_group.webp" alt="Contact Us" />
+      </div>
+      <div class="page-header-overlay"></div>
+      <div class="container page-header-content">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Get in touch with us today.</p>
+      </div>
     </section>
 
     <!-- ===== CONTACT SECTION ===== -->
-    <section class="section-padding" style="background: #F8F9FA;">
-        <div class="container">
-            <div class="row g-5">
-                <!-- Contact Info -->
-                <div class="col-lg-4">
-                    <div class="contact-info-card">
-                        <h3 class="mb-4">Get in Touch</h3>
-                        
-                        <div class="contact-info-item">
-                            <i class="bi bi-geo-alt"></i>
-                            <div>
-                                <h5>Address</h5>
-                                <p>9 Adamu Chiroma Crescent,<br>Jabi District, Abuja, Nigeria</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-info-item">
-                            <i class="bi bi-telephone"></i>
-                            <div>
-                                <h5>Phone</h5>
-                                <p>+234 815 944 8287</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-info-item">
-                            <i class="bi bi-envelope"></i>
-                            <div>
-                                <h5>Email</h5>
-                                <p>wearefaithsisters@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-info-item">
-                            <i class="bi bi-clock"></i>
-                            <div>
-                                <h5>Meeting Time</h5>
-                                <p>Every First Saturday of the Month<br>10:00 AM - 2:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
+    <section class="section-padding" style="background: #f8f9fa">
+      <div class="container">
+        <div class="row g-5">
+          <!-- Contact Info -->
+          <div class="col-lg-4">
+            <div class="contact-info-card">
+              <h3 class="mb-4">Get in Touch</h3>
+
+              <div class="contact-info-item">
+                <i class="bi bi-geo-alt"></i>
+                <div>
+                  <h5>Address</h5>
+                  <p>
+                    9 Adamu Chiroma Crescent,<br />Jabi District, Abuja, Nigeria
+                  </p>
                 </div>
-                
-                <!-- Contact Form -->
-                <div class="col-lg-8">
-                    <div class="contact-form-card">
-                        <h3 class="mb-4">Send Us a Message</h3>
-                        <div id="formStatus" class="d-none" aria-live="polite"></div>
-                        <form id="contactForm" action="send-email.php" method="post">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label">First Name</label>
-                                    <input type="text" name="first_name" class="form-control" placeholder="Your first name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Last Name</label>
-                                    <input type="text" name="last_name" class="form-control" placeholder="Your last name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Phone</label>
-                                    <input type="tel" name="phone" class="form-control" placeholder="+234...">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Subject</label>
-                                    <select name="subject" class="form-control" required>
-                                        <option value="">Select a subject</option>
-                                        <option value="general">General Inquiry</option>
-                                        <option value="partnership">Partnership</option>
-                                        <option value="volunteer">Volunteering</option>
-                                        <option value="donation">Donation</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Message</label>
-                                    <textarea name="message" class="form-control" rows="5" placeholder="Your message..." required></textarea>
-                                </div>
-                                <div class="col-12 d-none" aria-hidden="true">
-                                    <label class="form-label" for="website">Leave this field empty</label>
-                                    <input type="text" id="website" name="website" class="form-control" tabindex="-1" autocomplete="off">
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-submit">
-                                        <i class="bi bi-send-fill me-2"></i>Send Message
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+              </div>
+
+              <div class="contact-info-item">
+                <i class="bi bi-telephone"></i>
+                <div>
+                  <h5>Phone</h5>
+                  <p>+234 815 944 8287</p>
                 </div>
+              </div>
+
+              <div class="contact-info-item">
+                <i class="bi bi-envelope"></i>
+                <div>
+                  <h5>Email</h5>
+                  <p>wearefaithsisters@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <i class="bi bi-clock"></i>
+                <div>
+                  <h5>Meeting Time</h5>
+                  <p>
+                    Every First Saturday of the Month<br />7:00 AM - 9:00 AM
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <i class="bi bi-bank"></i>
+                <div>
+                  <h5>Partnership Account Details</h5>
+                  <p>
+                    Account Number: 5463296002<br />Account Name: FAITH
+                    SISTERS GLOBAL<br />Bank Name: Moniepoint MFB
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="col-lg-8">
+            <div class="contact-form-card">
+              <h3 class="mb-4">Send Us a Message</h3>
+              <div id="formStatus" class="d-none" aria-live="polite"></div>
+              <form id="contactForm" action="send-email.php" method="post">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">First Name</label>
+                    <input
+                      type="text"
+                      name="first_name"
+                      class="form-control"
+                      placeholder="Your first name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Last Name</label>
+                    <input
+                      type="text"
+                      name="last_name"
+                      class="form-control"
+                      placeholder="Your last name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      placeholder="your@email.com"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      class="form-control"
+                      placeholder="+234..."
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Subject</label>
+                    <select name="subject" class="form-control" required>
+                      <option value="">Select a subject</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="partnership">Partnership</option>
+                      <option value="volunteer">Volunteering</option>
+                      <option value="donation">Donation</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Message</label>
+                    <textarea
+                      name="message"
+                      class="form-control"
+                      rows="5"
+                      placeholder="Your message..."
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-12 d-none" aria-hidden="true">
+                    <label class="form-label" for="website"
+                      >Leave this field empty</label
+                    >
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      class="form-control"
+                      tabindex="-1"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-submit">
+                      <i class="bi bi-send-fill me-2"></i>Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ===== MAP SECTION ===== -->
     <section class="section-padding pt-0">
-        <div class="container">
-            <div class="row g-4 align-items-stretch">
-                <div class="col-lg-8">
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8765432109876!2d7.3989!3d9.0765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDQnMzUuNCJOIDfCsDIzJzU2LjAiRQ!5e0!3m2!1sen!2sng!4v1234567890" 
-                            allowfullscreen="" 
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="social-connect">
-                        <div>
-                            <h4>Connect With Us</h4>
-                            <p class="mb-4">Follow Faith Sisters across our social channels for updates, stories, and community moments.</p>
-                            <div class="social-links">
-                                <a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a>
-                                <a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a>
-                                <a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a>
-                                <a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                            </div>
-                        </div>
-                        <div class="social-connect-meta">
-                            <div class="social-connect-stat">
-                                <strong>Daily</strong>
-                                <span>Fresh updates and encouragement</span>
-                            </div>
-                            <div class="social-connect-stat">
-                                <strong>Community</strong>
-                                <span>Stay close to events and outreach moments</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-8">
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8765432109876!2d7.3989!3d9.0765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDQnMzUuNCJOIDfCsDIzJzU2LjAiRQ!5e0!3m2!1sen!2sng!4v1234567890"
+                allowfullscreen=""
+                loading="lazy"
+              >
+              </iframe>
             </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="social-connect">
+              <div>
+                <h4>Connect With Us</h4>
+                <p class="mb-4">
+                  Follow Faith Sisters across our social channels for updates,
+                  stories, and community moments.
+                </p>
+                <div class="social-links">
+                  <a href="https://facebook.com/faithsisters" target="_blank"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                  <a
+                    href="https://instagram.com/faithsistersglobal"
+                    target="_blank"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                  <a
+                    href="https://youtube.com/@FaithSistersGlobal"
+                    target="_blank"
+                    ><i class="bi bi-youtube"></i
+                  ></a>
+                  <a href="https://x.com/faithsisters01" target="_blank"
+                    ><i class="bi bi-twitter-x"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="social-connect-meta">
+                <div class="social-connect-stat">
+                  <strong>Daily</strong>
+                  <span>Fresh updates and encouragement</span>
+                </div>
+                <div class="social-connect-stat">
+                  <strong>Community</strong>
+                  <span>Stay close to events and outreach moments</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ===== CTA SECTION ===== -->
     <section class="section-padding cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Join Our Sisterhood</h2>
-                <p>
-                    Be part of a community that supports, uplifts, and empowers women to live their best lives in Christ.
-                </p>
-                <a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank" class="btn btn-cta">
-                    <i class="bi bi-heart-fill me-2"></i>Become a Member
-                </a>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>Join Our Sisterhood</h2>
+          <p>
+            Be part of a community that supports, uplifts, and empowers women to
+            live their best lives in Christ.
+          </p>
+          <a
+            href="https://forms.gle/Xf2UDiuCFTPhiDVq7"
+            target="_blank"
+            class="btn btn-cta"
+          >
+            <i class="bi bi-heart-fill me-2"></i>Become a Member
+          </a>
         </div>
+      </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="footer-brand">
-                        <img class="brand-logo" src="images/logo.webp" alt="Faith Sisters Global Mission logo">
-                        <div>
-                            <h4>Faith Sisters</h4>
-                            <span>Global Mission</span>
-                        </div>
-                    </div>
-                    <div class="footer-about">
-                        <p>Living for Christ, taking the gospel to the nations.</p>
-                        <div class="social-links">
-                            <a href="https://facebook.com/faithsisters" target="_blank"><i class="bi bi-facebook"></i></a>
-                            <a href="https://instagram.com/faithsistersglobal" target="_blank"><i class="bi bi-instagram"></i></a>
-                            <a href="https://youtube.com/@FaithSistersGlobal" target="_blank"><i class="bi bi-youtube"></i></a>
-                            <a href="https://x.com/faithsisters01" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <div class="footer-links">
-                        <h5>Quick Links</h5>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="outreach.html">Outreach Programs</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <div class="footer-links">
-                        <h5>Get Involved</h5>
-                        <ul>
-                            <li><a href="partners.html">Partners & Sponsors</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank">Join Us</a></li>
-                            <li><a href="https://youtube.com/@FaithSistersGlobal" target="_blank">YouTube Channel</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="footer-links">
-                        <h5>Contact Info</h5>
-                        <div class="footer-contact">
-                            <p><i class="bi bi-geo-alt"></i> 9 Adamu Chiroma Crescent, Jabi, Abuja, Nigeria</p>
-                            <p><i class="bi bi-telephone"></i> +234 815 944 8287</p>
-                            <p><i class="bi bi-envelope"></i> wearefaithsisters@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <div class="footer-brand">
+              <img
+                class="brand-logo"
+                src="images/logo.webp"
+                alt="Faith Sisters Global Mission logo"
+              />
+              <div>
+                <h4>Faith Sisters</h4>
+                <span>Global Mission</span>
+              </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Faith Sisters Global Mission. All rights reserved.</p>
+            <div class="footer-about">
+              <p>Living for Christ, taking the gospel to the nations.</p>
+              <div class="social-links">
+                <a href="https://facebook.com/faithsisters" target="_blank"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a
+                  href="https://instagram.com/faithsistersglobal"
+                  target="_blank"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a
+                  href="https://youtube.com/@FaithSistersGlobal"
+                  target="_blank"
+                  ><i class="bi bi-youtube"></i
+                ></a>
+                <a href="https://x.com/faithsisters01" target="_blank"
+                  ><i class="bi bi-twitter-x"></i
+                ></a>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <div class="footer-links">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="outreach.html">Outreach Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <div class="footer-links">
+              <h5>Get Involved</h5>
+              <ul>
+                <li><a href="partners.html">Partners & Sponsors</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li>
+                  <a href="https://forms.gle/Xf2UDiuCFTPhiDVq7" target="_blank"
+                    >Join Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://youtube.com/@FaithSistersGlobal"
+                    target="_blank"
+                    >YouTube Channel</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="footer-links">
+              <h5>Contact Info</h5>
+              <div class="footer-contact">
+                <p>
+                  <i class="bi bi-geo-alt"></i> 9 Adamu Chiroma Crescent, Jabi,
+                  Abuja, Nigeria
+                </p>
+                <p><i class="bi bi-telephone"></i> +234 815 944 8287</p>
+                <p>
+                  <i class="bi bi-envelope"></i> wearefaithsisters@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Faith Sisters Global Mission. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
-        (function () {
-            const params = new URLSearchParams(window.location.search);
-            const status = params.get('status');
-            const formStatus = document.getElementById('formStatus');
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const status = params.get("status");
+        const formStatus = document.getElementById("formStatus");
 
-            if (!status || !formStatus) {
-                return;
-            }
+        if (!status || !formStatus) {
+          return;
+        }
 
-            const messages = {
-                sent: {
-                    className: 'alert alert-success form-alert',
-                    text: 'Thank you for your message. We have received it and will get back to you soon.'
-                },
-                error: {
-                    className: 'alert alert-danger form-alert',
-                    text: 'We could not send your message right now. Please try again or email us directly at wearefaithsisters@gmail.com.'
-                },
-                invalid: {
-                    className: 'alert alert-warning form-alert',
-                    text: 'Please complete all required fields with valid information before sending your message.'
-                }
-            };
+        const messages = {
+          sent: {
+            className: "alert alert-success form-alert",
+            text: "Thank you for your message. We have received it and will get back to you soon.",
+          },
+          error: {
+            className: "alert alert-danger form-alert",
+            text: "We could not send your message right now. Please try again or email us directly at wearefaithsisters@gmail.com.",
+          },
+          invalid: {
+            className: "alert alert-warning form-alert",
+            text: "Please complete all required fields with valid information before sending your message.",
+          },
+        };
 
-            if (!messages[status]) {
-                return;
-            }
+        if (!messages[status]) {
+          return;
+        }
 
-            formStatus.className = messages[status].className;
-            formStatus.textContent = messages[status].text;
-        })();
+        formStatus.className = messages[status].className;
+        formStatus.textContent = messages[status].text;
+      })();
     </script>
-</body>
+  </body>
 </html>
