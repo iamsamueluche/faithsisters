@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Outreach - Reframing | Faith Sisters Gallery</title>
+
+  <link rel="icon" type="image/png" href="images/favicon/favicon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .story-page { background: linear-gradient(180deg, #f6f8fb 0%, #fff 100%); }
+    .story-shell { margin-top: -5rem; position: relative; z-index: 2; }
+    .story-card, .story-gallery-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(21, 34, 56, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(16, 31, 53, 0.08);
+    }
+    .story-card, .story-aside { padding: 2rem; }
+    .story-back {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      color: #f26522;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .story-kicker {
+      display: inline-flex;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(242, 101, 34, 0.1);
+      color: #f26522;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .story-card h1 {
+      color: #152238;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      margin-bottom: 0.5rem;
+    }
+    .story-meta {
+      color: #5f6d7a;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+    .story-lead, .story-card p, .story-detail-list li, .story-gallery-note {
+      color: #51606f;
+    }
+    .story-detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .story-detail-list li {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+    .story-detail-list i {
+      color: #00AEEF;
+      margin-top: 0.15rem;
+    }
+    .story-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    .story-gallery-item {
+      grid-column: span 4;
+      min-height: 250px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(16, 31, 53, 0.1);
+      display: block;
+    }
+    .story-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .story-gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    .story-gallery-note {
+      margin-top: 0.65rem;
+      margin-bottom: 0;
+    }
+    @media (max-width: 991px) {
+      .story-gallery-item { grid-column: span 6; }
+    }
+    @media (max-width: 767px) {
+      .story-shell { margin-top: -3rem; }
+      .story-card, .story-aside { padding: 1.5rem; }
+      .story-gallery-item { grid-column: span 12; min-height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top scrolled">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/logo.webp" alt="Faith Sisters Global Mission logo">
+        <div class="brand-text" style="color:#1A1A2E;">Faith Sisters<span>Global Mission</span></div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggle-box" aria-hidden="true">
+          <span class="navbar-toggle-lines"><span></span><span></span><span></span></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="outreach.html">Outreach Programs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html">Partners & Sponsors</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header" style="min-height:50vh;">
+    <div class="page-header-bg">
+      <img src="images/Gallery/Educational_Outreach - GGSC_DUTSE_ABUJA/IMG_4257.webp" alt="Education Outreach at Government Girls Secondary School Dutse">
+    </div>
+    <div class="page-header-overlay"></div>
+    <div class="container page-header-content">
+      <h1>Education Outreach - Reframing</h1>
+      <p>Social-Emotional Learning at Government Girls Secondary School Dutse, FCT, Nigeria.</p>
+    </div>
+  </section>
+
+  <main class="story-page section-padding">
+    <div class="container story-shell">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+          <article class="story-card">
+            <a class="story-back" href="gallery.html"><i class="bi bi-arrow-left"></i>Back to Gallery</a>
+            <span class="story-kicker">Education Outreach</span>
+            <h1>Education Outreach – Reframing: Social-Emotional Learning | April 2026 | Government Girls Secondary School Dutse, Abua, FCT, Nigeria</h1>
+            <div class="story-meta">Saturday, 25th April 2026 | Government Girls Secondary School Dutse, Abua, FCT, Nigeria</div>
+            <p class="story-lead">On Saturday, 25th April 2026, Faith Sisters Global Mission held an impactful Education Outreach at Government Girls Secondary School Dutse, bringing together young female students for a day of learning, inspiration, and transformation.</p>
+            <p>Centered on the theme “Reframing,” the outreach encouraged the girls to shift their perspectives about life, challenges, and their personal journeys. Through engaging sessions, they were taught how to renew their mindset, overcome limiting beliefs, and see themselves through the lens of purpose, faith, and possibility. The message emphasized that with the right mindset, every obstacle can become an opportunity for growth and advancement.</p>
+            <p>A major highlight of the outreach was the award of scholarships to twenty-five (25) deserving students. This initiative provided school fee support of ₦20,000 per student, amounting to a total of ₦500,000. The scholarship recognized not only academic effort but also resilience, determination, and the potential to succeed despite financial constraints. It served as a powerful reminder that their dreams are valid and achievable.</p>
+            <p>The outreach left a lasting impact on both the students and the school community, sparking renewed hope, confidence, and motivation among the girls.</p>
+            <p>Faith Sisters Global Mission remains deeply grateful to its dedicated members, partners, and sponsors whose unwavering support continues to drive meaningful change.</p>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <aside class="story-gallery-card story-aside">
+            <h3>Event Highlights</h3>
+            <ul class="story-detail-list">
+              <li><i class="bi bi-check2-circle"></i><span>The outreach centered on “Reframing,” helping the girls renew their mindset, overcome limiting beliefs, and see themselves through purpose, faith, and possibility.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Twenty-five (25) deserving students received scholarship support of ₦20,000 each, totaling ₦500,000 in school fee assistance.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>The school community experienced renewed hope, confidence, and motivation through the support of dedicated members, partners, and sponsors.</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <section class="story-gallery-card p-4 p-lg-5">
+        <div class="section-header mb-4">
+          <span class="section-eyebrow">Photo Gallery</span>
+          <h2 class="section-title">Images from the outreach</h2>
+          <p class="story-gallery-note">Click any image to open it in full size.</p>
+        </div>
+        <div class="story-gallery-grid" id="storyGallery"></div>
+      </section>
+    </div>
+  </main>
+
+  <section class="section-padding cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Continue Exploring Our Outreach Stories</h2>
+        <p>Return to the gallery to discover more moments of service, compassion, and community transformation.</p>
+        <a href="gallery.html" class="btn btn-cta"><i class="bi bi-images me-2"></i>Return to Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const galleryFolder = 'images/Gallery/Educational_Outreach - GGSC_DUTSE_ABUJA';
+    const galleryImages = [
+      'IMG_4202.webp',
+      'IMG_4203.webp',
+      'IMG_4204.webp',
+      'IMG_4205.webp',
+      'IMG_4206.webp',
+      'IMG_4207.webp',
+      'IMG_4208.webp',
+      'IMG_4209.webp',
+      'IMG_4211.webp',
+      'IMG_4212.webp',
+      'IMG_4213.webp',
+      'IMG_4214.webp',
+      'IMG_4215.webp',
+      'IMG_4216.webp',
+      'IMG_4217.webp',
+      'IMG_4218.webp',
+      'IMG_4219.webp',
+      'IMG_4220.webp',
+      'IMG_4221.webp',
+      'IMG_4222.webp',
+      'IMG_4223.webp',
+      'IMG_4224.webp',
+      'IMG_4225.webp',
+      'IMG_4226.webp',
+      'IMG_4227.webp',
+      'IMG_4228.webp',
+      'IMG_4230.webp',
+      'IMG_4231.webp',
+      'IMG_4232.webp',
+      'IMG_4233.webp',
+      'IMG_4234.webp',
+      'IMG_4235.webp',
+      'IMG_4236.webp',
+      'IMG_4237.webp',
+      'IMG_4238.webp',
+      'IMG_4239.webp',
+      'IMG_4240.webp',
+      'IMG_4241.webp',
+      'IMG_4243.webp',
+      'IMG_4244.webp',
+      'IMG_4245.webp',
+      'IMG_4246.webp',
+      'IMG_4247.webp',
+      'IMG_4248.webp',
+      'IMG_4249.webp',
+      'IMG_4250.webp',
+      'IMG_4251.webp',
+      'IMG_4252.webp',
+      'IMG_4253.webp',
+      'IMG_4254.webp',
+      'IMG_4255.webp',
+      'IMG_4256.webp',
+      'IMG_4257.webp',
+      'WhatsApp Image 2026-04-29 at 02.16.46.webp',
+      'WhatsApp Image 2026-04-29 at 02.17.09.webp',
+      'WhatsApp Image 2026-04-29 at 02.18.34 (1).webp',
+      'WhatsApp Image 2026-04-29 at 02.18.34.webp',
+      'WhatsApp Image 2026-04-29 at 02.18.35 (1).webp',
+      'WhatsApp Image 2026-04-29 at 02.18.35 (2).webp',
+      'WhatsApp Image 2026-04-29 at 02.18.35 (3).webp',
+      'WhatsApp Image 2026-04-29 at 02.18.35.webp',
+      'WhatsApp Image 2026-04-29 at 02.18.36 (1).webp',
+      'WhatsApp Image 2026-04-29 at 02.18.36 (2).webp',
+      'WhatsApp Image 2026-04-29 at 02.18.36.webp',
+      'WhatsApp Image 2026-04-29 at 02.18.56.webp',
+      'WhatsApp Image 2026-04-29 at 02.18.57.webp'
+    ];
+
+    const storyGallery = document.getElementById('storyGallery');
+    galleryImages.forEach((imageName, index) => {
+      const imagePath = `${galleryFolder}/${imageName}`;
+      const item = document.createElement('a');
+      item.className = 'story-gallery-item';
+      item.href = imagePath;
+      item.target = '_blank';
+      item.rel = 'noopener';
+      item.innerHTML = `<img src="${imagePath}" alt="Education Outreach Reframing photo ${index + 1}">`;
+      storyGallery.appendChild(item);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
